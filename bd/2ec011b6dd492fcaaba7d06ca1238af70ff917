@@ -1,0 +1,26 @@
+decks/clickjacking/vite.config.ts
+  s_7551d6ca727bf5::t_3abdb9e4b7e1d1 4,39-41
+decks/clickjacking/public/victims/dcj-oauth.js
+  s_7551d6ca727bf5::t_43bb87f718204b 12
+  s_7551d6ca727bf5::t_63733bdd51495c 1-2,6,9
+  s_7551d6ca727bf5::t_a1900fc60cde83 3,13-14,16
+decks/clickjacking/slides/05-dcj.md
+  s_7551d6ca727bf5::t_41f67aaa8ab7b0 276-277
+  s_7551d6ca727bf5::t_aa9ee18bb640af 190
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "bd2ec011b6dd492fcaaba7d06ca1238af70ff917",
+  "prompts": {},
+  "sessions": {
+    "s_7551d6ca727bf5": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "11cd824d-979b-4568-9e87-ac2a0be27593",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
