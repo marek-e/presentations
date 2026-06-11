@@ -1,0 +1,21 @@
+apps/home/public/404.html
+  s_76c0f9b881234c::t_1da2cf7cede763 7-11
+decks/clickjacking/public/callback/index.html
+  s_76c0f9b881234c::t_1da2cf7cede763 6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "1efcae057a436a7cbca3aa0c2cab6446939f0892",
+  "prompts": {},
+  "sessions": {
+    "s_76c0f9b881234c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "3ab0a209-1290-4926-add9-ef082f7921db",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
