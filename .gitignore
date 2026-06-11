@@ -6,4 +6,8 @@ dist/
 .vercel/
 .netlify/
 .slidev/
+.vite-inspect/
+.remote-assets/
+decks/**/components.d.ts
+decks/clickjacking/public/victims/dcj-config.js
 *.log
