@@ -1,0 +1,21 @@
+scripts/site.mjs
+  s_76c0f9b881234c::t_e953db0c78e6d4 1-50
+scripts/seo.mjs
+  s_76c0f9b881234c::t_b23ded0a6cd62c 1-69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "ce886c3caf0e3a57eb34ad050951ce835ecef121",
+  "prompts": {},
+  "sessions": {
+    "s_76c0f9b881234c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "3ab0a209-1290-4926-add9-ef082f7921db",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
