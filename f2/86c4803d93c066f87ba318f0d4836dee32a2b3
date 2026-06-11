@@ -1,0 +1,21 @@
+packages/slidev-addon-melmayan/custom-nav-controls.vue
+  s_5fff0a680712b9::t_52fa4599c31e24 1-17
+packages/slidev-addon-melmayan/README.md
+  s_5fff0a680712b9::t_e49805a98af955 34-37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "f286c4803d93c066f87ba318f0d4836dee32a2b3",
+  "prompts": {},
+  "sessions": {
+    "s_5fff0a680712b9": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "9ef688eb-c877-4279-a13f-300ac6280dfa",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
