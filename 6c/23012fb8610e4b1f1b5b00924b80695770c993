@@ -1,0 +1,26 @@
+apps/home/public/404.html
+  s_c4a9ebaf235eb5::t_905eaaaa99714c 8
+apps/home/src/App.vue
+  s_c4a9ebaf235eb5::t_4efb7970fbaa1b 82-87
+  s_c4a9ebaf235eb5::t_73a3d12c1b63f6 20-24
+apps/home/index.html
+  s_c4a9ebaf235eb5::t_1ebd03b4484386 11
+apps/home/public/favicon.svg
+  s_c4a9ebaf235eb5::t_705185752549db 1-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "6c23012fb8610e4b1f1b5b00924b80695770c993",
+  "prompts": {},
+  "sessions": {
+    "s_c4a9ebaf235eb5": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "329fd4f1-9f9d-426e-8f67-241dfd6da89b",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
