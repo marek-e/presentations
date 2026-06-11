@@ -1,0 +1,23 @@
+branding/logo-refined.html
+  s_c4a9ebaf235eb5::t_b0a699b637994c 106-110
+  s_c4a9ebaf235eb5::t_4055f87e49a9e7 1-105,111-310,396-423
+  s_c4a9ebaf235eb5::t_7ae5766031e711 311-395
+branding/logo-variants.html
+  s_c4a9ebaf235eb5::t_0160d164a2d597 1-305
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "02a9006cf29870c661332a9306912e404671a6f2",
+  "prompts": {},
+  "sessions": {
+    "s_c4a9ebaf235eb5": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "329fd4f1-9f9d-426e-8f67-241dfd6da89b",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
