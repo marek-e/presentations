@@ -1,0 +1,27 @@
+decks/clickjacking/slides.md
+  s_c4a9ebaf235eb5::t_8e4a5de5b0cf9e 6
+templates/deck/public/favicon.svg
+  s_c4a9ebaf235eb5::t_1d68bb0ae206fc 1-8
+templates/deck/slides.md
+  s_c4a9ebaf235eb5::t_a8ef7e74cde7ff 6
+decks/clickjacking/public/favicon.svg
+  s_c4a9ebaf235eb5::t_1d68bb0ae206fc 1-8
+apps/home/src/App.vue
+  s_c4a9ebaf235eb5::t_e51a1339c4e882 86-132
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "baa2ef51bf7bfed33f879a310690c6ee7ae47af5",
+  "prompts": {},
+  "sessions": {
+    "s_c4a9ebaf235eb5": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "329fd4f1-9f9d-426e-8f67-241dfd6da89b",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
