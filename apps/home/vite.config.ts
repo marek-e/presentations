@@ -3,41 +3,13 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig, type Plugin } from 'vite'
-
-const DECKS_DIR = path.resolve(
-  path.dirname(fileURLToPath(import.meta.url)),
-  '../../decks',
-)
+import { buildLandingJsonLd } from '../../scripts/seo.mjs'
+import { readDecks } from '../../scripts/site.mjs'
 
 const TOKENS_CSS = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
   '../../packages/slidev-addon-melmayan/styles/tokens.css',
 )
-
-interface DeckMeta {
-  slug: string
-  title: string
-  subtitle?: string
-  description?: string
-  date?: string
-  tags?: string[]
-  accent?: string
-  emoji?: string
-}
-
-function readDecks(): DeckMeta[] {
-  return fs
-    .readdirSync(DECKS_DIR, { withFileTypes: true })
-    .filter((e) => e.isDirectory())
-    .map((e) => {
-      const metaPath = path.join(DECKS_DIR, e.name, 'deck.json')
-      const meta = fs.existsSync(metaPath)
-        ? JSON.parse(fs.readFileSync(metaPath, 'utf8'))
-        : { title: e.name }
-      return { slug: e.name, ...meta }
-    })
-    .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''))
-}
 
 // Copies shared --mm-* tokens to dist/tokens.css (used by static pages like 404.html).
 function tokensPlugin(): Plugin {
@@ -52,6 +24,21 @@ function tokensPlugin(): Plugin {
     writeBundle(options) {
       const outDir = options.dir ?? path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'dist')
       fs.copyFileSync(TOKENS_CSS, path.join(outDir, 'tokens.css'))
+    },
+  }
+}
+
+function seoJsonLdPlugin(): Plugin {
+  return {
+    name: 'seo-jsonld',
+    transformIndexHtml(html) {
+      const blocks = buildLandingJsonLd()
+        .map(
+          (data) =>
+            `<script type="application/ld+json">${JSON.stringify(data)}</script>`,
+        )
+        .join('\n    ')
+      return html.replace('</head>', `    ${blocks}\n  </head>`)
     },
   }
 }
@@ -74,5 +61,5 @@ function decksManifestPlugin(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [vue(), tokensPlugin(), decksManifestPlugin()],
+  plugins: [vue(), tokensPlugin(), decksManifestPlugin(), seoJsonLdPlugin()],
 })
