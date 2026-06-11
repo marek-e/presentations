@@ -1,0 +1,20 @@
+decks/clickjacking/slides/05-dcj.md
+  s_ab0403cd182f62::t_5aa39112e05449 141,148
+  s_ab0403cd182f62::t_f333b47f5b4962 138-140,142-147,149-156,159-173
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "58f4cfd7fc593b60f0a0acb0c49c701ef2a337af",
+  "prompts": {},
+  "sessions": {
+    "s_ab0403cd182f62": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "1ff959cb-4321-433a-979e-a17763294e08",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
