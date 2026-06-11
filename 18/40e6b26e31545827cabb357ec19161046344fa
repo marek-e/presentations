@@ -1,0 +1,19 @@
+packages/slidev-addon-melmayan/custom-nav-controls.vue
+  s_efe30bea0c85b6::t_602a74b9a3f77e 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "1840e6b26e31545827cabb357ec19161046344fa",
+  "prompts": {},
+  "sessions": {
+    "s_efe30bea0c85b6": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "aa12afec-21c7-4c2f-95b3-7ff6eaae6604",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
