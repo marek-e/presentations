@@ -13,7 +13,7 @@ export const SITE = {
   author: 'Marek Elmayan',
   authorUrl: 'https://melmayan.fr',
   locale: 'en_US',
-  ogImage: `${SITE_URL}/icon-512.png`,
+  ogImage: `${SITE_URL}/og-image.png`,
   themeColor: '#355C7D',
 }
 
