@@ -1,0 +1,36 @@
+apps/home/src/style.css
+  s_c4a9ebaf235eb5::t_374f20286296df 14,21-32,34-35
+apps/home/src/App.vue
+  s_c4a9ebaf235eb5::t_fbe68f2f893de8 21-23
+  s_c4a9ebaf235eb5::t_58bec445fc9d94 145
+  s_c4a9ebaf235eb5::t_24ad2405d9b2bc 191
+  s_c4a9ebaf235eb5::t_f4712bb38554f2 160
+  s_c4a9ebaf235eb5::t_d8c2949fbace01 172
+  s_c4a9ebaf235eb5::t_a8dea21a7196a9 43
+  s_c4a9ebaf235eb5::t_20ab91fd03a7de 63-70
+  s_c4a9ebaf235eb5::t_5dee5895f8965f 217
+  s_c4a9ebaf235eb5::t_2f900a6f5d7e6e 314-316,323-333
+  s_c4a9ebaf235eb5::t_ed177b6fe8a440 313,322
+packages/slidev-addon-melmayan/styles/tokens.css
+  s_c4a9ebaf235eb5::t_18e753b351d5b4 43-58
+apps/home/public/404.html
+  s_c4a9ebaf235eb5::t_9e06947376237e 54
+  s_c4a9ebaf235eb5::t_a657fa78c821ce 32,40-41
+  s_c4a9ebaf235eb5::t_28e4df531ea9e7 104,110-112,117,124,129-130
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "ed4155c21521244d6d5dc1eb8893cd8f43a15167",
+  "prompts": {},
+  "sessions": {
+    "s_c4a9ebaf235eb5": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "329fd4f1-9f9d-426e-8f67-241dfd6da89b",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
