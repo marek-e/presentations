@@ -40,4 +40,20 @@
   --mm-warning-text:   #b45309;
   --mm-warning-bg:     #fff7ed;
   --mm-warning-border: #fed7aa;
+
+  /*
+   * Brand — melmayan.fr AnimatedLogo palette.
+   * Used for site chrome (landing, 404); decks keep semantic --mm-danger/safe/etc.
+   */
+  --mm-brand-pink:       #F67280;
+  --mm-brand-pink-dark:  #d4505f;
+  --mm-brand-mauve:      #C06C84;
+  --mm-brand-mauve-dark: #9d5069;
+  --mm-brand-purple:     #6C5B7B;
+  --mm-brand-blue:       #355C7D;
+  --mm-brand-blue-dark:  #264761;
+
+  /* Site chrome — warm surfaces from melmayan.fr light theme */
+  --mm-site-bg:     #fdfaf6;
+  --mm-site-footer: #f5f0ea;
 }

@@ -11,16 +11,28 @@ html {
 
 body {
   margin: 0;
-  background: var(--mm-surface);
+  background: var(--mm-site-bg);
   color: var(--mm-text-strong);
   font-family: 'Archivo', ui-sans-serif, sans-serif;
   font-size: 16px;
   line-height: 1.55;
 }
 
+/* Soft brand wash — echoes melmayan.fr hero gradient placeholder */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 45% at 15% -5%, color-mix(in srgb, var(--mm-brand-pink) 14%, transparent), transparent),
+    radial-gradient(ellipse 55% 35% at 92% 8%, color-mix(in srgb, var(--mm-brand-blue) 10%, transparent), transparent);
+}
+
 ::selection {
-  background: var(--mm-danger);
-  color: #fff;
+  background: color-mix(in srgb, var(--mm-brand-purple) 35%, transparent);
+  color: var(--mm-text-strong);
 }
 
 @media (prefers-reduced-motion: reduce) {

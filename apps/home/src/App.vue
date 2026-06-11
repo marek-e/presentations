@@ -18,9 +18,9 @@ function formatDate(date?: string): string {
   <main class="page">
     <header class="masthead">
       <svg class="masthead-logo" viewBox="21 18 64 64" aria-hidden="true">
-        <rect x="38" y="42" width="44" height="30" rx="8" fill="#F67280" stroke="#d4505f" stroke-width="3" />
-        <rect x="31" y="35" width="44" height="30" rx="8" fill="#C06C84" stroke="#9d5069" stroke-width="3" />
-        <rect x="24" y="28" width="44" height="30" rx="8" fill="#355C7D" stroke="#264761" stroke-width="3" />
+        <rect x="38" y="42" width="44" height="30" rx="8" fill="var(--mm-brand-pink)" stroke="var(--mm-brand-pink-dark)" stroke-width="3" />
+        <rect x="31" y="35" width="44" height="30" rx="8" fill="var(--mm-brand-mauve)" stroke="var(--mm-brand-mauve-dark)" stroke-width="3" />
+        <rect x="24" y="28" width="44" height="30" rx="8" fill="var(--mm-brand-blue)" stroke="var(--mm-brand-blue-dark)" stroke-width="3" />
       </svg>
       <p class="masthead-kicker">presentations.melmayan.fr</p>
       <h1 class="masthead-title">
@@ -40,7 +40,7 @@ function formatDate(date?: string): string {
         :key="deck.slug"
         class="deck-card"
         :href="`/${deck.slug}/`"
-        :style="{ '--deck-accent': deck.accent ?? 'var(--mm-danger)', '--i': i }"
+        :style="{ '--deck-accent': deck.accent ?? 'var(--mm-brand-pink)', '--i': i }"
       >
         <div class="deck-head">
           <span v-if="deck.emoji" class="deck-emoji" aria-hidden="true">{{ deck.emoji }}</span>
@@ -59,11 +59,15 @@ function formatDate(date?: string): string {
         </div>
       </a>
     </section>
-
-    <footer class="footer">
-      <p>© {{ new Date().getFullYear() }} melmayan — slides are open, opinions are mine.</p>
-    </footer>
   </main>
+
+  <footer class="footer">
+    <p>
+      © {{ new Date().getFullYear() }}
+      <a href="https://melmayan.fr" target="_blank" rel="noopener">melmayan</a>
+      — slides are open, opinions are mine.
+    </p>
+  </footer>
 </template>
 
 <style scoped>
@@ -138,7 +142,7 @@ function formatDate(date?: string): string {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--mm-danger);
+  color: var(--mm-brand-mauve);
 }
 
 .masthead-title {
@@ -153,7 +157,7 @@ function formatDate(date?: string): string {
 .masthead-title em {
   font-style: italic;
   font-weight: 500;
-  color: var(--mm-text);
+  color: var(--mm-brand-blue);
 }
 
 .masthead-sub {
@@ -165,7 +169,7 @@ function formatDate(date?: string): string {
 
 .masthead-sub a {
   color: var(--mm-text);
-  text-decoration-color: var(--mm-danger);
+  text-decoration-color: var(--mm-brand-pink);
   text-underline-offset: 3px;
 }
 
@@ -184,7 +188,7 @@ function formatDate(date?: string): string {
   background: #fff;
   border: 1.5px solid var(--mm-border);
   border-radius: 14px;
-  box-shadow: 5px 5px 0 color-mix(in srgb, var(--deck-accent) 22%, var(--mm-surface));
+  box-shadow: 5px 5px 0 color-mix(in srgb, var(--deck-accent) 22%, var(--mm-site-bg));
   color: inherit;
   text-decoration: none;
   transition:
@@ -210,7 +214,7 @@ function formatDate(date?: string): string {
 .deck-card:focus-visible {
   transform: translate(-3px, -3px);
   border-color: color-mix(in srgb, var(--deck-accent) 45%, var(--mm-border));
-  box-shadow: 9px 9px 0 color-mix(in srgb, var(--deck-accent) 30%, var(--mm-surface));
+  box-shadow: 9px 9px 0 color-mix(in srgb, var(--deck-accent) 30%, var(--mm-site-bg));
 }
 
 .deck-card:focus-visible {
@@ -306,13 +310,26 @@ function formatDate(date?: string): string {
 /* ── Footer ───────────────────────────────────────────── */
 .footer {
   margin-top: clamp(3rem, 8vw, 5rem);
-  padding-top: 1.5rem;
-  border-top: 1.5px solid var(--mm-border);
+  padding: 1.5rem clamp(1.25rem, 5vw, 3rem) 2rem;
+  background: var(--mm-site-footer);
+  border-top: 1.5px solid color-mix(in srgb, var(--mm-brand-mauve) 18%, var(--mm-border));
+  border-radius: 1.25rem 1.25rem 0 0;
   font-size: 0.82rem;
   color: var(--mm-text-muted);
 }
 
 .footer p {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1060px;
+}
+
+.footer a {
+  color: var(--mm-brand-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--mm-brand-mauve);
 }
 </style>

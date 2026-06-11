@@ -29,7 +29,7 @@
         display: grid;
         place-items: center;
         padding: clamp(1.25rem, 5vw, 3rem);
-        background: var(--mm-surface);
+        background: var(--mm-site-bg);
         color: var(--mm-text-strong);
         font-family: 'Archivo', ui-sans-serif, sans-serif;
         font-size: 16px;
@@ -37,8 +37,8 @@
       }
 
       ::selection {
-        background: var(--mm-danger);
-        color: #fff;
+        background: color-mix(in srgb, var(--mm-brand-purple) 35%, transparent);
+        color: var(--mm-text-strong);
       }
 
       main {
@@ -51,7 +51,7 @@
         font-weight: 600;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: var(--mm-danger);
+        color: var(--mm-brand-mauve);
       }
 
       .code {
@@ -101,33 +101,33 @@
       }
 
       a:focus-visible {
-        outline: 2px solid var(--mm-danger);
+        outline: 2px solid var(--mm-brand-mauve);
         outline-offset: 3px;
       }
 
       .primary {
         color: #fff;
-        background: var(--mm-danger);
-        border: 1.5px solid var(--mm-danger);
-        box-shadow: 4px 4px 0 color-mix(in srgb, var(--mm-danger) 35%, var(--mm-surface));
+        background: var(--mm-brand-blue);
+        border: 1.5px solid var(--mm-brand-blue-dark);
+        box-shadow: 4px 4px 0 color-mix(in srgb, var(--mm-brand-blue) 35%, var(--mm-site-bg));
       }
 
       .primary:hover {
         transform: translate(-2px, -2px);
-        box-shadow: 7px 7px 0 color-mix(in srgb, var(--mm-danger) 35%, var(--mm-surface));
+        box-shadow: 7px 7px 0 color-mix(in srgb, var(--mm-brand-blue) 35%, var(--mm-site-bg));
       }
 
       .secondary {
         color: var(--mm-text);
         background: #fff;
         border: 1.5px solid var(--mm-border);
-        box-shadow: 4px 4px 0 color-mix(in srgb, var(--mm-text-muted) 18%, var(--mm-surface));
+        box-shadow: 4px 4px 0 color-mix(in srgb, var(--mm-text-muted) 18%, var(--mm-site-bg));
       }
 
       .secondary:hover {
         transform: translate(-2px, -2px);
-        border-color: color-mix(in srgb, var(--mm-danger) 35%, var(--mm-border));
-        box-shadow: 7px 7px 0 color-mix(in srgb, var(--mm-danger) 20%, var(--mm-surface));
+        border-color: color-mix(in srgb, var(--mm-brand-mauve) 35%, var(--mm-border));
+        box-shadow: 7px 7px 0 color-mix(in srgb, var(--mm-brand-pink) 20%, var(--mm-site-bg));
       }
 
       @media (prefers-reduced-motion: reduce) {
