@@ -1,0 +1,29 @@
+AGENTS.md
+  s_98c3c987e5b907::t_980b64b97ad858 8,32
+  h_34454149dac528 13
+.agents/skills/deck-design/examples.md
+  s_98c3c987e5b907::t_980b64b97ad858 101,103
+.agents/skills/deck-design/SKILL.md
+  s_98c3c987e5b907::t_980b64b97ad858 41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "9b8828e995e2f9e4fb1fc38ac1620b9de5c594fd",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_98c3c987e5b907": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "427110f3-8b90-435a-827b-5a4884a5a43a",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
