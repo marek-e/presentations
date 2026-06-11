@@ -3,9 +3,21 @@ theme: geist
 addons:
   - melmayan
 title: __TITLE__
+author: Marek Elmayan
+info: |
+  __TITLE__ — a talk by Marek Elmayan.
 favicon: /__SLUG__/favicon.svg
 transition: fade
 colorSchema: light
+seoMeta:
+  ogTitle: __TITLE__
+  ogDescription: __TITLE__ — a talk by Marek Elmayan.
+  ogUrl: https://presentations.melmayan.fr/__SLUG__/
+  ogImage: https://presentations.melmayan.fr/icon-512.png
+  twitterCard: summary
+  twitterTitle: __TITLE__
+  twitterDescription: __TITLE__ — a talk by Marek Elmayan.
+  twitterImage: https://presentations.melmayan.fr/icon-512.png
 defaults:
   layout: default
   class: px-16 py-8
