@@ -1,0 +1,26 @@
+apps/home/public/404.html
+  s_98c3c987e5b907::t_cbe27ddefb78a5 1-7,9-30,33-38,41-52,54-75,77-102,104-107,112-115,117-119,124-127,130-157
+  s_98c3c987e5b907::t_c79bc6103d80d1 8,40,108,121
+  s_98c3c987e5b907::t_980b64b97ad858 31-32,39,53,76,103,109-111,116,120,122-123,128-129
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "a03172d6586b768edb41e4ee786a105c72b0acee",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_98c3c987e5b907": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "427110f3-8b90-435a-827b-5a4884a5a43a",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
