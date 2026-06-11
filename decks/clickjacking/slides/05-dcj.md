@@ -187,7 +187,7 @@ layout: center
   </button>
 </div>
 
-<p class="dcj-demo-note">Live demo uses a fake Slack consent screen. <strong>Real Target</strong> hits GitHub OAuth — register your app with callback <code>https://presentations.melmayan.fr/clickjacking/callback/</code> and set <code>VITE_GITHUB_OAUTH_CLIENT_ID</code> in deploy env (see <code>.env.example</code>). Don't click Authorize on stage.</p>
+<p class="dcj-demo-note">Live demo uses a fake Slack consent screen. <strong>Real Target</strong> hits the real GitHub OAuth consent page. Don't click Authorize on stage — revoke at the link below if you do.</p>
 
 <div v-click class="dcj-revoke-wrap">
   <a
@@ -273,8 +273,8 @@ Ask the audience: "What do you think you're double-clicking?"
 Launch Demo — reliable stage demo. Double-click the fake Turnstile button;
 popup closes on mousedown, mouseup hits the fake Slack Allow button.
 
-Real Target — live Cloudflare Turnstile + window.opener.location swap to your
-GitHub OAuth app (.env). Needs network. Double-click "Double-click to verify"
+Real Target — live Cloudflare Turnstile + window.opener.location swap to GitHub
+OAuth. Needs network. Double-click "Double-click to verify"
 below the widget. Parent shows real GitHub login or consent — do NOT click
 Authorize. Use the video for a full hit.
 -->

@@ -1,15 +1,19 @@
+const CLIENT_ID = 'Ov23lic64L0rqZE1fEBh'
+const SCOPE = 'read:user'
+
 window.DCJOAuth = {
   clientId() {
-    return window.__DCJ_GITHUB_CLIENT_ID__ || '178c6fc778ccc68e1d6a'
+    return CLIENT_ID
   },
   scope() {
-    return window.__DCJ_GITHUB_OAUTH_SCOPE__ || 'read:user'
+    return SCOPE
   },
   redirectUri() {
-    if (window.__DCJ_GITHUB_REDIRECT_URI__) {
-      return window.__DCJ_GITHUB_REDIRECT_URI__
+    const { origin, pathname } = window.location
+    if (pathname.startsWith('/clickjacking')) {
+      return `${origin}/clickjacking/callback/`
     }
-    return `${window.location.origin}/clickjacking/callback/`
+    return `${origin}/callback/`
   },
   buildAuthorizeUrl() {
     return (
