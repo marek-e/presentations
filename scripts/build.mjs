@@ -8,6 +8,7 @@ import { execSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { buildRobotsTxt, buildSitemapXml } from './seo.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DECKS_DIR = path.join(ROOT, 'decks')
@@ -37,5 +38,8 @@ for (const slug of slugs) {
     recursive: true,
   })
 }
+
+fs.writeFileSync(path.join(OUT, 'sitemap.xml'), buildSitemapXml())
+fs.writeFileSync(path.join(OUT, 'robots.txt'), buildRobotsTxt())
 
 console.log(`\n✓ Site assembled in dist/ (${slugs.length} deck(s) + landing page)`)
