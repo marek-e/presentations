@@ -1,0 +1,41 @@
+:root {
+  --bg: #f6f7f9;
+  --ink: #101725;
+  --ink-soft: #3c4759;
+  --ink-muted: #69788f;
+  --line: #dde3ec;
+  --accent: #dc2626;
+  --card-bg: #fdfdfe;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Archivo', ui-sans-serif, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff5f5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

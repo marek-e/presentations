@@ -1,0 +1,117 @@
+<script setup lang="ts">
+import { computed, useSlots } from 'vue'
+
+type Accent = 'blue' | 'red' | 'orange' | 'gray' | 'green' | 'purple' | 'yellow' | 'pink'
+
+const props = withDefaults(
+  defineProps<{
+    label?: string
+    title?: string
+    accent?: Accent
+    shadowSize?: number
+  }>(),
+  {
+    accent: 'gray',
+    shadowSize: 6,
+  },
+)
+
+const ACCENT = {
+  blue: {
+    borderRgb: '191 219 254',
+    chipBg: 'bg-blue-50',
+    chipText: 'text-blue-700',
+    chipBorder: 'border-blue-200',
+  },
+  red: {
+    borderRgb: '254 202 202',
+    chipBg: 'bg-red-50',
+    chipText: 'text-red-700',
+    chipBorder: 'border-red-200',
+  },
+  orange: {
+    borderRgb: '254 215 170',
+    chipBg: 'bg-orange-50',
+    chipText: 'text-orange-700',
+    chipBorder: 'border-orange-200',
+  },
+  gray: {
+    borderRgb: '229 231 235',
+    chipBg: 'bg-slate-50',
+    chipText: 'text-slate-700',
+    chipBorder: 'border-slate-200',
+  },
+  green: {
+    borderRgb: '187 247 208',
+    chipBg: 'bg-green-50',
+    chipText: 'text-green-700',
+    chipBorder: 'border-green-200',
+  },
+  purple: {
+    borderRgb: '233 213 255',
+    chipBg: 'bg-purple-50',
+    chipText: 'text-purple-700',
+    chipBorder: 'border-purple-200',
+  },
+  yellow: {
+    borderRgb: '253 230 138',
+    chipBg: 'bg-yellow-50',
+    chipText: 'text-yellow-700',
+    chipBorder: 'border-yellow-200',
+  },
+  pink: {
+    borderRgb: '251 207 232',
+    chipBg: 'bg-pink-50',
+    chipText: 'text-pink-700',
+    chipBorder: 'border-pink-200',
+  },
+} satisfies Record<Accent, { borderRgb: string; chipBg: string; chipText: string; chipBorder: string }>
+
+const theme = computed(() => ACCENT[props.accent])
+
+const slots = useSlots()
+const hasIcon = computed(() => !!slots.icon)
+const useInlineHeader = computed(() => !props.label && (hasIcon.value || !!props.title))
+</script>
+
+<template>
+  <div
+    class="relative h-full rounded-2xl bg-white p-4 border flex flex-col"
+    :class="[label ? 'pt-9' : 'pt-4']"
+    :style="{
+      '--color-border': `rgb(${theme.borderRgb})`,
+      boxShadow: `${shadowSize}px ${shadowSize}px 0 var(--color-border)`,
+      borderColor: 'var(--color-border)',
+    }"
+  >
+    <span
+      v-if="label"
+      class="absolute left-3 top-3 text-[10px] font-semibold tracking-wide uppercase px-2 py-0.5 rounded-lg border"
+      :class="[theme.chipBg, theme.chipText, theme.chipBorder]"
+    >
+      {{ label }}
+    </span>
+
+    <div v-if="useInlineHeader" class="flex items-center gap-2 mb-2">
+      <div v-if="hasIcon" class="text-2xl leading-none">
+        <slot name="icon" />
+      </div>
+      <div v-if="title" class="font-bold text-slate-900 leading-tight">
+        {{ title }}
+      </div>
+    </div>
+    <div v-else>
+      <div v-if="hasIcon" class="text-3xl mb-2">
+        <slot name="icon" />
+      </div>
+      <div v-if="title" class="font-bold text-slate-900">
+        {{ title }}
+      </div>
+    </div>
+
+    <div class="text-sm text-slate-600 mt-1 flex-1">
+      <slot />
+    </div>
+  </div>
+</template>
+

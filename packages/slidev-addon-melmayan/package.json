@@ -1,0 +1,11 @@
+{
+  "name": "slidev-addon-melmayan",
+  "version": "0.1.0",
+  "private": true,
+  "keywords": [
+    "slidev-addon"
+  ],
+  "engines": {
+    "slidev": ">=0.50.0"
+  }
+}

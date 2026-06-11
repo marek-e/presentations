@@ -1,0 +1,22 @@
+{
+  "name": "deck-clickjacking",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build --base /clickjacking/ --out dist",
+    "dev": "slidev --open --base /clickjacking/",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.9.0",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "slidev-addon-melmayan": "workspace:*",
+    "slidev-theme-geist": "^0.8.1",
+    "vue": "^3.5.24"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.109",
+    "@unocss/preset-icons": "^66.7.0"
+  }
+}

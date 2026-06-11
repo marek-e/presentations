@@ -1,0 +1,155 @@
+<script setup>
+import { ref, onMounted, onUnmounted } from "vue";
+
+const props = defineProps({
+  trigger: { type: String, default: null },
+  title: { type: String, required: true },
+  width: { type: String, default: "400px" },
+  x: { type: String, default: "2rem" },
+  y: { type: String, default: "2rem" },
+});
+
+const open = ref(false);
+const everOpened = ref(false);
+const root = ref(null);
+
+function toggle() {
+  open.value = !open.value;
+  if (open.value) everOpened.value = true;
+}
+
+function onClickOutside(e) {
+  if (open.value && root.value && !root.value.contains(e.target))
+    open.value = false;
+}
+
+onMounted(() => document.addEventListener("pointerdown", onClickOutside));
+onUnmounted(() => document.removeEventListener("pointerdown", onClickOutside));
+</script>
+
+<template>
+  <div class="ip-root" ref="root" :style="{ top: y, right: x }">
+    <button
+      class="ip-btn"
+      :class="{ 'ip-btn--active': open, 'ip-btn--pulse': !everOpened }"
+      :aria-label="title"
+      :aria-expanded="open"
+      @click="toggle"
+    >
+      <span v-if="trigger">{{ trigger }}</span
+      ><span v-else class="i-lucide-lightbulb" />
+    </button>
+
+    <Transition name="ip-pop">
+      <div v-if="open" class="ip-popover" :style="{ width }">
+        <div class="ip-title">{{ title }}</div>
+        <div class="ip-body">
+          <slot />
+        </div>
+      </div>
+    </Transition>
+  </div>
+</template>
+
+<style scoped>
+.ip-root {
+  position: absolute;
+  z-index: 10;
+}
+
+.ip-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid var(--cj-defense-ring);
+  background: var(--cj-defense-bg);
+  color: var(--cj-defense);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition:
+    background 150ms,
+    border-color 150ms;
+}
+.ip-btn:hover,
+.ip-btn--active {
+  background: var(--cj-defense-bg);
+  border-color: var(--cj-defense);
+}
+
+.ip-btn--pulse {
+  animation: ip-attn 1.6s ease-in-out infinite;
+}
+.ip-btn--pulse::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--cj-defense);
+  opacity: 0;
+  animation: ip-ring 1.6s ease-out infinite;
+  pointer-events: none;
+}
+.ip-btn { position: relative; }
+
+@keyframes ip-attn {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(37, 99, 235, 0);
+    transform: scale(1.08);
+  }
+}
+
+@keyframes ip-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.ip-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #fff;
+  border: 1.5px solid var(--cj-defense-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+  padding: 14px 16px;
+  z-index: 20;
+}
+
+.ip-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--cj-defense-text);
+  margin-bottom: 8px;
+}
+
+.ip-body {
+  font-size: 1em;
+  color: var(--cj-text);
+  line-height: 1.5;
+}
+
+.ip-pop-enter-active,
+.ip-pop-leave-active {
+  transition:
+    opacity 160ms,
+    transform 160ms;
+}
+.ip-pop-enter-from,
+.ip-pop-leave-to {
+  opacity: 0;
+  transform: translateY(-6px) scale(0.97);
+}
+</style>

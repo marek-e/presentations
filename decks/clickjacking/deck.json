@@ -1,0 +1,9 @@
+{
+  "title": "Clickjacking",
+  "subtitle": "Proof Hackers Write Better CSS Than You",
+  "description": "When z-index, opacity, and iframe become weapons. The attack, modern defenses (XFO, CSP frame-ancestors), and advanced variants like double-clickjacking.",
+  "date": "2026-06",
+  "tags": ["security", "web"],
+  "accent": "#dc2626",
+  "emoji": "🖱️"
+}

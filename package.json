@@ -1,0 +1,20 @@
+{
+  "name": "presentations",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "new": "node scripts/new-deck.mjs",
+    "preview": "node scripts/preview.mjs",
+    "dev:home": "pnpm --filter home dev"
+  },
+  "packageManager": "pnpm@10.34.2",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

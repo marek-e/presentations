@@ -1,0 +1,20 @@
+{
+  "name": "deck-__SLUG__",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build --base /__SLUG__/ --out dist",
+    "dev": "slidev --open --base /__SLUG__/",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.9.0",
+    "slidev-addon-melmayan": "workspace:*",
+    "slidev-theme-geist": "^0.8.1",
+    "vue": "^3.5.24"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.109",
+    "@unocss/preset-icons": "^66.7.0"
+  }
+}
