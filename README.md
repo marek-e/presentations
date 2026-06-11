@@ -1,6 +1,6 @@
-# presentations
+# presentations.melmayan.fr — Slidev deck monorepo
 
-All my [Slidev](https://sli.dev) presentations in one monorepo, deployed to [presentations.melmayan.fr](https://presentations.melmayan.fr).
+All my [Slidev](https://sli.dev) presentations in one monorepo — deck factory, shared design system, static landing page — deployed to [presentations.melmayan.fr](https://presentations.melmayan.fr).
 
 - The landing page lists every deck as a card.
 - Each deck lives at `presentations.melmayan.fr/<slug>` (e.g. [/clickjacking](https://presentations.melmayan.fr/clickjacking)).

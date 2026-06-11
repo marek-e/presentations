@@ -1,7 +1,32 @@
 {
   "name": "presentations",
+  "description": "Slidev deck monorepo — factory scaffold, shared design system, and a static landing site. Live at presentations.melmayan.fr.",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
+  "author": "Marek Elmayan <melmayan.dev@gmail.com> (https://melmayan.fr)",
+  "homepage": "https://presentations.melmayan.fr",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marek-e/presentations.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marek-e/presentations/issues"
+  },
+  "keywords": [
+    "slidev",
+    "presentations",
+    "slides",
+    "developer-talks",
+    "conference-talks",
+    "monorepo",
+    "vue",
+    "vite",
+    "markdown-slides",
+    "deck",
+    "static-site",
+    "vercel"
+  ],
   "scripts": {
     "build": "node scripts/build.mjs",
     "new": "node scripts/new-deck.mjs",
