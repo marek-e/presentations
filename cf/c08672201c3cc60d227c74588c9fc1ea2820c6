@@ -1,0 +1,61 @@
+decks/clickjacking/slides/06-ext-cj.md
+  s_98c3c987e5b907::t_980b64b97ad858 3,33,37,45-46,49-50,55,64-66,75,125,148,215-216,220-221,223-224
+decks/clickjacking/components/DblClickDemo.vue
+  s_98c3c987e5b907::t_980b64b97ad858 111,121-123,134-136,145,158-159,164,166,168,187,194,199-201,207,216,219-221,228,230,232,234,242-243,246
+decks/clickjacking/slides/05-variants-intro.md
+  s_98c3c987e5b907::t_980b64b97ad858 56-58,70,84,102-104,107-109,116,123,129-130,133,141
+templates/deck/style.css
+  s_98c3c987e5b907::t_980b64b97ad858 3
+decks/clickjacking/style.css
+  s_98c3c987e5b907::t_980b64b97ad858 3
+decks/clickjacking/slides/02-the-attack.md
+  s_98c3c987e5b907::t_980b64b97ad858 169-170,191,196-198,205,221,229-230,233-234,237,246,362,398-399,412,419-421,427,441,447-448,453,467,469-470,474-475,477,583,595-596,602,606-607,620-621,634,636,638-639,644,664,671,684,686,688-690,695-696,714,725,732,741,744,750,805,913,926-927,936,942-944,1010,1020-1021,1028-1029,1039,1043-1044,1051,1061-1062,1069-1070,1078-1079,1086-1087
+packages/slidev-addon-melmayan/components/AgendaItem.vue
+  s_98c3c987e5b907::t_980b64b97ad858 23-24,26,36-37,52-54
+decks/clickjacking/slides/04-defenses.md
+  s_98c3c987e5b907::t_980b64b97ad858 125-126,130,134,216,220,223,226,230,241-243,251,259,326,337,349-350,364,369
+apps/home/src/App.vue
+  s_98c3c987e5b907::t_980b64b97ad858 38,83,98,104,109-110,127,129,154-155,180,202,229-231,252,254
+  s_98c3c987e5b907::t_1c39d441e444cf 126
+packages/slidev-addon-melmayan/README.md
+  s_98c3c987e5b907::t_980b64b97ad858 33
+apps/home/src/style.css
+  s_98c3c987e5b907::t_980b64b97ad858 14-15,22
+  s_98c3c987e5b907::t_f7c7dfe3dfffdf 1,23
+decks/clickjacking/components/ClickjackDemo.vue
+  s_98c3c987e5b907::t_980b64b97ad858 190,214,237,269,291,295,301,309,320,322,341,358,362,374,387,394,474
+packages/slidev-addon-melmayan/styles/tokens.css
+  s_98c3c987e5b907::t_fa7d6f03e7f820 2-3
+  s_98c3c987e5b907::t_980b64b97ad858 8-16,19-22,25-28,31-36,39-42
+decks/clickjacking/slides/05-dcj.md
+  s_98c3c987e5b907::t_980b64b97ad858 27-29,42,116-117,120,125,130-131,140,193,212,227-228,237
+apps/home/vite.config.ts
+  s_98c3c987e5b907::t_c281752b4d8ad0 52-54
+  s_98c3c987e5b907::t_461db8758d7801 77
+  s_98c3c987e5b907::t_c9e1e219fe9d7f 12-16
+  s_98c3c987e5b907::t_980b64b97ad858 42
+  s_98c3c987e5b907::t_24ea12dd747154 43-51,55-58
+packages/slidev-addon-melmayan/components/InfoPopover.vue
+  s_98c3c987e5b907::t_980b64b97ad858 64-66,78-79,90,124,134,140
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "cfc08672201c3cc60d227c74588c9fc1ea2820c6",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_98c3c987e5b907": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "427110f3-8b90-435a-827b-5a4884a5a43a",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
