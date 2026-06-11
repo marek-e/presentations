@@ -1,0 +1,29 @@
+.cursor/skills/deck-design
+  s_4675ece4cd7f0b::t_d09b6c219f4ef2 1
+.agents/skills/deck-design/examples.md
+  s_4675ece4cd7f0b::t_dd9dd44e413b1a 1-110
+AGENTS.md
+  s_4675ece4cd7f0b::t_7381721392f2e4 13-15
+.claude/skills/deck-design
+  s_4675ece4cd7f0b::t_d09b6c219f4ef2 1
+.cursor/skills/slidev
+  s_4675ece4cd7f0b::t_d09b6c219f4ef2 1
+.agents/skills/deck-design/SKILL.md
+  s_4675ece4cd7f0b::t_2e74d5622c7d96 1-65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "e8977e5a742d40bc0b09c0d2c17f98eacce0410c",
+  "prompts": {},
+  "sessions": {
+    "s_4675ece4cd7f0b": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "5443a387-0a41-4334-9ec8-389c2ebde2c7",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
