@@ -122,16 +122,16 @@ If they conflict, CSP `frame-ancestors` takes precedence in modern browsers.
 .ip-code {
   font-family: monospace;
   font-size: 1em;
-  background: var(--cj-divider);
-  border: 1px solid var(--cj-border);
+  background: var(--mm-divider);
+  border: 1px solid var(--mm-border);
   border-radius: 6px;
   padding: 6px 8px;
   margin-top: 6px;
-  color: var(--cj-defense-text);
+  color: var(--mm-defense-text);
   word-break: break-all;
 }
 .ip-body code {
-  background: var(--cj-divider);
+  background: var(--mm-divider);
   padding: 1px 5px;
   border-radius: 4px;
 }
@@ -213,21 +213,21 @@ zoom: 0.9
 <style>
 .dia-label {
   font-size: 0.84em;
-  color: var(--cj-text-muted);
+  color: var(--mm-text-muted);
   margin-bottom: 12px;
 }
 .dia-label code {
-  background: var(--cj-divider);
+  background: var(--mm-divider);
   padding: 1px 6px;
   border-radius: 4px;
-  color: var(--cj-text);
+  color: var(--mm-text);
 }
 .dia-frame {
-  border: 2px solid var(--cj-safe-border);
+  border: 2px solid var(--mm-safe-border);
   border-radius: 10px;
   overflow: hidden;
   height: 300px;
-  background: var(--cj-surface);
+  background: var(--mm-surface);
 }
 .dia-footer {
   margin-top: 14px;
@@ -238,9 +238,9 @@ zoom: 0.9
 .dia-badge {
   font-family: monospace;
   font-size: 0.78em;
-  background: var(--cj-safe-bg);
-  color: var(--cj-safe-text);
-  border: 1.5px solid var(--cj-safe-border);
+  background: var(--mm-safe-bg);
+  color: var(--mm-safe-text);
+  border: 1.5px solid var(--mm-safe-border);
   padding: 5px 12px;
   border-radius: 6px;
   white-space: nowrap;
@@ -248,7 +248,7 @@ zoom: 0.9
 }
 .dia-msg {
   font-size: 0.82em;
-  color: var(--cj-text);
+  color: var(--mm-text);
   line-height: 1.5;
 }
 .ip-img {
@@ -256,7 +256,7 @@ zoom: 0.9
   width: 100%;
   margin-top: 8px;
   border-radius: 6px;
-  border: 1px solid var(--cj-border);
+  border: 1px solid var(--mm-border);
 }
 </style>
 
@@ -323,7 +323,7 @@ zoom: 0.9
 <Callout v-click variant="warning" class="mt-3"><strong>The dangerous misconception:</strong> "We have CSRF tokens, we're safe." With clickjacking the victim clicks a real button in a real session. The CSRF token is legitimately present and valid. The server cannot tell it was a tricked click. Frame headers are the only fix.</Callout>
 
 <style>
-.csrf-intro { font-size: 0.84em; color: var(--cj-text); line-height: 1.5; }
+.csrf-intro { font-size: 0.84em; color: var(--mm-text); line-height: 1.5; }
 
 .csrf-grid {
   display: grid;
@@ -334,7 +334,7 @@ zoom: 0.9
 .csrf-card {
   border-radius: 14px;
   overflow: hidden;
-  border: 1.5px solid var(--cj-border);
+  border: 1.5px solid var(--mm-border);
   animation: csrf-rise 340ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .csrf-card.slidev-vclick-hidden { animation-play-state: paused; }
@@ -346,8 +346,8 @@ zoom: 0.9
   letter-spacing: 0.4px;
   padding: 6px 14px;
 }
-.csrf-label--blue { background: var(--cj-defense-bg); color: var(--cj-defense-text); border-bottom: 1px solid var(--cj-defense-border); }
-.csrf-label--red  { background: var(--cj-danger-bg); color: var(--cj-danger-text); border-bottom: 1px solid var(--cj-danger-border); }
+.csrf-label--blue { background: var(--mm-defense-bg); color: var(--mm-defense-text); border-bottom: 1px solid var(--mm-defense-border); }
+.csrf-label--red  { background: var(--mm-danger-bg); color: var(--mm-danger-text); border-bottom: 1px solid var(--mm-danger-border); }
 
 .csrf-card-body {
   padding: 10px 14px;
@@ -361,12 +361,12 @@ zoom: 0.9
   display: flex;
   gap: 10px;
   font-size: 0.74em;
-  color: var(--cj-text);
+  color: var(--mm-text);
   line-height: 1.4;
 }
 .csrf-key {
   font-weight: 800;
-  color: var(--cj-text-muted);
+  color: var(--mm-text-muted);
   min-width: 72px;
   flex-shrink: 0;
   padding-top: 1px;

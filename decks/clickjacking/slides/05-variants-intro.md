@@ -53,9 +53,9 @@ zoom: 0.9
   display: inline-block;
   padding: 4px 14px;
   border-radius: 999px;
-  border: 1px solid var(--cj-danger-border);
-  background: var(--cj-danger-bg);
-  color: var(--cj-danger-text);
+  border: 1px solid var(--mm-danger-border);
+  background: var(--mm-danger-bg);
+  color: var(--mm-danger-text);
   font-size: 0.72em;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -67,7 +67,7 @@ zoom: 0.9
   max-width: 36rem;
   font-size: 1.05em;
   line-height: 1.55;
-  color: var(--cj-text);
+  color: var(--mm-text);
 }
 
 .av-grid {
@@ -81,7 +81,7 @@ zoom: 0.9
   position: relative;
   padding: 18px 18px 16px;
   border-radius: 16px;
-  border: 1.5px solid var(--cj-border);
+  border: 1.5px solid var(--mm-border);
   background: #fff;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
   animation: av-rise 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -99,38 +99,38 @@ zoom: 0.9
   text-transform: uppercase;
 }
 .av-card-tag--red {
-  background: var(--cj-danger-bg);
-  color: var(--cj-danger-text);
-  border: 1px solid var(--cj-danger-border);
+  background: var(--mm-danger-bg);
+  color: var(--mm-danger-text);
+  border: 1px solid var(--mm-danger-border);
 }
 .av-card-tag--orange {
-  background: var(--cj-warning-bg);
-  color: var(--cj-warning-text);
-  border: 1px solid var(--cj-warning-border);
+  background: var(--mm-warning-bg);
+  color: var(--mm-warning-text);
+  border: 1px solid var(--mm-warning-border);
 }
 
 .av-card-icon { font-size: 1.6em; line-height: 1; margin-bottom: 6px; }
 .av-card-title {
   font-size: 1.15em;
   font-weight: 900;
-  color: var(--cj-text-strong);
+  color: var(--mm-text-strong);
   margin-bottom: 6px;
 }
 .av-card-body {
   margin: 0;
   font-size: 0.82em;
   line-height: 1.5;
-  color: var(--cj-text-muted);
+  color: var(--mm-text-muted);
 }
 .av-card-hook {
   margin-top: 12px;
   padding: 8px 10px;
   border-radius: 10px;
-  background: var(--cj-surface);
-  border: 1px dashed var(--cj-border);
+  background: var(--mm-surface);
+  border: 1px dashed var(--mm-border);
   font-size: 0.76em;
   font-style: italic;
-  color: var(--cj-text);
+  color: var(--mm-text);
 }
 
 .av-punch {
@@ -138,7 +138,7 @@ zoom: 0.9
   max-width: 32rem;
   font-size: 1.1em;
   line-height: 1.5;
-  color: var(--cj-text-strong);
+  color: var(--mm-text-strong);
   animation: av-rise 380ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .av-punch.slidev-vclick-hidden { animation-play-state: paused; }

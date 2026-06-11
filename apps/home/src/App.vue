@@ -35,7 +35,7 @@ function formatDate(date?: string): string {
         :key="deck.slug"
         class="deck-card"
         :href="`/${deck.slug}/`"
-        :style="{ '--deck-accent': deck.accent ?? 'var(--accent)', '--i': i }"
+        :style="{ '--deck-accent': deck.accent ?? 'var(--mm-danger)', '--i': i }"
       >
         <div class="deck-head">
           <span v-if="deck.emoji" class="deck-emoji" aria-hidden="true">{{ deck.emoji }}</span>
@@ -80,7 +80,7 @@ function formatDate(date?: string): string {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--mm-danger);
 }
 
 .masthead-title {
@@ -95,19 +95,19 @@ function formatDate(date?: string): string {
 .masthead-title em {
   font-style: italic;
   font-weight: 500;
-  color: var(--ink-soft);
+  color: var(--mm-text);
 }
 
 .masthead-sub {
   margin: 1.4rem 0 0;
   font-size: 1.02rem;
-  color: var(--ink-muted);
+  color: var(--mm-text-muted);
   max-width: 30rem;
 }
 
 .masthead-sub a {
-  color: var(--ink-soft);
-  text-decoration-color: var(--accent);
+  color: var(--mm-text);
+  text-decoration-color: var(--mm-danger);
   text-underline-offset: 3px;
 }
 
@@ -123,10 +123,10 @@ function formatDate(date?: string): string {
   flex-direction: column;
   gap: 0.35rem;
   padding: 1.5rem 1.5rem 1.25rem;
-  background: var(--card-bg);
-  border: 1.5px solid var(--line);
+  background: #fff;
+  border: 1.5px solid var(--mm-border);
   border-radius: 14px;
-  box-shadow: 5px 5px 0 color-mix(in srgb, var(--deck-accent) 22%, var(--bg));
+  box-shadow: 5px 5px 0 color-mix(in srgb, var(--deck-accent) 22%, var(--mm-surface));
   color: inherit;
   text-decoration: none;
   transition:
@@ -151,8 +151,8 @@ function formatDate(date?: string): string {
 .deck-card:hover,
 .deck-card:focus-visible {
   transform: translate(-3px, -3px);
-  border-color: color-mix(in srgb, var(--deck-accent) 45%, var(--line));
-  box-shadow: 9px 9px 0 color-mix(in srgb, var(--deck-accent) 30%, var(--bg));
+  border-color: color-mix(in srgb, var(--deck-accent) 45%, var(--mm-border));
+  box-shadow: 9px 9px 0 color-mix(in srgb, var(--deck-accent) 30%, var(--mm-surface));
 }
 
 .deck-card:focus-visible {
@@ -177,7 +177,7 @@ function formatDate(date?: string): string {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink-muted);
+  color: var(--mm-text-muted);
 }
 
 .deck-title {
@@ -199,7 +199,7 @@ function formatDate(date?: string): string {
 .deck-desc {
   margin: 0.5rem 0 0;
   font-size: 0.9rem;
-  color: var(--ink-muted);
+  color: var(--mm-text-muted);
   line-height: 1.55;
 }
 
@@ -226,9 +226,9 @@ function formatDate(date?: string): string {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--ink-soft);
-  background: color-mix(in srgb, var(--deck-accent) 7%, var(--bg));
-  border: 1px solid color-mix(in srgb, var(--deck-accent) 18%, var(--line));
+  color: var(--mm-text);
+  background: color-mix(in srgb, var(--deck-accent) 7%, var(--mm-surface));
+  border: 1px solid color-mix(in srgb, var(--deck-accent) 18%, var(--mm-border));
   border-radius: 999px;
   padding: 0.15rem 0.6rem;
 }
@@ -249,9 +249,9 @@ function formatDate(date?: string): string {
 .footer {
   margin-top: clamp(3rem, 8vw, 5rem);
   padding-top: 1.5rem;
-  border-top: 1.5px solid var(--line);
+  border-top: 1.5px solid var(--mm-border);
   font-size: 0.82rem;
-  color: var(--ink-muted);
+  color: var(--mm-text-muted);
 }
 
 .footer p {

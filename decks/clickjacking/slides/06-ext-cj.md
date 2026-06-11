@@ -1,6 +1,6 @@
 # DOM-Based Extension Clickjacking — Your Security Tool Is the Target
 
-<div class="mt-2" style="font-size:0.88em;color:var(--cj-text-muted)">Classic clickjacking hides another website. This hides <strong style="color:var(--cj-text-strong)">your password manager</strong>.</div>
+<div class="mt-2" style="font-size:0.88em;color:var(--mm-text-muted)">Classic clickjacking hides another website. This hides <strong style="color:var(--mm-text-strong)">your password manager</strong>.</div>
 
 <div class="ecj-contrast mt-5">
   <div class="ecj-panel ecj-panel--classic">
@@ -30,11 +30,11 @@
 .ecj-panel {
   border-radius: 14px;
   overflow: hidden;
-  border: 1.5px solid var(--cj-border);
+  border: 1.5px solid var(--mm-border);
   display: flex;
   flex-direction: column;
 }
-.ecj-panel--ext { border-color: var(--cj-danger-border); }
+.ecj-panel--ext { border-color: var(--mm-danger-border); }
 
 .ecj-panel-label {
   font-size: 0.7em;
@@ -42,17 +42,17 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   padding: 5px 12px;
-  background: var(--cj-defense-bg);
-  color: var(--cj-defense-text);
+  background: var(--mm-defense-bg);
+  color: var(--mm-defense-text);
 }
 .ecj-panel--ext .ecj-panel-label {
-  background: var(--cj-danger-bg);
-  color: var(--cj-danger-text);
+  background: var(--mm-danger-bg);
+  color: var(--mm-danger-text);
 }
 .ecj-panel-body {
   padding: 10px 12px;
   font-size: 0.78em;
-  color: var(--cj-text);
+  color: var(--mm-text);
   line-height: 1.45;
   background: #fff;
   flex: 1;
@@ -61,9 +61,9 @@
   padding: 7px 12px;
   font-family: monospace;
   font-size: 0.7em;
-  background: var(--cj-divider);
-  color: var(--cj-text-strong);
-  border-top: 1px solid var(--cj-border);
+  background: var(--mm-divider);
+  color: var(--mm-text-strong);
+  border-top: 1px solid var(--mm-border);
   line-height: 1.5;
 }
 .ecj-vs {
@@ -72,7 +72,7 @@
   justify-content: center;
   font-size: 0.9em;
   font-weight: 900;
-  color: var(--cj-text-muted);
+  color: var(--mm-text-muted);
   padding: 0 4px;
 }
 </style>
@@ -122,7 +122,7 @@ Their autofill features trigger the moment a field is focused — a single click
 </div>
 
 <style>
-.ecj-intro { font-size: 0.84em; color: var(--cj-text); line-height: 1.5; }
+.ecj-intro { font-size: 0.84em; color: var(--mm-text); line-height: 1.5; }
 </style>
 
 ---
@@ -145,7 +145,7 @@ layout: center
 }
 .ecj-demo-hint {
   font-size: 0.8em;
-  color: var(--cj-text-muted);
+  color: var(--mm-text-muted);
   font-style: italic;
 }
 </style>
@@ -212,14 +212,14 @@ zoom: 0.92
   align-items: center;
   gap: 14px;
   padding: 12px 16px;
-  background: var(--cj-warning-bg);
-  border: 1.5px solid var(--cj-warning-border);
+  background: var(--mm-warning-bg);
+  border: 1.5px solid var(--mm-warning-border);
   border-radius: 12px;
 }
 .ecj-stat--red {
-  background: var(--cj-danger-bg);
-  border-color: var(--cj-danger-border);
+  background: var(--mm-danger-bg);
+  border-color: var(--mm-danger-border);
 }
-.ecj-stat-num   { font-size: 2em; font-weight: 900; color: var(--cj-text-strong); line-height: 1; }
-.ecj-stat-label { font-size: 0.8em; color: var(--cj-text-muted); line-height: 1.3; }
+.ecj-stat-num   { font-size: 2em; font-weight: 900; color: var(--mm-text-strong); line-height: 1; }
+.ecj-stat-label { font-size: 0.8em; color: var(--mm-text-muted); line-height: 1.3; }
 </style>

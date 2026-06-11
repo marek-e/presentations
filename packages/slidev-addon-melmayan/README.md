@@ -30,4 +30,4 @@ Auto-imported in any slide once the addon is enabled:
 
 ## Styles
 
-`styles/tokens.css` defines the shared `--cj-*` design tokens. Deck-level `style.css` loads after the addon, so decks can override any token.
+`styles/tokens.css` defines the shared `--mm-*` design tokens. Deck-level `style.css` loads after the addon, so decks can override any token.

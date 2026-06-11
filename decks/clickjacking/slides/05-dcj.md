@@ -24,9 +24,9 @@
   display: inline-block;
   padding: 3px 12px;
   border-radius: 999px;
-  background: var(--cj-danger-bg);
-  color: var(--cj-danger-text);
-  border: 1px solid var(--cj-danger-border);
+  background: var(--mm-danger-bg);
+  color: var(--mm-danger-text);
+  border: 1px solid var(--mm-danger-border);
   font-size: 0.72em;
   font-weight: 700;
   letter-spacing: 0.3px;
@@ -39,7 +39,7 @@
 .dcj-link {
   font-size: 0.72em;
   font-weight: 700;
-  color: var(--cj-danger-text);
+  color: var(--mm-danger-text);
   text-decoration: none;
   opacity: 0.75;
   margin-left: 6px;
@@ -113,22 +113,22 @@ document.querySelector('.verify-btn')
   gap: 14px;
   align-items: flex-start;
   padding: 12px 16px;
-  background: var(--cj-surface);
-  border: 1px solid var(--cj-border);
+  background: var(--mm-surface);
+  border: 1px solid var(--mm-border);
   border-radius: 12px;
 }
-.dcj-step--red { background: var(--cj-danger-bg); border-color: var(--cj-danger-border); }
+.dcj-step--red { background: var(--mm-danger-bg); border-color: var(--mm-danger-border); }
 
 .dcj-step-num {
   font-size: 1.8em;
   font-weight: 900;
-  color: var(--cj-text-strong);
+  color: var(--mm-text-strong);
   line-height: 1;
   min-width: 2.2rem;
   text-align: center;
 }
-.dcj-step-title { font-size: 0.84em; font-weight: 800; color: var(--cj-text-strong); margin-bottom: 3px; }
-.dcj-step-desc  { font-size: 0.76em; color: var(--cj-text-muted); line-height: 1.45; }
+.dcj-step-title { font-size: 0.84em; font-weight: 800; color: var(--mm-text-strong); margin-bottom: 3px; }
+.dcj-step-desc  { font-size: 0.76em; color: var(--mm-text-muted); line-height: 1.45; }
 </style>
 
 ---
@@ -137,7 +137,7 @@ class: p-2 py-4
 ---
 
 <div style="display:flex; align-items:center; justify-content:center; height:100%;">
-<img src="../public/dcj-attack-flow.png" alt="DoubleClickjacking attack flow diagram" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); border: 1px solid var(--cj-border);" />
+<img src="../public/dcj-attack-flow.png" alt="DoubleClickjacking attack flow diagram" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); border: 1px solid var(--mm-border);" />
 </div>
 ::right::
 
@@ -190,7 +190,7 @@ layout: center
   gap: 10px;
   width: fit-content;
   padding: 14px 32px;
-  background: var(--cj-danger);
+  background: var(--mm-danger);
   color: #ffffff;
   font-size: 1.05em;
   font-weight: 800;
@@ -209,7 +209,7 @@ layout: center
   margin: 16px auto 0;
   max-width: 520px;
   font-size: 0.78em;
-  color: var(--cj-text-muted);
+  color: var(--mm-text-muted);
   text-align: center;
   line-height: 1.5;
 }
@@ -224,8 +224,8 @@ layout: center
   gap: 8px;
   padding: 11px 22px;
   background: #fff;
-  color: var(--cj-text-strong);
-  border: 1px solid var(--cj-border);
+  color: var(--mm-text-strong);
+  border: 1px solid var(--mm-border);
   border-radius: 10px;
   font-size: 0.82em;
   font-weight: 700;
@@ -234,7 +234,7 @@ layout: center
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 .dcj-revoke-btn:hover {
-  border-color: var(--cj-danger-border);
+  border-color: var(--mm-danger-border);
   box-shadow: 0 4px 16px rgba(220,38,38,0.12);
 }
 </style>

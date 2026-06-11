@@ -20,10 +20,10 @@ defineProps({
   gap: 8px;
   padding: 6px 10px;
   border-radius: 8px;
-  background: var(--cj-surface);
-  border: 1px solid var(--cj-border);
+  background: var(--mm-surface);
+  border: 1px solid var(--mm-border);
   font-size: 0.82em;
-  color: var(--cj-text-strong);
+  color: var(--mm-text-strong);
 }
 
 .agenda-n {
@@ -33,8 +33,8 @@ defineProps({
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--cj-border);
-  color: var(--cj-text);
+  background: var(--mm-border);
+  color: var(--mm-text);
   font-size: 0.75em;
   font-weight: 700;
   flex-shrink: 0;
@@ -49,9 +49,9 @@ defineProps({
   font-size: 0.65em;
   font-weight: 700;
   letter-spacing: 0.5px;
-  color: var(--cj-danger);
-  background: var(--cj-danger-bg);
-  border: 1px solid var(--cj-danger-border);
+  color: var(--mm-danger);
+  background: var(--mm-danger-bg);
+  border: 1px solid var(--mm-danger-border);
   border-radius: 4px;
   padding: 1px 5px;
   flex-shrink: 0;

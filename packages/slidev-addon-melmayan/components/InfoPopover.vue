@@ -61,9 +61,9 @@ onUnmounted(() => document.removeEventListener("pointerdown", onClickOutside));
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  border: 1.5px solid var(--cj-defense-ring);
-  background: var(--cj-defense-bg);
-  color: var(--cj-defense);
+  border: 1.5px solid var(--mm-defense-ring);
+  background: var(--mm-defense-bg);
+  color: var(--mm-defense);
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
@@ -75,8 +75,8 @@ onUnmounted(() => document.removeEventListener("pointerdown", onClickOutside));
 }
 .ip-btn:hover,
 .ip-btn--active {
-  background: var(--cj-defense-bg);
-  border-color: var(--cj-defense);
+  background: var(--mm-defense-bg);
+  border-color: var(--mm-defense);
 }
 
 .ip-btn--pulse {
@@ -87,7 +87,7 @@ onUnmounted(() => document.removeEventListener("pointerdown", onClickOutside));
   position: absolute;
   inset: -4px;
   border-radius: 50%;
-  border: 2px solid var(--cj-defense);
+  border: 2px solid var(--mm-defense);
   opacity: 0;
   animation: ip-ring 1.6s ease-out infinite;
   pointer-events: none;
@@ -121,7 +121,7 @@ onUnmounted(() => document.removeEventListener("pointerdown", onClickOutside));
   top: calc(100% + 8px);
   right: 0;
   background: #fff;
-  border: 1.5px solid var(--cj-defense-border);
+  border: 1.5px solid var(--mm-defense-border);
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
   padding: 14px 16px;
@@ -131,13 +131,13 @@ onUnmounted(() => document.removeEventListener("pointerdown", onClickOutside));
 .ip-title {
   font-size: 1.2em;
   font-weight: 600;
-  color: var(--cj-defense-text);
+  color: var(--mm-defense-text);
   margin-bottom: 8px;
 }
 
 .ip-body {
   font-size: 1em;
-  color: var(--cj-text);
+  color: var(--mm-text);
   line-height: 1.5;
 }
 

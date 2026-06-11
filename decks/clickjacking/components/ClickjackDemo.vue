@@ -187,7 +187,7 @@ iframe {
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
-  border: 2px solid var(--cj-border);
+  border: 2px solid var(--mm-border);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
@@ -211,7 +211,7 @@ iframe {
   position: absolute;
   top: 8px;
   left: 8px;
-  background: var(--cj-danger);
+  background: var(--mm-danger);
   color: #fff;
   font-size: 0.68em;
   font-weight: 700;
@@ -234,7 +234,7 @@ iframe {
 
 .cj-attacker-btn {
   padding: 11px 30px;
-  background: var(--cj-safe);
+  background: var(--mm-safe);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -266,7 +266,7 @@ iframe {
   right: 8px;
   z-index: 3;
   background: rgba(0, 0, 0, 0.65);
-  color: var(--cj-defense-light);
+  color: var(--mm-defense-light);
   font-size: 0.7em;
   padding: 2px 8px;
   border-radius: 4px;
@@ -288,17 +288,17 @@ iframe {
 }
 
 .cj-lbl-attack {
-  color: var(--cj-danger);
+  color: var(--mm-danger);
   white-space: nowrap;
 }
 .cj-lbl-reveal {
-  color: var(--cj-safe);
+  color: var(--mm-safe);
   white-space: nowrap;
 }
 
 .cj-slider {
   flex: 1;
-  accent-color: var(--cj-danger);
+  accent-color: var(--mm-danger);
   cursor: pointer;
   height: 4px;
 }
@@ -306,7 +306,7 @@ iframe {
 .cj-status {
   text-align: center;
   font-size: 0.78em;
-  color: var(--cj-text-muted);
+  color: var(--mm-text-muted);
   font-style: italic;
 }
 
@@ -317,9 +317,9 @@ iframe {
   align-items: center;
   margin-top: 6px;
   padding: 8px 10px;
-  background: var(--cj-text-strong);
+  background: var(--mm-text-strong);
   border-radius: 8px;
-  border: 1px solid var(--cj-nav);
+  border: 1px solid var(--mm-nav);
 }
 
 .cj-pos-sliders {
@@ -338,7 +338,7 @@ iframe {
 .cj-pos-lbl {
   font-family: monospace;
   font-size: 0.8em;
-  color: var(--cj-defense-light);
+  color: var(--mm-defense-light);
   width: 28px;
   flex-shrink: 0;
 }
@@ -355,11 +355,11 @@ iframe {
 .cj-pos-code {
   margin: 0;
   padding: 6px 10px;
-  background: var(--cj-nav);
+  background: var(--mm-nav);
   border-radius: 6px;
   font-family: monospace;
   font-size: 0.72em;
-  color: var(--cj-border);
+  color: var(--mm-border);
   line-height: 1.6;
   white-space: pre;
   flex-shrink: 0;
@@ -371,7 +371,7 @@ iframe {
   align-items: center;
   gap: 6px;
   font-size: 0.7em;
-  color: var(--cj-text-muted);
+  color: var(--mm-text-muted);
   flex-wrap: wrap;
 }
 
@@ -384,14 +384,14 @@ iframe {
 }
 
 .dot-attacker {
-  background: var(--cj-warning);
+  background: var(--mm-warning);
   margin-left: 8px;
 }
 .dot-attacker:first-child {
   margin-left: 0;
 }
 .dot-victim {
-  background: var(--cj-defense-light);
+  background: var(--mm-defense-light);
 }
 
 /* ── Ad popup mode ───────────────────────────────────────── */
@@ -471,7 +471,7 @@ iframe {
 }
 
 .cj-ad-scene .cj-attacker-title {
-  color: var(--cj-nav);
+  color: var(--mm-nav);
   font-size: 1.1em;
 }
 .cj-ad-scene .cj-attacker-body {

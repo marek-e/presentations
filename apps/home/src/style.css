@@ -1,12 +1,4 @@
-:root {
-  --bg: #f6f7f9;
-  --ink: #101725;
-  --ink-soft: #3c4759;
-  --ink-muted: #69788f;
-  --line: #dde3ec;
-  --accent: #dc2626;
-  --card-bg: #fdfdfe;
-}
+@import '../../../packages/slidev-addon-melmayan/styles/tokens.css';
 
 * {
   box-sizing: border-box;
@@ -19,16 +11,16 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--ink);
+  background: var(--mm-surface);
+  color: var(--mm-text-strong);
   font-family: 'Archivo', ui-sans-serif, sans-serif;
   font-size: 16px;
   line-height: 1.55;
 }
 
 ::selection {
-  background: var(--accent);
-  color: #fff5f5;
+  background: var(--mm-danger);
+  color: #fff;
 }
 
 @media (prefers-reduced-motion: reduce) {

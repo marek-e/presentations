@@ -9,6 +9,11 @@ const DECKS_DIR = path.resolve(
   '../../decks',
 )
 
+const TOKENS_CSS = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  '../../packages/slidev-addon-melmayan/styles/tokens.css',
+)
+
 interface DeckMeta {
   slug: string
   title: string
@@ -34,6 +39,23 @@ function readDecks(): DeckMeta[] {
     .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''))
 }
 
+// Copies shared --mm-* tokens to dist/tokens.css (used by static pages like 404.html).
+function tokensPlugin(): Plugin {
+  return {
+    name: 'melmayan-tokens',
+    configureServer(server) {
+      server.middlewares.use('/tokens.css', (_req, res) => {
+        res.setHeader('Content-Type', 'text/css')
+        res.end(fs.readFileSync(TOKENS_CSS, 'utf8'))
+      })
+    },
+    writeBundle(options) {
+      const outDir = options.dir ?? path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'dist')
+      fs.copyFileSync(TOKENS_CSS, path.join(outDir, 'tokens.css'))
+    },
+  }
+}
+
 // Exposes each deck's deck.json as the `virtual:decks` module.
 function decksManifestPlugin(): Plugin {
   const id = 'virtual:decks'
@@ -52,5 +74,5 @@ function decksManifestPlugin(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [vue(), decksManifestPlugin()],
+  plugins: [vue(), tokensPlugin(), decksManifestPlugin()],
 })
