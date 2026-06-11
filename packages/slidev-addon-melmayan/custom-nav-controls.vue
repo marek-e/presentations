@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import IconButton from '@slidev/client/internals/IconButton.vue'
-import { useNav } from '@slidev/client/composables/useNav'
+import { useNav } from '@slidev/client'
 
 const { isEmbedded } = useNav()
 </script>
