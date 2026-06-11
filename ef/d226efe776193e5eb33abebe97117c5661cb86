@@ -1,0 +1,282 @@
+.agents/skills/slidev/references/layout-slots.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-75
+decks/clickjacking/slides/02-the-attack.md
+  s_4675ece4cd7f0b::t_e1ea1f2d0f3c67 278
+  s_4675ece4cd7f0b::t_52feed0c099d7f 847
+.agents/skills/slidev/references/layout-global-layers.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-50
+.agents/skills/slidev/references/core-headmatter.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-188
+decks/clickjacking/slides/06-ext-cj.md
+  s_4675ece4cd7f0b::t_6ba25f5276fbdc 136
+apps/home/tsconfig.json
+  s_4675ece4cd7f0b::t_a3465160e868b1 1-12
+decks/clickjacking/components/ClickjackDemo.vue
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-483
+.agents/skills/slidev/references/core-global-context.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-155
+.agents/skills/slidev/references/code-magic-move.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-57
+templates/deck/slides.md
+  s_4675ece4cd7f0b::t_8d05f58d8b3abc 1-53
+.agents/skills/slidev/references/presenter-recording.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-30
+scripts/preview.mjs
+  s_4675ece4cd7f0b::t_f06a4d4fdf802a 1-60
+apps/home/vite.config.ts
+  s_4675ece4cd7f0b::t_a21d98a028b14b 1-36,38-56
+  s_4675ece4cd7f0b::t_7a6a6e6f19ed94 37
+decks/clickjacking/public/victims/framebusting-victim.html
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-88
+.agents/skills/slidev/references/core-exporting.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-148
+decks/clickjacking/skills-lock.json
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-11
+decks/clickjacking/slides-en.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-127
+.agents/skills/slidev/references/presenter-remote.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-40
+decks/clickjacking/docs/superpowers/specs/2026-05-27-demo-fullscreen-teaser-design.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-63
+.agents/skills/slidev/references/code-import-snippet.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-55
+decks/clickjacking/CLAUDE.md
+  s_4675ece4cd7f0b::t_9ed2c6bb1710ed 25
+  s_4675ece4cd7f0b::t_5e298ded2fffd0 3-15
+templates/deck/package.json
+  s_4675ece4cd7f0b::t_2c4c347b8355d5 1-20
+packages/slidev-addon-melmayan/styles/tokens.css
+  s_4675ece4cd7f0b::t_4355824e584490 1-43
+.agents/skills/slidev/references/core-hosting.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-152
+.agents/skills/slidev/references/editor-monaco-run.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-44
+decks/clickjacking/slides/05-variants-intro.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-150
+apps/home/src/App.vue
+  s_4675ece4cd7f0b::t_9b32cb0a9965e4 1-260
+.agents/skills/slidev/references/editor-prettier.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-40
+decks/clickjacking/docs/superpowers/plans/2026-05-22-color-system-unification.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-557
+scripts/build.mjs
+  s_4675ece4cd7f0b::t_d5a885585edb90 1-41
+.agents/skills/slidev/references/animation-rough-marker.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-53
+.agents/skills/slidev/references/presenter-notes-ruby.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-35
+.agents/skills/slidev/references/editor-monaco-write.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-24
+decks/clickjacking/style.css
+  s_4675ece4cd7f0b::t_be06b00c7f3f1e 2-5
+.agents/skills/slidev/references/diagram-latex.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-55
+decks/clickjacking/public/callback/index.html
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-96
+decks/clickjacking/public/victims/dcj-real.js
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-63
+decks/clickjacking/public/victims/dcj-victim.js
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-33
+decks/clickjacking/public/victims/dcj.css
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-357
+.agents/skills/slidev/references/code-max-height.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-37
+pnpm-workspace.yaml
+  s_4675ece4cd7f0b::t_32786e21558ac2 1-4
+decks/clickjacking/public/victims/dcj-oauth.js
+  s_4675ece4cd7f0b::t_d33b3ba2d54fe6 12
+packages/slidev-addon-melmayan/styles/index.ts
+  s_4675ece4cd7f0b::t_a6b741422ab924 1
+.agents/skills/slidev/references/style-scoped.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-50
+decks/clickjacking/public/victims/dcj.html
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-92
+decks/clickjacking/slides/01-cover.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-27
+.agents/skills/slidev/README.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-61
+apps/home/package.json
+  s_4675ece4cd7f0b::t_a991447459e8b0 1-16
+.agents/skills/slidev/references/code-twoslash.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-42
+packages/slidev-addon-melmayan/README.md
+  s_4675ece4cd7f0b::t_3d6df15a4c0998 1-33
+.agents/skills/slidev/references/editor-vscode.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-55
+apps/home/src/main.ts
+  s_4675ece4cd7f0b::t_9b659c0cff8d4e 1-5
+.agents/skills/slidev/references/animation-click-marker.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-37
+.agents/skills/slidev/references/core-cli.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-140
+decks/clickjacking/README.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-140
+decks/clickjacking/slides/07-finish.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-28
+.agents/skills/slidev/references/syntax-frontmatter-merging.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-49
+decks/clickjacking/unocss.config.ts
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-11
+CLAUDE.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1
+.agents/skills/slidev/references/core-frontmatter.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-195
+scripts/new-deck.mjs
+  s_4675ece4cd7f0b::t_d5fd0b552d2562 1-53
+.agents/skills/slidev/references/core-animations.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-196
+.agents/skills/slidev/references/diagram-plantuml.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-45
+.agents/skills/slidev/references/layout-zoom.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-39
+AGENTS.md
+  s_4675ece4cd7f0b::t_7beaae2d66345a 1-31
+decks/clickjacking/public/victims/dcj-victim.html
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-353
+.node-version
+  s_4675ece4cd7f0b::t_c8203e0ac5e6dd 1
+decks/clickjacking/slides/04-defenses.md
+  s_4675ece4cd7f0b::t_0851170257fe80 199
+.agents/skills/slidev/references/animation-drawing.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-68
+.agents/skills/slidev/references/core-layouts.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-286
+.agents/skills/slidev/references/diagram-mermaid.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-44
+templates/deck/unocss.config.ts
+  s_4675ece4cd7f0b::t_168b1d85aedbe8 1-11
+.agents/skills/slidev/SKILL.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-189
+decks/clickjacking/docs/superpowers/specs/2026-05-27-advanced-variants-design.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-213
+.agents/skills/slidev/references/code-line-numbers.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-46
+decks/clickjacking/slides/05-dcj.md
+  s_4675ece4cd7f0b::t_91edd9394ec455 158
+  s_4675ece4cd7f0b::t_604e674db4db76 140
+  s_4675ece4cd7f0b::t_1036ba40d27343 145
+  s_4675ece4cd7f0b::t_4342d945f16d37 155
+.agents/skills/slidev/references/style-direction.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-34
+decks/clickjacking/deck.json
+  s_4675ece4cd7f0b::t_d88310a83ea625 1-9
+decks/clickjacking/docs/superpowers/specs/2026-05-22-color-system-design.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-137
+.npmrc
+  s_4675ece4cd7f0b::t_0d400cf5d20f5d 1-3
+.agents/skills/slidev/references/build-remote-assets.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-34
+packages/slidev-addon-melmayan/components/Callout.vue
+  s_4675ece4cd7f0b::t_e35cfafa612160 2-3
+.agents/skills/slidev/references/build-og-image.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-36
+.claude/skills/slidev
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1
+decks/clickjacking/slides.md
+  s_4675ece4cd7f0b::t_8c70c3174822f6 3-4
+apps/home/index.html
+  s_4675ece4cd7f0b::t_1ec21d2662a698 1-22
+apps/home/src/decks.d.ts
+  s_4675ece4cd7f0b::t_aea651a7c2609f 1-13
+vercel.json
+  s_4675ece4cd7f0b::t_78424bb2b39898 1-8
+.agents/skills/slidev/references/api-slide-hooks.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-37
+decks/clickjacking/public/victims/ext-clickjack-demo.html
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-351
+pnpm-lock.yaml
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-7254
+.agents/skills/slidev/references/syntax-comark.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-51
+.agents/skills/slidev/references/code-line-highlighting.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-50
+.agents/skills/slidev/references/core-components.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-197
+.agents/skills/slidev/references/build-pdf.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-40
+.agents/skills/slidev/references/style-icons.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-46
+decks/clickjacking/.gitignore
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-11
+.agents/skills/slidev/references/layout-canvas-size.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-25
+.agents/skills/slidev/references/editor-side.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-23
+decks/clickjacking/docs/superpowers/plans/2026-05-27-demo-fullscreen-teaser.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-172
+packages/slidev-addon-melmayan/package.json
+  s_4675ece4cd7f0b::t_87556b6977330c 1-11
+templates/deck/deck.json
+  s_4675ece4cd7f0b::t_d459167f7238b2 1-9
+decks/clickjacking/public/victims/bank.html
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-146
+.agents/skills/slidev/references/layout-draggable.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-57
+decks/clickjacking/vite.config.ts
+  s_4675ece4cd7f0b::t_731dc9b0896ca7 13-14
+.agents/skills/slidev/references/code-groups.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-64
+package.json
+  s_4675ece4cd7f0b::t_604d4e5057c6e4 8
+  s_4675ece4cd7f0b::t_b3bfb6a421f073 18
+  s_4675ece4cd7f0b::t_c4da15d8dbe279 12-16
+  s_4675ece4cd7f0b::t_ef05e670e7927d 11
+  s_4675ece4cd7f0b::t_e95042f98c7a9f 1-7,9-10,17,19-20
+decks/clickjacking/slides-fr.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-108
+apps/home/src/style.css
+  s_4675ece4cd7f0b::t_0672930e114235 1-41
+.agents/skills/slidev/references/syntax-importing-slides.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-60
+packages/slidev-addon-melmayan/components/InfoPopover.vue
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-155
+.agents/skills/slidev/references/layout-transform.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-33
+packages/slidev-addon-melmayan/components/OffsetCard.vue
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-117
+.gitignore
+  s_4675ece4cd7f0b::t_3c4929d8dcec37 1-9
+README.md
+  s_4675ece4cd7f0b::t_b5107c95359ca3 1-61
+.agents/skills/slidev/references/core-syntax.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-155
+decks/clickjacking/.env.example
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-17
+decks/clickjacking/components/DblClickDemo.vue
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-254
+decks/clickjacking/package.json
+  s_4675ece4cd7f0b::t_a07b5b021460e8 6-7
+  s_4675ece4cd7f0b::t_5dfcbba0141217 2,14-22
+packages/slidev-addon-melmayan/components/AgendaItem.vue
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-59
+decks/clickjacking/public/victims/github-star.html
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-201
+templates/deck/style.css
+  s_4675ece4cd7f0b::t_04c4ab946c90db 1-6
+.agents/skills/slidev/references/editor-monaco.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-50
+.agents/skills/slidev/references/tool-eject-theme.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-27
+.agents/skills/slidev/references/presenter-timer.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-34
+.agents/skills/slidev/references/build-seo-meta.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-43
+.agents/skills/slidev/references/syntax-block-frontmatter.md
+  s_4675ece4cd7f0b::t_13a0582879eeaf 1-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "efd226efe776193e5eb33abebe97117c5661cb86",
+  "prompts": {},
+  "sessions": {
+    "s_4675ece4cd7f0b": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "5443a387-0a41-4334-9ec8-389c2ebde2c7",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
