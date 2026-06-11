@@ -17,6 +17,11 @@ function formatDate(date?: string): string {
 <template>
   <main class="page">
     <header class="masthead">
+      <svg class="masthead-logo" viewBox="21 18 64 64" aria-hidden="true">
+        <rect x="38" y="42" width="44" height="30" rx="8" fill="#F67280" stroke="#d4505f" stroke-width="3" />
+        <rect x="31" y="35" width="44" height="30" rx="8" fill="#C06C84" stroke="#9d5069" stroke-width="3" />
+        <rect x="24" y="28" width="44" height="30" rx="8" fill="#355C7D" stroke="#264761" stroke-width="3" />
+      </svg>
       <p class="masthead-kicker">presentations.melmayan.fr</p>
       <h1 class="masthead-title">
         Talks &amp;<br />
@@ -72,6 +77,12 @@ function formatDate(date?: string): string {
 .masthead {
   max-width: 38rem;
   margin-bottom: clamp(3rem, 8vw, 6rem);
+}
+
+.masthead-logo {
+  width: 3.6rem;
+  height: 3.6rem;
+  margin-bottom: 1.1rem;
 }
 
 .masthead-kicker {
