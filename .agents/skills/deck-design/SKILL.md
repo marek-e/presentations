@@ -38,7 +38,7 @@ Rules:
 - A slide may have **at most 4 bullets, one line each**. More than that → convert using the table above.
 - Prefer an interactive Vue demo over a static screenshot, a screenshot over a diagram, a diagram over prose. Demos go in the deck's `components/`; promote to the addon only if deck-agnostic.
 - Code slides show the **minimum lines that matter** — strip imports and boilerplate, highlight the 1–3 lines being discussed (`{2,5-6}` line highlighting), and walk through them with clicks.
-- Use the shared design tokens (`--cj-*`) and addon components (`Callout`, `AgendaItem`, `InfoPopover`, `OffsetCard`) so decks stay coherent. Light scheme; everything must pass WCAG AA on white.
+- Use the shared design tokens (`--mm-*`) and addon components (`Callout`, `AgendaItem`, `InfoPopover`, `OffsetCard`) so decks stay coherent. Light scheme; everything must pass WCAG AA on white.
 - Decorative background shapes: blurred, `aria-hidden="true"`, `pointer-events:none`, behind `z-index:1` content.
 
 ## Sounding human, not AI

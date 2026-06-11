@@ -98,9 +98,9 @@ layout: center
 class: text-center
 ---
 
-<p class="text-8xl font-black m-0" style="color: var(--cj-danger)">1 click</p>
+<p class="text-8xl font-black m-0" style="color: var(--mm-danger)">1 click</p>
 
-<p v-click class="text-2xl mt-4" style="color: var(--cj-text)">
+<p v-click class="text-2xl mt-4" style="color: var(--mm-text)">
   is all it took to enable your webcam — Adobe Flash settings, framed.
 </p>
 
