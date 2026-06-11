@@ -132,18 +132,45 @@ document.querySelector('.verify-btn')
 </style>
 
 ---
-layout: two-cols
 class: p-2 py-4
 ---
 
-<div style="display:flex; align-items:center; justify-content:center; height:100%;">
-<img src="../public/dcj-attack-flow.png" alt="DoubleClickjacking attack flow diagram" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); border: 1px solid var(--mm-border);" />
+<div class="dcj-media-grid">
+  <div class="dcj-media-cell">
+    <img
+      :src="'/clickjacking/dcj-attack-flow.png'"
+      alt="DoubleClickjacking attack flow diagram"
+      style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); border: 1px solid var(--mm-border);"
+    />
+  </div>
+  <div class="dcj-media-cell">
+    <video
+      :src="'/clickjacking/dcj-demo.mp4'"
+      controls
+      autoplay
+      loop
+      muted
+      playsinline
+      style="width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.10);"
+    ></video>
+  </div>
 </div>
-::right::
 
-<div style="display:flex; align-items:center; justify-content:center; height:100%;">
-  <video src="../public/dcj-demo.mp4" controls autoplay loop muted style="width:100%; border-radius:12px; box-shadow: 0 8px 32px rgba(0,0,0,0.10);" />
-</div>
+<style>
+.dcj-media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  height: 100%;
+  align-items: center;
+}
+.dcj-media-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
+</style>
 
 ---
 layout: center
