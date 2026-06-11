@@ -1,0 +1,23 @@
+apps/home/index.html
+  s_76c0f9b881234c::t_7756ad5c79f54b 9,11-29
+apps/home/public/site.webmanifest
+  s_76c0f9b881234c::t_7756ad5c79f54b 4
+apps/home/vite.config.ts
+  s_76c0f9b881234c::t_7756ad5c79f54b 6-7,31-45,64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "916fde886b2576dc540f05b6932085400c11c75f",
+  "prompts": {},
+  "sessions": {
+    "s_76c0f9b881234c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "3ab0a209-1290-4926-add9-ef082f7921db",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
