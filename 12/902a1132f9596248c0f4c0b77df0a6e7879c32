@@ -1,0 +1,29 @@
+apps/home/index.html
+  s_5a27ed8587c505::t_f67a743a945053 12-14
+apps/home/src/App.vue
+  s_5a27ed8587c505::t_dda003c69e0f47 20-34
+  s_5a27ed8587c505::t_5f9f88dbdc0df8 91-131
+  s_5a27ed8587c505::t_f230aad41a1980 4-5
+apps/home/public/site.webmanifest
+  s_5a27ed8587c505::t_5076097863d7a1 1-29
+apps/home/public/404.html
+  s_5a27ed8587c505::t_ff974139ef7814 9-11
+scripts/generate-home-icons.mjs
+  s_5a27ed8587c505::t_0cef01f7985f5d 1-64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "12902a1132f9596248c0f4c0b77df0a6e7879c32",
+  "prompts": {},
+  "sessions": {
+    "s_5a27ed8587c505": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "ce79ca54-bb79-48d6-8cb5-2de3e23dab91",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
