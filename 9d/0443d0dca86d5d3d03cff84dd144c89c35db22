@@ -1,0 +1,26 @@
+apps/home/index.html
+  s_76c0f9b881234c::t_e091ad6b29a46f 22-26
+  s_76c0f9b881234c::t_334743ef8e1cc9 32
+scripts/site.mjs
+  s_76c0f9b881234c::t_bd816f3e8743e2 16
+apps/home/public/og-image.svg
+  s_76c0f9b881234c::t_e9f8b07f7fdbc3 42
+  s_76c0f9b881234c::t_b92ec928f770b9 30-40,50-61
+  s_76c0f9b881234c::t_733d0b5e5d07e6 70-87
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "9d0443d0dca86d5d3d03cff84dd144c89c35db22",
+  "prompts": {},
+  "sessions": {
+    "s_76c0f9b881234c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "3ab0a209-1290-4926-add9-ef082f7921db",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
