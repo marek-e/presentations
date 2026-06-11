@@ -3,6 +3,7 @@ theme: geist
 addons:
   - melmayan
 title: Clickjacking — Proof Hackers Write Better CSS Than You
+favicon: /clickjacking/favicon.svg
 transition: fade
 colorSchema: light
 defaults:

@@ -83,6 +83,53 @@ function formatDate(date?: string): string {
   width: 3.6rem;
   height: 3.6rem;
   margin-bottom: 1.1rem;
+  overflow: visible;
+  transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.masthead-logo:hover {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+/* Staggered spring entrance, echoing the melmayan.fr AnimatedLogo */
+.masthead-logo rect {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: logo-piece-in 600ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.masthead-logo rect:nth-of-type(1) {
+  --from: translate(-14px, 12px) rotate(-10deg);
+  animation-delay: 0ms;
+}
+
+.masthead-logo rect:nth-of-type(2) {
+  --from: translate(14px, 12px) rotate(8deg);
+  animation-delay: 90ms;
+}
+
+.masthead-logo rect:nth-of-type(3) {
+  --from: translate(0, -16px) rotate(4deg);
+  animation-delay: 180ms;
+}
+
+@keyframes logo-piece-in {
+  from {
+    opacity: 0;
+    transform: var(--from);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .masthead-logo,
+  .masthead-logo rect {
+    animation: none;
+    transition: none;
+  }
 }
 
 .masthead-kicker {

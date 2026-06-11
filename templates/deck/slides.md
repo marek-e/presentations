@@ -3,6 +3,7 @@ theme: geist
 addons:
   - melmayan
 title: __TITLE__
+favicon: /__SLUG__/favicon.svg
 transition: fade
 colorSchema: light
 defaults:
