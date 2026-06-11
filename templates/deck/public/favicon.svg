@@ -1,7 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="21 18 64 64">
-  <!-- melmayan presentations mark  "Palette Stack, self-shade":
-       three stacked slides in the melmayan.fr AnimatedLogo palette,
-       each edged in a darker shade of its own fill. -->
   <rect x="38" y="42" width="44" height="30" rx="8" fill="#F67280" stroke="#d4505f" stroke-width="3"/>
   <rect x="31" y="35" width="44" height="30" rx="8" fill="#C06C84" stroke="#9d5069" stroke-width="3"/>
   <rect x="24" y="28" width="44" height="30" rx="8" fill="#355C7D" stroke="#264761" stroke-width="3"/>
