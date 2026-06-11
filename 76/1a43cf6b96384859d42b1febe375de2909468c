@@ -1,0 +1,23 @@
+.gitignore
+  s_8847e0f11b218e::t_0d2db22b2d57f5 9-12
+decks/clickjacking/.env.example
+  s_8847e0f11b218e::t_7e00538437f0ab 8-10
+decks/clickjacking/slides/05-dcj.md
+  s_8847e0f11b218e::t_635f0870728f45 163
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "761a43cf6b96384859d42b1febe375de2909468c",
+  "prompts": {},
+  "sessions": {
+    "s_8847e0f11b218e": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "fb57026f-052e-44d3-89a0-59e6e575a4ac",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
