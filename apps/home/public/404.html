@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Not found — presentations.melmayan.fr</title>
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="/tokens.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: clamp(1.25rem, 5vw, 3rem);
+        background: var(--mm-surface);
+        color: var(--mm-text-strong);
+        font-family: 'Archivo', ui-sans-serif, sans-serif;
+        font-size: 16px;
+        line-height: 1.55;
+      }
+
+      ::selection {
+        background: var(--mm-danger);
+        color: #fff;
+      }
+
+      main {
+        width: min(100%, 38rem);
+      }
+
+      .kicker {
+        margin: 0 0 1rem;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--mm-danger);
+      }
+
+      .code {
+        margin: 0;
+        font-size: clamp(4.5rem, 18vw, 7.5rem);
+        font-weight: 850;
+        line-height: 0.92;
+        letter-spacing: -0.04em;
+      }
+
+      h1 {
+        margin: 0.75rem 0 0;
+        font-size: clamp(1.75rem, 5vw, 2.4rem);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.08;
+        text-wrap: balance;
+      }
+
+      p {
+        margin: 1.1rem 0 0;
+        max-width: 30rem;
+        color: var(--mm-text-muted);
+        font-size: 1.02rem;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 2rem;
+      }
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.7rem 1.1rem;
+        border-radius: 999px;
+        font-size: 0.92rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition:
+          transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+          border-color 220ms;
+      }
+
+      a:focus-visible {
+        outline: 2px solid var(--mm-danger);
+        outline-offset: 3px;
+      }
+
+      .primary {
+        color: #fff;
+        background: var(--mm-danger);
+        border: 1.5px solid var(--mm-danger);
+        box-shadow: 4px 4px 0 color-mix(in srgb, var(--mm-danger) 35%, var(--mm-surface));
+      }
+
+      .primary:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 7px 7px 0 color-mix(in srgb, var(--mm-danger) 35%, var(--mm-surface));
+      }
+
+      .secondary {
+        color: var(--mm-text);
+        background: #fff;
+        border: 1.5px solid var(--mm-border);
+        box-shadow: 4px 4px 0 color-mix(in srgb, var(--mm-text-muted) 18%, var(--mm-surface));
+      }
+
+      .secondary:hover {
+        transform: translate(-2px, -2px);
+        border-color: color-mix(in srgb, var(--mm-danger) 35%, var(--mm-border));
+        box-shadow: 7px 7px 0 color-mix(in srgb, var(--mm-danger) 20%, var(--mm-surface));
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="kicker">presentations.melmayan.fr</p>
+      <p class="code" aria-hidden="true">404</p>
+      <h1>This slide doesn&rsquo;t exist.</h1>
+      <p>
+        The page you asked for isn&rsquo;t here — wrong URL, retired deck, or a typo
+        in the path.
+      </p>
+      <div class="actions">
+        <a class="primary" href="/">← All presentations</a>
+        <a class="secondary" href="javascript:history.back()">Go back</a>
+      </div>
+    </main>
+  </body>
+</html>
