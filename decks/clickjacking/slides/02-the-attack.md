@@ -283,7 +283,7 @@ layout: center
   :height="300"
   :show-position-controls="true"
   :clickable="true"
-  :start-y="-72"
+  :start-y="-68"
   @button-click="onBtnClick"
 />
 
@@ -857,7 +857,7 @@ layout: center
   :show-position-controls="true"
   :clickable="true"
   :start-y="-15"
-  :start-x="-49"
+  :start-x="32"
 />
 
 <!--
