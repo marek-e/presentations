@@ -10,7 +10,9 @@ All my Slidev presentations, deployed as one static site at https://presentation
 - **`templates/deck/`** — factory template used by `pnpm new <slug>`.
 - **`scripts/build.mjs`** — builds every deck with `--base /<slug>/`, builds the landing app, and assembles everything into root `dist/`.
 - **`scripts/new-deck.mjs`** — scaffolds a new deck from the template.
-- **`.agents/skills/`** — shared agent skills (notably `slidev`, the Slidev reference skill). Symlinked from `.claude/skills/` and `.cursor/skills/`. Read `.agents/skills/slidev/SKILL.md` before non-trivial Slidev work.
+- **`.agents/skills/`** — shared agent skills, symlinked from `.claude/skills/` and `.cursor/skills/`:
+  - `slidev` — Slidev syntax/feature reference. Read before non-trivial Slidev work.
+  - `deck-design` — what makes a slide clear, visual, and human. Read before creating or editing slide content.
 
 ## Commands
 
