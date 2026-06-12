@@ -1,0 +1,19 @@
+.github/workflows/ci.yml
+  s_d1070293b4ba44::t_5dade539124efd 1-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "8b61e443714e0490cfb782a8c919d77a9e8ee2c9",
+  "prompts": {},
+  "sessions": {
+    "s_d1070293b4ba44": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "465c534d-57a2-4044-8969-30eeaa6b7663",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
