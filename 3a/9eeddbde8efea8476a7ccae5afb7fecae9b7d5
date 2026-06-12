@@ -1,0 +1,31 @@
+apps/home/vite.config.ts
+  s_d1070293b4ba44::t_8e4021c325dc7d 75
+  s_d1070293b4ba44::t_f3783ac8de8afb 14-17
+  s_d1070293b4ba44::t_9bc75f920226e2 69-74,76-81
+package.json
+  s_d1070293b4ba44::t_3a990906c3d037 32
+scripts/dev.mjs
+  s_d1070293b4ba44::t_a938a0577eee30 38-54,57-58,60-69,74,113-115,117-129,135,141,146-147,164,170
+  s_d1070293b4ba44::t_7588dea7488d07 13,100-102,105-107,110,112,116,130-131,138-140,142-145,148-157
+  s_d1070293b4ba44::t_3c938e6bfa1a2c 90-99,103-104,108-109,111
+  s_d1070293b4ba44::t_b76d1dc86a0836 1-12,14-37,55-56,59,70-73,75-89,132-134,136,159-163
+  s_d1070293b4ba44::t_3fa3ee45ed5ac9 137,158,165-169
+scripts/new-deck.mjs
+  s_d1070293b4ba44::t_97bf14bc952646 56-57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "3a9eeddbde8efea8476a7ccae5afb7fecae9b7d5",
+  "prompts": {},
+  "sessions": {
+    "s_d1070293b4ba44": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "465c534d-57a2-4044-8969-30eeaa6b7663",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
