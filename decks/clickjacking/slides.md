@@ -2,23 +2,9 @@
 theme: geist
 addons:
   - melmayan
-title: Clickjacking — Proof Hackers Write Better CSS Than You
-author: Marek Elmayan
-info: |
-  When z-index, opacity, and iframe become weapons. The attack, modern defenses
-  (XFO, CSP frame-ancestors), and advanced variants like double-clickjacking.
 favicon: /clickjacking/favicon.svg
 transition: fade
 colorSchema: light
-seoMeta:
-  ogTitle: Clickjacking — Proof Hackers Write Better CSS Than You
-  ogDescription: When z-index, opacity, and iframe become weapons. The attack, modern defenses (XFO, CSP frame-ancestors), and advanced variants like double-clickjacking.
-  ogUrl: https://presentations.melmayan.fr/clickjacking/
-  ogImage: https://presentations.melmayan.fr/clickjacking/og-image.png
-  twitterCard: summary_large_image
-  twitterTitle: Clickjacking — Proof Hackers Write Better CSS Than You
-  twitterDescription: When z-index, opacity, and iframe become weapons. The attack, modern defenses (XFO, CSP frame-ancestors), and advanced variants like double-clickjacking.
-  twitterImage: https://presentations.melmayan.fr/clickjacking/og-image.png
 defaults:
   layout: default
   class: px-16 py-8

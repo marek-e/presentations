@@ -35,7 +35,8 @@
     "dev:home": "pnpm --filter home dev"
   },
   "devDependencies": {
-    "sharp": "^0.34.5"
+    "sharp": "^0.34.5",
+    "yaml": "^2.9.0"
   },
   "packageManager": "pnpm@10.34.2",
   "pnpm": {

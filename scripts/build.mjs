@@ -9,6 +9,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { generateAllDeckOgImages } from './og-image.mjs'
+import { validateAllDeckSlides } from './deck-meta.mjs'
 import { buildRobotsTxt, buildSitemapXml } from './seo.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -32,6 +33,8 @@ const slugs = fs
   .readdirSync(DECKS_DIR, { withFileTypes: true })
   .filter((e) => e.isDirectory())
   .map((e) => e.name)
+
+validateAllDeckSlides()
 
 await generateAllDeckOgImages()
 

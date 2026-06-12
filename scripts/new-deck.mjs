@@ -37,7 +37,7 @@ const date = new Date().toISOString().slice(0, 7) // YYYY-MM
 
 fs.cpSync(TEMPLATE, dest, { recursive: true })
 
-for (const file of ['package.json', 'deck.json', 'slides.md']) {
+for (const file of ['package.json', 'deck.json', 'slides.md', 'vite.config.ts']) {
   const p = path.join(dest, file)
   const content = fs
     .readFileSync(p, 'utf8')

@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import type { Connect } from 'vite'
 import { defineConfig } from 'vite'
+import { deckMetaVitePlugin } from '../../scripts/deck-meta-vite-plugin.mjs'
 
 const CALLBACK_HTML = 'public/callback/index.html'
 
@@ -37,5 +38,5 @@ function callbackPagePlugin() {
 }
 
 export default defineConfig({
-  plugins: [callbackPagePlugin()],
+  plugins: [deckMetaVitePlugin('clickjacking'), callbackPagePlugin()],
 })
