@@ -11,6 +11,10 @@ const TOKENS_CSS = path.resolve(
   '../../packages/slidev-addon-melmayan/styles/tokens.css',
 )
 
+const deckSlug = process.env.DECK_SLUG
+const slidevPort = Number(process.env.SLIDEV_PORT ?? 3031)
+const port = Number(process.env.PORT ?? 5173)
+
 // Copies shared --mm-* tokens to dist/tokens.css (used by static pages like 404.html).
 function tokensPlugin(): Plugin {
   return {
@@ -62,4 +66,17 @@ function decksManifestPlugin(): Plugin {
 
 export default defineConfig({
   plugins: [vue(), tokensPlugin(), decksManifestPlugin(), seoJsonLdPlugin()],
+  server: {
+    port,
+    strictPort: Boolean(deckSlug),
+    proxy: deckSlug
+      ? {
+          [`/${deckSlug}`]: {
+            target: `http://localhost:${slidevPort}`,
+            changeOrigin: true,
+            ws: true,
+          },
+        }
+      : undefined,
+  },
 })
