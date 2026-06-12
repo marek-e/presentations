@@ -13,11 +13,11 @@ seoMeta:
   ogTitle: __TITLE__
   ogDescription: __TITLE__ — a talk by Marek Elmayan.
   ogUrl: https://presentations.melmayan.fr/__SLUG__/
-  ogImage: https://presentations.melmayan.fr/icon-512.png
-  twitterCard: summary
+  ogImage: https://presentations.melmayan.fr/__SLUG__/og-image.png
+  twitterCard: summary_large_image
   twitterTitle: __TITLE__
   twitterDescription: __TITLE__ — a talk by Marek Elmayan.
-  twitterImage: https://presentations.melmayan.fr/icon-512.png
+  twitterImage: https://presentations.melmayan.fr/__SLUG__/og-image.png
 defaults:
   layout: default
   class: px-16 py-8

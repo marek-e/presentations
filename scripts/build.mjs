@@ -8,6 +8,7 @@ import { execSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { generateAllDeckOgImages } from './og-image.mjs'
 import { buildRobotsTxt, buildSitemapXml } from './seo.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -31,6 +32,8 @@ const slugs = fs
   .readdirSync(DECKS_DIR, { withFileTypes: true })
   .filter((e) => e.isDirectory())
   .map((e) => e.name)
+
+await generateAllDeckOgImages()
 
 for (const slug of slugs) {
   run(`pnpm --filter deck-${slug} build`)

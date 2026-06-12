@@ -7,6 +7,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { writeDeckOgImages } from './og-image.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const TEMPLATE = path.join(ROOT, 'templates/deck')
@@ -45,6 +46,9 @@ for (const file of ['package.json', 'deck.json', 'slides.md']) {
     .replaceAll('__DATE__', date)
   fs.writeFileSync(p, content)
 }
+
+const deckMeta = JSON.parse(fs.readFileSync(path.join(dest, 'deck.json'), 'utf8'))
+await writeDeckOgImages({ slug, ...deckMeta })
 
 console.log(`✓ Created decks/${slug} ("${title}")`)
 console.log('\nNext steps:')

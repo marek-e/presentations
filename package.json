@@ -30,13 +30,18 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "new": "node scripts/new-deck.mjs",
+    "og-images": "node scripts/og-image.mjs",
     "preview": "node scripts/preview.mjs",
     "dev:home": "pnpm --filter home dev"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
   },
   "packageManager": "pnpm@10.34.2",
   "pnpm": {
     "onlyBuiltDependencies": [
-      "esbuild"
+      "esbuild",
+      "sharp"
     ]
   },
   "engines": {
