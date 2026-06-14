@@ -1,0 +1,19 @@
+README.md
+  s_ccc2f85e80421c::t_3c885ba12a5534 16-17,27-31,33-35,39-44,47-48,51,57,65-75,83-84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "9bd27c8186b9688e41f3162a031dea52c801bd26",
+  "prompts": {},
+  "sessions": {
+    "s_ccc2f85e80421c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a80b0526-0b0e-4c27-a453-405ef730b7e6",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
