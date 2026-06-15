@@ -1,0 +1,28 @@
+apps/home/vite.config.ts
+  s_0cc2b86a76e371::t_d446c454ea8aa2 74-78
+scripts/deck-meta-vite-plugin.mjs
+  s_0cc2b86a76e371::t_dbbf50393f265a 37-52
+packages/slidev-addon-melmayan/setup/main.ts
+  s_0cc2b86a76e371::t_60cc691b6593f2 35-67,69-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "e2f600875c0b056e21fdb325eeff23a01c4e0601",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_0cc2b86a76e371": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "0929db93-d720-49be-8fb5-4b30fb103981",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
