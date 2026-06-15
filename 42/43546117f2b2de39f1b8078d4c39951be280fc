@@ -1,0 +1,31 @@
+packages/slidev-addon-melmayan/setup/shiki.ts
+  s_ccc2f85e80421c::t_48f7005f7b8365 1-11
+packages/slidev-addon-melmayan/README.md
+  s_ccc2f85e80421c::t_44a4e253cf6c70 35-38
+scripts/dev.mjs
+  s_ccc2f85e80421c::t_c14a9a80678ffe 39
+patches/slidev-theme-geist@0.8.1.patch
+  s_ccc2f85e80421c::t_45e42d76aedcff 1-17
+pnpm-lock.yaml
+  s_ccc2f85e80421c::t_d9c1b6851c0923 7-11,52,64-68,7111
+packages/slidev-addon-melmayan/package.json
+  s_ccc2f85e80421c::t_9fd7eb54318afc 10-12
+package.json
+  s_ccc2f85e80421c::t_45e42d76aedcff 47-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "4243546117f2b2de39f1b8078d4c39951be280fc",
+  "prompts": {},
+  "sessions": {
+    "s_ccc2f85e80421c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a80b0526-0b0e-4c27-a453-405ef730b7e6",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
