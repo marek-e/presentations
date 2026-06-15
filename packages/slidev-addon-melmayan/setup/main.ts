@@ -32,6 +32,41 @@ function patchRouterNavigation(router: Router, basePath: string) {
   }
 }
 
+function withBaseUrl(path: string, basePath: string) {
+  const base = basePath.replace(/\/$/, '')
+  if (!base || base === '/')
+    return path
+  return `${base}${path}`
+}
+
+/**
+ * Presenter notes load from `/__slidev/slides/:no.json`, but Slidev's client
+ * omits BASE_URL. Under `pnpm dev` (home proxy) or `--base /<slug>/` that 404s.
+ */
+function patchSlidevApiFetch(basePath: string) {
+  const base = basePath.replace(/\/$/, '')
+  if (!base || base === '/')
+    return
+
+  const originalFetch = window.fetch.bind(window)
+  window.fetch = (input: RequestInfo | URL, init?: RequestInit) => {
+    if (typeof input === 'string' && input.startsWith('/__slidev/'))
+      return originalFetch(withBaseUrl(input, basePath), init)
+
+    if (input instanceof Request) {
+      const url = new URL(input.url)
+      if (url.pathname.startsWith('/__slidev/')) {
+        const prefixed = withBaseUrl(url.pathname, basePath) + url.search
+        return originalFetch(new Request(prefixed, input), init)
+      }
+    }
+
+    return originalFetch(input, init)
+  }
+}
+
 export default async function fixSubpathNavigation({ router }: AppContext) {
-  patchRouterNavigation(router, import.meta.env.BASE_URL)
+  const base = import.meta.env.BASE_URL
+  patchRouterNavigation(router, base)
+  patchSlidevApiFetch(base)
 }

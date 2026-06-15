@@ -71,6 +71,11 @@ export default defineConfig({
     strictPort: Boolean(deckSlug),
     proxy: deckSlug
       ? {
+          // Slidev presenter notes API (client still requests /__slidev/ at site root)
+          '/__slidev': {
+            target: `http://localhost:${slidevPort}`,
+            changeOrigin: true,
+          },
           [`/${deckSlug}`]: {
             target: `http://localhost:${slidevPort}`,
             changeOrigin: true,

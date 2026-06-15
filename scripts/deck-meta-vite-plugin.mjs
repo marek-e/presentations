@@ -34,6 +34,22 @@ export function deckMetaVitePlugin(slug) {
     },
     configureServer(server) {
       server.watcher.add(deckJsonPath)
+
+      // Slidev's notes API matches `/__slidev/slides/:no.json` at the server root.
+      // With `--base /<slug>/`, proxied requests arrive as `/<slug>/__slidev/...`.
+      const base = server.config.base?.replace(/\/$/, '') ?? ''
+      if (base && base !== '/') {
+        const stripBaseForSlidevApi = (req, _res, next) => {
+          const url = req.url ?? ''
+          const qIndex = url.indexOf('?')
+          const pathOnly = qIndex === -1 ? url : url.slice(0, qIndex)
+          const query = qIndex === -1 ? '' : url.slice(qIndex)
+          if (pathOnly.startsWith(`${base}/__slidev/`))
+            req.url = pathOnly.slice(base.length) + query
+          next()
+        }
+        server.middlewares.stack.unshift({ route: '', handle: stripBaseForSlidevApi })
+      }
     },
   }
 }
