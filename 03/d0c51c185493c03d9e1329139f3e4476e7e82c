@@ -1,0 +1,50 @@
+decks/clickjacking/slides/04-defenses.md
+  s_0cc2b86a76e371::t_1c230e4d6b5d86 59-66
+  s_0cc2b86a76e371::t_fd3a3f7ea31398 287-293
+  s_0cc2b86a76e371::t_7bfbc4dbc6edaf 208-215
+  s_0cc2b86a76e371::t_eb4c8cfce00c1c 149-156
+  s_0cc2b86a76e371::t_5d319884cef9a2 408-415
+decks/clickjacking/slides/02-the-attack.md
+  s_0cc2b86a76e371::t_534caa80c5e1bb 778-785
+  s_0cc2b86a76e371::t_27af2f7500f9d1 271-279
+  s_0cc2b86a76e371::t_3beb7ca4222e1d 988-995
+  s_0cc2b86a76e371::t_71dfcba92c9df5 1138-1145
+  s_0cc2b86a76e371::t_4e5bcae5b74f81 1176-1183
+  s_0cc2b86a76e371::t_e4f13dcaf39ebf 871-876
+  s_0cc2b86a76e371::t_e327d7d7a9081c 522-523,525
+  s_0cc2b86a76e371::t_c6b2bbd8381ef1 58-64
+  s_0cc2b86a76e371::t_2ad9be1b4a883c 850-857
+  s_0cc2b86a76e371::t_63b5aff67ce7c4 903-905
+decks/clickjacking/slides/06-ext-cj.md
+  s_0cc2b86a76e371::t_22d98d530253a7 136-143
+  s_0cc2b86a76e371::t_dabbfb1af906cd 80-87
+  s_0cc2b86a76e371::t_e5f9a816ca5c58 242-249
+decks/clickjacking/slides/05-dcj.md
+  s_0cc2b86a76e371::t_525f7e64d75339 303-305
+  s_0cc2b86a76e371::t_4b3161f1aca320 142-150
+  s_0cc2b86a76e371::t_2e8c73ad08bd9b 50-57
+  s_0cc2b86a76e371::t_01dc611b2e10a6 385-392
+  s_0cc2b86a76e371::t_9d94d8202d5e82 192-198
+decks/clickjacking/slides.md
+  s_0cc2b86a76e371::t_fc804b69d6de84 109-115
+decks/clickjacking/slides/01-cover.md
+  s_0cc2b86a76e371::t_fe2b24d607c9be 28-33
+decks/clickjacking/slides/05-variants-intro.md
+  s_0cc2b86a76e371::t_59ace4e26740b3 151-158
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "03d0c51c185493c03d9e1329139f3e4476e7e82c",
+  "prompts": {},
+  "sessions": {
+    "s_0cc2b86a76e371": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "0929db93-d720-49be-8fb5-4b30fb103981",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
