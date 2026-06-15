@@ -56,6 +56,14 @@ http.headers().frameOptions().deny();
 
 </div>
 
+<!--
+PRESENTER NOTE:
+XFO is the 2009 answer — still works, still worth shipping. DENY is the default recommendation.
+Show the server snippets briefly; audience may only need their stack's one-liner.
+[click] Limitations: ALLOW-FROM is dead in Chrome/Safari, SAMEORIGIN still allows same-origin XSS to frame you.
+Defense-in-depth: set it even if you also ship CSP. ~63% of sites still missing it per HTTP Archive.
+-->
+
 ---
 zoom: 0.9
 ---
@@ -138,6 +146,14 @@ If they conflict, CSP `frame-ancestors` takes precedence in modern browsers.
 .ip-body p { margin: 0; }
 </style>
 
+<!--
+PRESENTER NOTE:
+If audience is fuzzy on CSP, pop the InfoPopover — most people know script-src for XSS; frame-ancestors is the clickjacking slice.
+frame-ancestors is strictly better than XFO: multi-origin allowlist, wildcards, report-only mode.
+[click] Best practice table: set BOTH. If they conflict, CSP wins in modern browsers.
+~89% missing frame-ancestors — worse coverage than XFO. Low-hanging fruit for any security audit.
+-->
+
 ---
 zoom: 0.95
 ---
@@ -188,6 +204,14 @@ if (window !== top) {
 </div>
 
 </div>
+
+<!--
+PRESENTER NOTE:
+Historical context only — many legacy apps still have this in their codebase. Don't rely on it.
+Classic pattern: if (top !== self) top.location = self.location.
+[click] sandbox bypass: omit allow-top-navigation and framebusting can't escape. Also onbeforeunload can block the redirect.
+Takeaway: delete framebusting scripts when you add headers; they're false comfort.
+-->
 
 ---
 zoom: 0.9
@@ -259,6 +283,13 @@ zoom: 0.9
   border: 1px solid var(--mm-border);
 }
 </style>
+
+<!--
+PRESENTER NOTE:
+Live proof — this iframe should be blank/broken. GitHub sends X-Frame-Options: DENY + frame-ancestors 'none' on every response.
+Open the InfoPopover to show real response headers from github.com (screenshot).
+If the iframe somehow loads in dev, mention browser extensions or cached exceptions — production blocks it.
+-->
 
 ---
 class: px-14 py-6
@@ -373,4 +404,12 @@ zoom: 0.9
 }
 
 </style>
+
+<!--
+PRESENTER NOTE:
+(Hidden slide — use if audience asks "isn't this just CSRF?")
+CSRF: no user click, hidden request. Clickjacking: real click on real UI in real session.
+CSRF tokens do NOT stop clickjacking — the token is legitimately present when the victim clicks.
+[click] Side-by-side reveal, then the misconception callout: "we have CSRF tokens" ≠ safe from UI redressing.
+-->
 

@@ -47,6 +47,14 @@
 .dcj-link:hover { opacity: 1; }
 </style>
 
+<!--
+PRESENTER NOTE:
+Paulos Yibelo, Dec 2024 — fresh variant that bypasses everything we just taught.
+Emphasize: X-Frame-Options DENY on every page does nothing here. Zero iframes.
+Three cards: classic (blocked by headers) vs DCJ (popup/opener) vs what's bypassed (XFO, CSP, SameSite).
+Link evil.blog for curious audience members.
+-->
+
 ---
 class: px-14 py-4
 ---
@@ -131,6 +139,15 @@ document.querySelector('.verify-btn')
 .dcj-step-desc  { font-size: 0.76em; color: var(--mm-text-muted); line-height: 1.45; }
 </style>
 
+<!--
+PRESENTER NOTE:
+The whole attack is a race against human perception. Walk the three steps slowly.
+Step 2 is the magic: mousedown on first click of double-click fires BEFORE mouseup.
+Popup uses window.opener.location to swap the parent tab to OAuth consent.
+[click] Show the code — mousedown handler redirects parent; mouseup completes on "Allow".
+~100ms gap is invisible to humans but plenty for navigation + layout.
+-->
+
 ---
 class: p-2 py-4
 ---
@@ -171,6 +188,13 @@ class: p-2 py-4
   min-height: 0;
 }
 </style>
+
+<!--
+PRESENTER NOTE:
+Visual aid — left: attack flow diagram, right: recorded demo (autoplays).
+Let the video run ~10s if live demo might fail. Diagram is good for screenshots/social.
+Don't narrate over the video — let it show the parent tab swap, then move on.
+-->
 
 ---
 layout: center
@@ -276,7 +300,9 @@ popup closes on mousedown, mouseup hits the fake Slack Allow button.
 Real Target — live Cloudflare Turnstile + window.opener.location swap to GitHub
 OAuth. Needs network. Double-click "Double-click to verify"
 below the widget. Parent shows real GitHub login or consent — do NOT click
-Authorize. Use the video for a full hit.
+Authorize. Use the video on the previous slide for a full hit.
+
+[click] Show revoke link if anyone accidentally authorizes on stage.
 -->
 
 ---
@@ -356,3 +382,11 @@ The pattern mirrors the 2008 clickjacking story. JS patches first, then browser-
 </div>
 
 </div>
+
+<!--
+PRESENTER NOTE:
+No browser-standard fix yet — mirrors 2008 clickjacking before XFO existed.
+Client-side patch: disable submit buttons until mousemove/keydown proves real user presence. Zero UX hit.
+[click] Similar gesture-splitting patterns: mobile double-tap, drag-and-drop, spacebar keyup on focused buttons.
+Long-term: spec proposals (Double-Click-Protection header, CSP for opener). Watch the standards space.
+-->

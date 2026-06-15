@@ -77,6 +77,14 @@
 }
 </style>
 
+<!--
+PRESENTER NOTE:
+Reframe the threat: the victim site isn't in a frame — your password manager's injected UI is.
+Attacker page runs JS that sets opacity:0 on the extension popup, overlays a cookie banner.
+[click] No iframe, no CORS, no frame headers — any page with a malicious third-party script can do this.
+One line of JS on a compromised ad network = game over for autofill.
+-->
+
 ---
 zoom: 0.92
 ---
@@ -124,6 +132,14 @@ Their autofill features trigger the moment a field is focused — a single click
 <style>
 .ecj-intro { font-size: 0.84em; color: var(--mm-text); line-height: 1.5; }
 </style>
+
+<!--
+PRESENTER NOTE:
+Content scripts inject DOM nodes the page can touch — same origin from the page's perspective.
+Three hide techniques: element opacity, body opacity, overlay div.
+Password managers are worst case: autofill fires on focus, one click exfiltrates.
+[click] Run through why each classic defense fails (table on slide). 11 PMs, 40M+ users, all initially vulnerable.
+-->
 
 ---
 layout: center
@@ -223,3 +239,11 @@ zoom: 0.92
 .ecj-stat-num   { font-size: 2em; font-weight: 900; color: var(--mm-text-strong); line-height: 1; }
 .ecj-stat-label { font-size: 0.8em; color: var(--mm-text-muted); line-height: 1.3; }
 </style>
+
+<!--
+PRESENTER NOTE:
+Scale: 11 password managers, 40M+ installs — credentials, cards+CVV, TOTP, passkeys all one click away.
+Extension dev fixes: closed Shadow DOM, visibility checks before fill, MutationObserver on style tampering.
+Web authors: no untrusted scripts on auth/payment pages; Permissions-Policy on clipboard.
+[click] Users: keep extensions updated. Ecosystem problem — not solvable by one site's headers alone.
+-->

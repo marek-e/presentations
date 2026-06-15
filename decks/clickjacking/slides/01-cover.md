@@ -25,3 +25,9 @@
 </div>
 
 </div>
+
+<!--
+PRESENTER NOTE:
+Quick roadmap — ~30 min total. Left column is attack mechanics + demos; right is defenses then the two modern variants (DCJ, extension clickjacking).
+Call out the three demos (bank, GitHub stars, DCJ OAuth, extension cookie banner) so people know when to lean in.
+-->

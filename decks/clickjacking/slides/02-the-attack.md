@@ -55,6 +55,13 @@
 }
 </style>
 
+<!--
+PRESENTER NOTE:
+"Jacking" = hi-jack — intercepting intent mid-click. UI redressing is the formal name.
+[click] Reveal the definition: victim clicks what they *think* they see, not what's actually under the cursor.
+[click] Walk the three cards left→right: innocent lure → invisible iframe → silent damage.
+-->
+
 ---
 
 # How It Works ? The Mechanics behind the attack
@@ -260,6 +267,15 @@ const { next } = useNav()
   to   { opacity: 1; transform: translateY(0); }
 }
 </style>
+
+<!--
+PRESENTER NOTE:
+Two layers: attacker's lure page + transparent iframe of the real target.
+Step through the code block clicks: CSS overlay → lure button → iframe with pre-filled transfer URL.
+[click:4] Right column: opacity/z-index/position — the whole attack is ~5 lines of CSS.
+[click:5] Email lure is the delivery vector — phishing link lands on attacker.com, not bank.com.
+Optional: mention opacity 0.001 instead of 0 so some browsers still register pointer events.
+-->
 
 ---
 layout: center
@@ -503,10 +519,10 @@ function onBtnClick() {
 
 <!--
 PRESENTER NOTE:
-Start with opacity at 0 so the user only sees the prize page (the attack scenario).
-Slowly drag the slider to reveal the victim iframe: a bank transfer confirmation.
+Open with the full-screen teaser — audience only sees the iPhone prize page.
+[click] Reveal the demo: start opacity at 0, drag slider to show the bank iframe underneath.
 Key message: one click on "Claim Prize" = one confirmed bank transfer.
-Then actually click the button to trigger the bank alert and advance the slide.
+[click] Actually click the button (or let audience click) to trigger the bank alert overlay.
 -->
 
 ---
@@ -759,6 +775,14 @@ zoom: 0.88
 }
 </style>
 
+<!--
+PRESENTER NOTE:
+The click is only half the con — smart attackers swap the decoy page immediately after.
+Left: victim sees "Order Confirmed" and never suspects a bank transfer.
+[click] Right: reality — $500 already gone. Origin logged as iPhonePromo.net.
+[click] The blur listener trick: iframe stealing focus = user clicked the overlay. Same pattern powers the bank demo.
+-->
+
 ---
 
 # The Stakes - What Attackers Actually Get
@@ -823,6 +847,14 @@ zoom: 0.88
 }
 </style>
 
+<!--
+PRESENTER NOTE:
+Impact scales with what one click can do on the target app — not with attacker sophistication.
+[click] Reveal categories one by one; pause on account takeover (OAuth, 2FA device add).
+[click] Social manipulation is underrated — GitHub stars, fake reviews, trending manipulation.
+[click] Closing punch: logs look 100% legitimate. No exploit chain, no malware — just a tricked click.
+-->
+
 ---
 
 # Notable Real-World Attacks
@@ -836,6 +868,12 @@ zoom: 0.88
 | 2018 | [Yelp Reservations](https://hackerone.com/reports/355859) | Stored credit card charged via hijacked booking button |
 | 2024 | [DoubleClickjacking](https://www.bleepingcomputer.com/news/security/new-doubleclickjacking-attack-exploits-double-clicks-to-hijack-accounts/) | OAuth consent hijack — Slack, Salesforce, Shopify |
 
+<!--
+PRESENTER NOTE:
+This isn't theoretical — decade-plus of real bugs. Highlight 2008 Flash (mic/cam via settings UI) and 2009 Twitter worm.
+LinkedIn 2015 is the CSS-only variant: invisible buttons via opacity, no iframe tricks needed on their end.
+2024 DoubleClickjacking tees up the second half of the deck. Don't dwell — table is reference material.
+-->
 
 ---
 layout: center
@@ -862,12 +900,9 @@ layout: center
 
 <!--
 PRESENTER NOTE:
-This is a real historical attack vector. Before GitHub added X-Frame-Options: DENY,
-repos could be embedded on any attacker page. A single phishing prompt could
-star-bomb any repository - inflating credibility, gaming the trending list.
-Today GitHub is protected. But the same attack still lands on self-hosted GitLab,
-Gitea, internal CI dashboards, or any platform with a one-click social action
-that forgot the header.
+Real historical vector — GitHub had no XFO before ~2013; star-bombing repos was trivial.
+Start opacity at 0, drag slider to reveal the Star button under the fake badge prompt.
+[click] Click "Claim My Badge" to star octocat/Hello-World. Today GitHub blocks framing; self-hosted GitLab/Gitea still don't.
 -->
 
 ---
@@ -949,6 +984,14 @@ that forgot the header.
 }
 
 </style>
+
+<!--
+PRESENTER NOTE:
+Three prerequisites — fix any one and the attack collapses. This is the checklist for your own apps.
+[click] #1 embeddable: missing XFO or frame-ancestors. One header fixes it.
+[click] #2 single-click sensitive action: add confirmation for money/destructive ops.
+[click] #3 predictable button position: can't fully prevent — that's why headers matter most.
+-->
 
 ---
 
@@ -1092,6 +1135,14 @@ that forgot the header.
 }
 </style>
 
+<!--
+PRESENTER NOTE:
+Common question: "How does the bank page load logged-in inside the iframe?"
+Walk the 3-step flow: cookie stored on login → browser auto-sends it to iframe request → server renders authenticated UI.
+[click] SameSite=Lax helps for cookies — iframe won't get the session, user sees login form instead.
+[click] JWT in localStorage: SameSite is irrelevant; framed page reads its own storage. Headers only fix.
+-->
+
 ---
 
 # Pre-armed Forms & Chained Clicks
@@ -1122,3 +1173,11 @@ that forgot the header.
   </div>
   <div class="mt-2 text-slate-500">No single action looks suspicious. The victim never suspects a thing.</div>
 </Callout>
+
+<!--
+PRESENTER NOTE:
+GET params that pre-fill forms are a gift to attackers — victim never even *initiated* the transfer flow.
+Attacker iframes bank.com/transfer?amount=500&to=attacker and only needs one click on Submit.
+[click] Chained clicks: two fake buttons, two real actions (Accept ToS → pay $500). Each click looks innocent in isolation.
+Bridge to defenses: even with CSRF tokens, the victim is clicking a real authenticated button.
+-->

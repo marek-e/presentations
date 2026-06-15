@@ -148,3 +148,11 @@ zoom: 0.9
   to   { opacity: 1; transform: translateY(0); }
 }
 </style>
+
+<!--
+PRESENTER NOTE:
+Pivot slide — classic clickjacking is largely solved by headers. Attackers moved to surfaces headers don't cover.
+[click] DoubleClickjacking: popup + window.opener + mousedown/mouseup gap. No iframe.
+[click] Extension clickjacking: target is password manager UI injected into the page DOM.
+Set expectations: next ~15 min is the scary modern stuff.
+-->
