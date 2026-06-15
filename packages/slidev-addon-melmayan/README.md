@@ -32,6 +32,10 @@ Auto-imported in any slide once the addon is enabled:
 
 `styles/tokens.css` defines the shared `--mm-*` design tokens. Deck-level `style.css` loads after the addon, so decks can override any token.
 
+## Shiki (Geist code themes)
+
+`setup/shiki.ts` imports Geist's light/dark themes directly (no deprecated `loadTheme()`). Decks using `theme: geist` rely on this; `slidev-theme-geist` is patched to skip its own shiki setup (see `patches/`).
+
 ## Navigation
 
 `custom-nav-controls.vue` adds a home icon to Slidev's bottom toolbar (via the built-in `CustomNavControls` slot). It links to `/` — the landing page in production builds.

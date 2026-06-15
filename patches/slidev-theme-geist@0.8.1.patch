@@ -1,0 +1,17 @@
+diff --git a/setup/shiki.ts b/setup/shiki.ts
+index 4461418363c00b917d5169af60a8d447d5b10de3..0d1eb5c77ad572b3e340e7921939ef640ff47fc1 100644
+--- a/setup/shiki.ts
++++ b/setup/shiki.ts
+@@ -1,10 +1,2 @@
+-import { defineShikiSetup } from '@slidev/types'
+-
+-export default defineShikiSetup(async({ loadTheme }) => {
+-  return {
+-    theme: {
+-      dark: await loadTheme(require.resolve('./shiki/dark.json')),
+-      light: await loadTheme(require.resolve('./shiki/light.json')),
+-    },
+-  }
+-})
++/** Shiki themes are provided by slidev-addon-melmayan/setup/shiki.ts */
++export default () => ({})

@@ -36,7 +36,7 @@ if (!decks.some((deck) => deck.slug === slug)) {
 const children = []
 
 const SUPPRESSED =
-  /loadTheme.*deprecated|ExperimentalWarning|trace-warnings|Console Ninja|Files in the public directory|Instead of \/public\/|●■▲|^  Slidev|^  theme |^  css engine|^  entry |^  public slide show|^  presenter mode|^  slides overview|^  export slides|^  remote control|^  shortcuts|^  VITE v|^  ➜  Local:|^  ➜  Network:|^  ➜  press h \+/i
+  /ExperimentalWarning|trace-warnings|Console Ninja|Files in the public directory|Instead of \/public\/|●■▲|^  Slidev|^  theme |^  css engine|^  entry |^  public slide show|^  presenter mode|^  slides overview|^  export slides|^  remote control|^  shortcuts|^  VITE v|^  ➜  Local:|^  ➜  Network:|^  ➜  press h \+/i
 
 const CHILD_ENV = {
   ...process.env,
