@@ -1,0 +1,36 @@
+decks/clickjacking/slides/07-finish.md
+  s_ccc2f85e80421c::t_41dab2945a951e 3-4,7-14,17-24,43-46,48-62,77-146,148-156,158-170,174-178
+  s_0cc2b86a76e371::t_2b20f472d0e224 171-173,179
+  s_ccc2f85e80421c::t_15358191fdd11e 16,25-39
+  h_34454149dac528 42,147,157
+  s_ccc2f85e80421c::t_4f370ca8c619a8 63-76
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "c1d283797c67fa4d57674bd6a587952b75d9d602",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_0cc2b86a76e371": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "0929db93-d720-49be-8fb5-4b30fb103981",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    },
+    "s_ccc2f85e80421c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a80b0526-0b0e-4c27-a453-405ef730b7e6",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
