@@ -13,22 +13,27 @@ import { spawn } from 'node:child_process'
 import net from 'node:net'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { accent, bold, cyan, dim, green, orange, red, underline } from './cli-colors.mjs'
 import { readDecks } from './site.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const HOME_PORT = Number(process.env.PORT ?? 3030)
 const SLIDEV_PORT = Number(process.env.SLIDEV_PORT ?? 3031)
 
-const slug = process.argv[2] ?? process.env.DECK ?? readDecks()[0]?.slug
+const decks = readDecks()
+const slug = process.argv[2] ?? process.env.DECK ?? decks[0]?.slug
 
 if (!slug) {
-  console.error('No decks found in decks/. Run pnpm new <slug> first.')
+  console.error(red('No decks found in decks/. Run pnpm new <slug> first.'))
   process.exit(1)
 }
 
-const decks = readDecks()
-if (!decks.some((deck) => deck.slug === slug)) {
-  console.error(`Unknown deck "${slug}". Available: ${decks.map((d) => d.slug).join(', ') || '(none)'}`)
+const activeDeck = decks.find((deck) => deck.slug === slug)
+
+if (!activeDeck) {
+  console.error(
+    red(`Unknown deck "${slug}". Available: ${decks.map((d) => d.slug).join(', ') || '(none)'}`),
+  )
   process.exit(1)
 }
 
@@ -114,25 +119,30 @@ async function waitForPort(port, timeoutMs = 120_000) {
   throw new Error(`Timed out waiting for port ${port}`)
 }
 
+function link(url) {
+  return underline(cyan(url))
+}
+
 function printBanner() {
   const base = `http://localhost:${HOME_PORT}`
-  const deck = `${base}/${slug}`
+  const deckUrl = `${base}/${slug}`
+  const paintSlug = accent(activeDeck.accent ?? '#06b6d4')
 
   console.log('')
-  console.log(`  presentations dev — ${slug}`)
+  console.log(`  ${bold('presentations')} ${dim('dev —')} ${paintSlug(slug)}`)
   console.log('')
-  console.log(`  Landing     ${base}/`)
-  console.log(`  Deck        ${deck}/`)
-  console.log(`  Presenter   ${deck}/presenter/`)
+  console.log(`  ${dim('Landing')}     ${link(`${base}/`)}`)
+  console.log(`  ${dim('Deck')}        ${link(`${deckUrl}/`)}`)
+  console.log(`  ${dim('Presenter')}   ${link(`${deckUrl}/presenter/`)}`)
   console.log('')
-  console.log('  Ctrl+C to stop')
+  console.log(`  ${orange('Ctrl+C to stop')}`)
   console.log('')
 }
 
 process.on('SIGINT', () => shutdown(0))
 process.on('SIGTERM', () => shutdown(0))
 
-console.log(`\n  Starting ${slug}…`)
+console.log(`\n  ${green('●')} ${dim('Starting')} ${accent(activeDeck.accent ?? '#06b6d4')(slug)}${dim('…')}`)
 
 const deck = spawnQuiet(
   'deck',
