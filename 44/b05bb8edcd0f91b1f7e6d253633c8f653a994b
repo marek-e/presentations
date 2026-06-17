@@ -1,0 +1,26 @@
+scripts/dev.mjs
+  s_5e39551df22a18::t_ca601d4b549f14 122-125,128-129,132,134-136
+  s_5e39551df22a18::t_46cb10719e6d8c 145
+  s_5e39551df22a18::t_66d3093c6e726a 24
+  h_34454149dac528 16,138
+  s_5e39551df22a18::t_fb3aa70255dc72 23,27,31-36
+scripts/cli-colors.mjs
+  s_5e39551df22a18::t_3bd2167b2ea1bb 1-13,16-30
+  h_34454149dac528 14-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "44b05bb8edcd0f91b1f7e6d253633c8f653a994b",
+  "prompts": {},
+  "sessions": {
+    "s_5e39551df22a18": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "58033913-30c4-42c8-a50f-d6c5197a10e8",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
