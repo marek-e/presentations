@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Analytics } from '@vercel/analytics/vue'
 import { decks } from 'virtual:decks'
 
 const REPO_URL = 'https://github.com/marek-e/presentations'
@@ -17,6 +18,7 @@ function formatDate(date?: string): string {
 </script>
 
 <template>
+  <Analytics />
   <a
     class="github-link"
     :href="REPO_URL"
