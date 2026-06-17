@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { SpeedInsights } from '@vercel/speed-insights/vue'
 import { Analytics } from '@vercel/analytics/vue'
 import { decks } from 'virtual:decks'
 
@@ -87,6 +88,8 @@ function formatDate(date?: string): string {
       — slides are open, opinions are mine.
     </p>
   </footer>
+
+  <SpeedInsights />
 </template>
 
 <style scoped>
