@@ -1,0 +1,39 @@
+decks/clickjacking/slides/05-variants-intro.md
+  s_57a88455ce8277::t_99714eea2414f1 155
+decks/clickjacking/slides/04-defenses.md
+  s_57a88455ce8277::t_c4be5a358bbf67 62-66
+  s_57a88455ce8277::t_cffe072b9dd8fe 154-155
+decks/clickjacking/slides/06-ext-cj.md
+  s_57a88455ce8277::t_b842d9b0ee86e7 86-87
+decks/clickjacking/slides/02-the-attack.md
+  s_57a88455ce8277::t_b6d6bba4e7240c 1203
+  s_57a88455ce8277::t_2d89f51582f66a 543-544
+  s_57a88455ce8277::t_3787abb0a991ae 293-294
+  s_57a88455ce8277::t_d78bfbe1802b8d 33-36
+  s_57a88455ce8277::t_6883ec666a8b1f 67-77
+  s_57a88455ce8277::t_a174572a804e13 925-926
+decks/clickjacking/slides/07-finish.md
+  s_57a88455ce8277::t_29ac411a843514 174-176
+  s_57a88455ce8277::t_bfbf7fe7e33856 20-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "11e591dbb14ba360e5e6d846e617e1de39700f36",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_57a88455ce8277": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "65182573-5c00-4e85-952b-2e937be8db8e",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
