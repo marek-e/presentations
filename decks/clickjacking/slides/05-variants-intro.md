@@ -152,6 +152,7 @@ zoom: 0.9
 <!--
 PRESENTER NOTE:
 Pivot slide — classic clickjacking is largely solved by headers. Attackers moved to surfaces headers don't cover.
+This is why bug bounty programs often list clickjacking as out of scope or no-reward: the iframe variant is easy to defend and low-impact when defended. The deck's reason to exist past this slide is DCJ and extension clickjacking — attacks that bypass the "just ship frame-ancestors" playbook.
 [click] DoubleClickjacking: popup + window.opener + mousedown/mouseup gap. No iframe.
 [click] Extension clickjacking: target is password manager UI injected into the page DOM.
 Set expectations: next ~15 min is the scary modern stuff.

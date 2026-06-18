@@ -83,6 +83,8 @@ Reframe the threat: the victim site isn't in a frame — your password manager's
 Attacker page runs JS that sets opacity:0 on the extension popup, overlays a cookie banner.
 [click] No iframe, no CORS, no frame headers — any page with a malicious third-party script can do this.
 One line of JS on a compromised ad network = game over for autofill.
+
+This demo is the purest form of the intrusive-element trick: a real cookie consent banner is the bait. Users click "Accept All" on every site — here that reflex fills credentials into a hidden autofill popup instead.
 -->
 
 ---

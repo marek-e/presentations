@@ -50,8 +50,6 @@ http.headers().frameOptions().deny();
 
 **Still recommended** as defense-in-depth alongside CSP. Universally understood by browsers, zero-cost to add.
 
-<Callout variant="warning" class="mt-4">Missing on <strong>~63%</strong> of production sites — <a href="https://almanac.httparchive.org/en/2024/security" target="_blank">HTTP Archive Web Almanac 2024</a></Callout>
-
 </div>
 
 </div>
@@ -61,7 +59,11 @@ PRESENTER NOTE:
 XFO is the 2009 answer — still works, still worth shipping. DENY is the default recommendation.
 Show the server snippets briefly; audience may only need their stack's one-liner.
 [click] Limitations: ALLOW-FROM is dead in Chrome/Safari, SAMEORIGIN still allows same-origin XSS to frame you.
-Defense-in-depth: set it even if you also ship CSP. ~63% of sites still missing it per HTTP Archive.
+Defense-in-depth: set it even if you also ship CSP.
+
+CONTEXT (optional — good for security-minded audiences):
+Classic iframe clickjacking is largely a solved problem today. XFO + frame-ancestors are cheap, well-understood, and shipped by every major app that handles sensitive actions (GitHub, Google, banks). Many bug bounty programs list clickjacking as out of scope or accept it without reward — not because the attack is fake, but because the baseline defense is trivial and impact is low when headers are present.
+Don't cite "missing header %" stats from crawlers like HTTP Archive — they count every site on the web (blogs, landing pages, CDNs), not the apps where clickjacking actually matters. The real gap is legacy/internal apps and misconfigured embed flows, not "89% of production sites."
 -->
 
 ---
@@ -98,8 +100,6 @@ Content-Security-Policy: frame-ancestors
   https://trusted-partner.com
   https://embed.example.com;
 ```
-
-<Callout variant="warning" class="mt-4">Missing on <strong>~89%</strong> of production sites — <a href="https://almanac.httparchive.org/en/2024/security" target="_blank">HTTP Archive Web Almanac 2024</a></Callout>
 
 </div>
 
@@ -151,7 +151,8 @@ PRESENTER NOTE:
 If audience is fuzzy on CSP, pop the InfoPopover — most people know script-src for XSS; frame-ancestors is the clickjacking slice.
 frame-ancestors is strictly better than XFO: multi-origin allowlist, wildcards, report-only mode.
 [click] Best practice table: set BOTH. If they conflict, CSP wins in modern browsers.
-~89% missing frame-ancestors — worse coverage than XFO. Low-hanging fruit for any security audit.
+
+If someone pushes back ("is clickjacking even exploitable in 2026?"): yes, but mostly on apps that never shipped these headers — internal tools, acquired codebases, pages that need iframe embeds but misconfigure the allowlist. For a greenfield app, this is a 5-minute fix with near-zero ongoing cost. The interesting attack surface moved elsewhere (see variants section).
 -->
 
 ---

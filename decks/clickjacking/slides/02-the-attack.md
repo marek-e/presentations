@@ -30,6 +30,10 @@
   </div>
 </div>
 
+<Callout v-click variant="note" class="mt-5">
+  <strong>Why users click:</strong> Every site trains us to dismiss cookie banners, newsletter popups, push prompts, and CAPTCHA gates — often 1–3 clicks before we reach content. The lure mimics those same intrusive elements.
+</Callout>
+
 <style>
 .cj-stagger .cj-stagger-item {
   opacity: 0;
@@ -60,6 +64,17 @@ PRESENTER NOTE:
 "Jacking" = hi-jack — intercepting intent mid-click. UI redressing is the formal name.
 [click] Reveal the definition: victim clicks what they *think* they see, not what's actually under the cursor.
 [click] Walk the three cards left→right: innocent lure → invisible iframe → silent damage.
+[click] Intrusive web elements — the psychological hook:
+
+While browsing, users constantly hit elements that block content until they click:
+- Cookie consent banners — 1 click (accept/decline)
+- Newsletter popups, login dialogs — 1 click (close)
+- Web push notifications — 1 click (allow/block)
+- Cloudflare / CAPTCHA — 1 click ("Verify you are human"); 2+ if verification fails, 4+ if a puzzle appears
+
+1–3 clicks before reaching real content is normal. Users *expect* to interact with these. Clickjacking exploits that trained reflex: the lure is a fake intrusive element — "Accept cookies", "Dismiss", "Verify you're human" — positioned over the real target button.
+
+This is why prize/giveaway lures work, but cookie-banner and CAPTCHA clones work even better: zero suspicion.
 -->
 
 ---
@@ -275,6 +290,8 @@ Step through the code block clicks: CSS overlay → lure button → iframe with 
 [click:4] Right column: opacity/z-index/position — the whole attack is ~5 lines of CSS.
 [click:5] Email lure is the delivery vector — phishing link lands on attacker.com, not bank.com.
 Optional: mention opacity 0.001 instead of 0 so some browsers still register pointer events.
+
+The lure doesn't have to be a giveaway — fake cookie banners and "Verify you are human" buttons work better because users click those dozens of times per week without thinking. Tie back to the intrusive-elements callout on the intro slide.
 -->
 
 ---
@@ -523,6 +540,8 @@ Open with the full-screen teaser — audience only sees the iPhone prize page.
 [click] Reveal the demo: start opacity at 0, drag slider to show the bank iframe underneath.
 Key message: one click on "Claim Prize" = one confirmed bank transfer.
 [click] Actually click the button (or let audience click) to trigger the bank alert overlay.
+
+This demo uses a giveaway lure for drama; in the wild, cookie-banner and CAPTCHA clones convert better because users click those without hesitation. Mention the intrusive-elements framing from the intro if someone asks "who would fall for this?"
 -->
 
 ---
@@ -903,6 +922,8 @@ PRESENTER NOTE:
 Real historical vector — GitHub had no XFO before ~2013; star-bombing repos was trivial.
 Start opacity at 0, drag slider to reveal the Star button under the fake badge prompt.
 [click] Click "Claim My Badge" to star octocat/Hello-World. Today GitHub blocks framing; self-hosted GitLab/Gitea still don't.
+
+The popup chrome (ad-header strip) mimics an intrusive element — same pattern as cookie banners and newsletter modals users dismiss reflexively. Point that out if the room looks skeptical that anyone would click.
 -->
 
 ---
@@ -1179,5 +1200,6 @@ PRESENTER NOTE:
 GET params that pre-fill forms are a gift to attackers — victim never even *initiated* the transfer flow.
 Attacker iframes bank.com/transfer?amount=500&to=attacker and only needs one click on Submit.
 [click] Chained clicks: two fake buttons, two real actions (Accept ToS → pay $500). Each click looks innocent in isolation.
+"Dismiss banner" / "Confirm free trial" are deliberate intrusive-element clones — users have muscle memory for clicking through these. Chaining them makes each individual click feel routine.
 Bridge to defenses: even with CSRF tokens, the victim is clicking a real authenticated button.
 -->
