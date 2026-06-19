@@ -21,7 +21,7 @@ zoom: 0.92
   is cheap, well-understood, and table stakes for any app handling sensitive actions.
 </p>
 
-<div class="fin-grid mt-8" v-click>
+<div class="fin-grid mt-8">
 <a class="fin-resource" href="https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html" target="_blank" rel="noopener noreferrer">
 <span class="fin-resource-label">OWASP</span>
 <span class="fin-resource-desc">Clickjacking Defense Cheat Sheet</span>
@@ -39,7 +39,7 @@ zoom: 0.92
 </a>
 </div>
 
-<p class="fin-slides" v-click>
+<p class="fin-slides">
   Slides &amp; demos →
   <a href="https://presentations.melmayan.fr/clickjacking/" target="_blank" rel="noopener noreferrer">presentations.melmayan.fr/clickjacking</a>
 </p>
@@ -144,7 +144,7 @@ zoom: 0.92
 }
 
 .fin-slides {
-  margin: 1rem auto 0;
+  margin: 2rem auto 0;
   font-size: 0.92em;
   color: var(--mm-text-muted);
   animation: fin-rise 380ms cubic-bezier(0.22, 1, 0.36, 1) both;
