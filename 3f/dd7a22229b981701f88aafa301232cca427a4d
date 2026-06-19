@@ -1,0 +1,84 @@
+decks/clickjacking/slides/05-variants-intro.md
+  h_34454149dac528 20,41,154-155
+templates/deck/style.css
+  h_34454149dac528 5
+decks/clickjacking/slides/04-defenses.md
+  h_34454149dac528 59,64-66,76,80,151,155,211,227,290,292,411,413
+apps/home/src/style.css
+  h_34454149dac528 21
+decks/clickjacking/components/DblClickDemo.vue
+  h_34454149dac528 115,171
+scripts/generate-home-icons.mjs
+  h_34454149dac528 26
+packages/slidev-addon-melmayan/README.md
+  h_34454149dac528 26-29,37
+decks/clickjacking/slides/01-cover.md
+  h_34454149dac528 31
+decks/clickjacking/components/ClickjackDemo.vue
+  h_34454149dac528 61,63
+decks/clickjacking/style.css
+  h_34454149dac528 5
+apps/home/public/404.html
+  h_34454149dac528 6,156
+package.json
+  h_34454149dac528 3
+decks/clickjacking/public/victims/dcj-victim.html
+  h_34454149dac528 6,146,336,339
+decks/clickjacking/public/callback/index.html
+  h_34454149dac528 7,73
+scripts/site.mjs
+  h_34454149dac528 9,12
+packages/slidev-addon-melmayan/styles/tokens.css
+  h_34454149dac528 3,7-16,18,24,30,38,45,56
+README.md
+  h_34454149dac528 1,3,12,14,27,51,85
+apps/home/index.html
+  h_34454149dac528 6,9,14,16,19,25,27,30
+decks/clickjacking/public/victims/bank.html
+  h_34454149dac528 6,144
+decks/clickjacking/slides/07-finish.md
+  h_34454149dac528 20,174,176,178
+decks/clickjacking/slides/02-the-attack.md
+  h_34454149dac528 34,64,67,70-73,75,290-291,294,539,799,801,845,871,873-874,884,888,892,894,922,926,1011,1014,1033,1067,1163,1200,1203
+AGENTS.md
+  h_34454149dac528 7-15,32
+decks/clickjacking/public/victims/ext-clickjack-demo.html
+  h_34454149dac528 6,45,102,273,275,283,292
+apps/home/public/site.webmanifest
+  h_34454149dac528 2,4
+scripts/deck-meta.mjs
+  h_34454149dac528 10,32,92
+scripts/run-slidev.mjs
+  h_34454149dac528 37
+scripts/dev.mjs
+  h_34454149dac528 132
+decks/clickjacking/public/victims/github-star.html
+  h_34454149dac528 6
+.agents/skills/deck-design/examples.md
+  h_34454149dac528 5,43,81,104
+apps/home/src/App.vue
+  h_34454149dac528 51,88
+decks/clickjacking/vite.config.ts
+  h_34454149dac528 9
+decks/clickjacking/slides.md
+  h_34454149dac528 111
+decks/clickjacking/slides/05-dcj.md
+  h_34454149dac528 1,52,62,71,78,95,99,106,110,147,194,196,203,214,297,300,302,323,329,365-367,388
+decks/clickjacking/public/victims/dcj.css
+  h_34454149dac528 236
+decks/clickjacking/public/victims/framebusting-victim.html
+  h_34454149dac528 50,69,77,79
+.agents/skills/deck-design/SKILL.md
+  h_34454149dac528 8,15,20,40,53,60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "3fdd7a22229b981701f88aafa301232cca427a4d",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
