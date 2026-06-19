@@ -1,0 +1,14 @@
+decks/clickjacking/slides/07-finish.md
+  h_34454149dac528 147
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "8820ada5de64d7443fbab1df47e41fc86523369f",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
