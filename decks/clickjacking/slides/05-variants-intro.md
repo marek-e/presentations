@@ -17,7 +17,7 @@ zoom: 0.9
 
 <p class="av-lead">
   Classic clickjacking dies when you ship <code>X-Frame-Options</code> and <code>frame-ancestors</code>.
-  Attackers didn't retire — they moved to layers your headers never see.
+  Attackers didn't retire - they moved to layers your headers never see.
 </p>
 
 <div class="av-grid mt-8">
@@ -38,7 +38,7 @@ zoom: 0.9
     <div class="av-card-icon" aria-hidden="true">🧩</div>
     <div class="av-card-title">Extension Clickjacking</div>
     <p class="av-card-body">
-      No victim site in a frame. The target is <strong>your password manager's UI</strong> —
+      No victim site in a frame. The target is <strong>your password manager's UI</strong> -
       injected into the page DOM, hidden with one line of CSS.
     </p>
     <div class="av-card-hook">"Accept all cookies" → credentials gone.</div>
@@ -151,8 +151,8 @@ zoom: 0.9
 
 <!--
 PRESENTER NOTE:
-Pivot slide — classic clickjacking is largely solved by headers. Attackers moved to surfaces headers don't cover.
-This is why bug bounty programs often list clickjacking as out of scope or no-reward: the iframe variant is easy to defend and low-impact when defended. The deck's reason to exist past this slide is DCJ and extension clickjacking — attacks that bypass the "just ship frame-ancestors" playbook.
+Pivot slide - classic clickjacking is largely solved by headers. Attackers moved to surfaces headers don't cover.
+This is why bug bounty programs often list clickjacking as out of scope or no-reward: the iframe variant is easy to defend and low-impact when defended. The deck's reason to exist past this slide is DCJ and extension clickjacking - attacks that bypass the "just ship frame-ancestors" playbook.
 [click] DoubleClickjacking: popup + window.opener + mousedown/mouseup gap. No iframe.
 [click] Extension clickjacking: target is password manager UI injected into the page DOM.
 Set expectations: next ~15 min is the scary modern stuff.

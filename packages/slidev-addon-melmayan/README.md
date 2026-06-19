@@ -23,10 +23,10 @@ addons:
 
 Auto-imported in any slide once the addon is enabled:
 
-- `<Callout variant="info|note|warning|escalation|success|error|gray|purple">` — bordered callout box with icon
-- `<AgendaItem n="1" demo>` — agenda row with number badge and optional DEMO chip
-- `<InfoPopover title="..." trigger="?">` — floating toggleable popover pinned to a corner
-- `<OffsetCard label="..." title="..." accent="blue|red|...">` — card with hard offset shadow
+- `<Callout variant="info|note|warning|escalation|success|error|gray|purple">` - bordered callout box with icon
+- `<AgendaItem n="1" demo>` - agenda row with number badge and optional DEMO chip
+- `<InfoPopover title="..." trigger="?">` - floating toggleable popover pinned to a corner
+- `<OffsetCard label="..." title="..." accent="blue|red|...">` - card with hard offset shadow
 
 ## Styles
 
@@ -34,4 +34,4 @@ Auto-imported in any slide once the addon is enabled:
 
 ## Navigation
 
-`custom-nav-controls.vue` adds a home icon to Slidev's bottom toolbar (via the built-in `CustomNavControls` slot). It links to `/` — the landing page in production builds.
+`custom-nav-controls.vue` adds a home icon to Slidev's bottom toolbar (via the built-in `CustomNavControls` slot). It links to `/` - the landing page in production builds.

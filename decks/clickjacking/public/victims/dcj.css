@@ -233,7 +233,7 @@ body.real-mode .cf-meta-row {
   margin-bottom: 24px;
 }
 
-/* spacer — #verify-btn is positioned over this via JS (preview) or fixed 50vh (live demo) */
+/* spacer - #verify-btn is positioned over this via JS (preview) or fixed 50vh (live demo) */
 .btn-slot { height: 56px; }
 
 .checking-row {

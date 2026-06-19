@@ -7,7 +7,7 @@ import { SITE, deckUrl } from './site.mjs'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DECKS_DIR = path.join(ROOT, 'decks')
 
-/** Headmatter keys derived from deck.json — must not appear in slides.md. */
+/** Headmatter keys derived from deck.json - must not appear in slides.md. */
 export const DERIVED_HEADMATTER_KEYS = ['title', 'author', 'info', 'seoMeta']
 
 const FRONTMATTER_RE = /^---\r?\n([\s\S]*?)\r?\n---/
@@ -29,7 +29,7 @@ export function deckDisplayTitle(deck) {
 
 export function deckInfo(deck) {
   if (deck.description) return deck.description
-  return `${deck.title} — a talk by ${SITE.author}.`
+  return `${deck.title} - a talk by ${SITE.author}.`
 }
 
 export function deckSeoMeta(slug, deck) {
@@ -89,7 +89,7 @@ export function validateDeckSlides(slug, root = ROOT) {
 
   if (duplicates.length) {
     throw new Error(
-      `decks/${slug}/slides.md defines ${duplicates.join(', ')} — edit deck.json instead (injected at build time)`,
+      `decks/${slug}/slides.md defines ${duplicates.join(', ')} - edit deck.json instead (injected at build time)`,
     )
   }
 }

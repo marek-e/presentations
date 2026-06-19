@@ -17,7 +17,7 @@ zoom: 0.92
 
 <p class="fin-lead">
   Classic clickjacking dies with two lines in your response headers.
-  DoubleClickjacking and extension tricks need more — but the baseline
+  DoubleClickjacking and extension tricks need more - but the baseline
   is cheap, well-understood, and table stakes for any app handling sensitive actions.
 </p>
 
@@ -171,10 +171,10 @@ zoom: 0.92
 
 <!--
 PRESENTER NOTE:
-Land the plane: frame-ancestors + XFO is the cheap win for classic clickjacking. If your app handles auth or sensitive actions and lacks these headers, fix it tonight — but don't oversell the urgency: this is a solved class of bug for anyone paying attention.
+Land the plane: frame-ancestors + XFO is the cheap win for classic clickjacking. If your app handles auth or sensitive actions and lacks these headers, fix it tonight - but don't oversell the urgency: this is a solved class of bug for anyone paying attention.
 Acknowledge DCJ and extension clickjacking need more than headers; that's where the deck's real "2026" value lives.
-Optional framing for bug bounty / AppSec folks: many programs deprioritize or exclude classic clickjacking because defenses are mature and impact is low when headers are present. Fair tradeoff — focus bounty budget on variants and on apps that genuinely need embed flows but misconfigure them.
+Optional framing for bug bounty / AppSec folks: many programs deprioritize or exclude classic clickjacking because defenses are mature and impact is low when headers are present. Fair tradeoff - focus bounty budget on variants and on apps that genuinely need embed flows but misconfigure them.
 [click] OWASP cheat sheet for copy-paste configs; securityheaders.com to scan their own employer site tonight; MDN for the directive reference.
-[click] Slides URL — demos (bank, GitHub iframe, DCJ OAuth, extension cookie banner) all work from the deployed deck.
+[click] Slides URL - demos (bank, GitHub iframe, DCJ OAuth, extension cookie banner) all work from the deployed deck.
 Q&A buffer. If someone asks about CSRF, jump back to the hidden CSRF slide in defenses.
 -->

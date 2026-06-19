@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BankPortal — Dashboard</title>
+  <title>BankPortal - Dashboard</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -42,7 +42,7 @@
     .card-value { font-size: 1.5em; font-weight: 800; color: #1e293b; margin-top: 4px; }
     .card-sub   { font-size: 0.72em; color: #94a3b8; margin-top: 2px; }
 
-    /* ── Password manager popup (HIDDEN — the actual attack target) ── */
+    /* ── Password manager popup (HIDDEN - the actual attack target) ── */
     #pm-popup {
       position: fixed;
       bottom: 66px;
@@ -99,7 +99,7 @@
       cursor: pointer;
     }
 
-    /* ── Cookie consent banner (VISIBLE — the bait) ─────── */
+    /* ── Cookie consent banner (VISIBLE - the bait) ─────── */
     #cookie-banner {
       position: fixed;
       bottom: 0;
@@ -270,9 +270,9 @@
     </div>
   </main>
 
-  <!-- PASSWORD MANAGER POPUP — hidden (opacity:0), the actual attack target -->
+  <!-- PASSWORD MANAGER POPUP - hidden (opacity:0), the actual attack target -->
   <div id="pm-popup" aria-hidden="true">
-    <div class="pm-header">🔑 KeyPass — Saved login found</div>
+    <div class="pm-header">🔑 KeyPass - Saved login found</div>
     <div class="pm-entry">
       <div class="pm-field">👤 alice@corp.com</div>
       <div class="pm-field">🔒 ••••••••••••</div>
@@ -280,7 +280,7 @@
     <button id="pm-autofill-btn">Autofill credentials</button>
   </div>
 
-  <!-- COOKIE BANNER — visible, positioned so "Accept All" overlaps pm-popup area -->
+  <!-- COOKIE BANNER - visible, positioned so "Accept All" overlaps pm-popup area -->
   <div id="cookie-banner" role="complementary" aria-label="Cookie consent">
     <span class="cookie-text">🍪 We use cookies to personalize content and analyze our traffic. By clicking "Accept All" you agree to our cookie policy.</span>
     <div class="cookie-btns">
@@ -289,7 +289,7 @@
     </div>
   </div>
 
-  <!-- DAMAGE REVEAL — shown after the "click" -->
+  <!-- DAMAGE REVEAL - shown after the "click" -->
   <div id="damage" role="alert">
     <div class="dmg-toast">
       <div class="dmg-dot"></div>

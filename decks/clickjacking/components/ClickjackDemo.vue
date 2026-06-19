@@ -58,9 +58,9 @@ const attackerBgStyle = computed(() =>
 
 const statusLabel = computed(() => {
   if (revealOpacity.value === 0)
-    return "⚠️ Attack in progress — victim iframe is invisible";
+    return "⚠️ Attack in progress - victim iframe is invisible";
   if (revealOpacity.value === 100)
-    return "✅ Fully revealed — this is what you're really clicking";
+    return "✅ Fully revealed - this is what you're really clicking";
   return `Partially revealed (${revealOpacity.value}%)`;
 });
 </script>

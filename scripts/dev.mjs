@@ -129,7 +129,7 @@ function printBanner() {
   const paintSlug = accent(activeDeck.accent ?? '#06b6d4')
 
   console.log('')
-  console.log(`  ${bold('presentations')} ${dim('dev —')} ${paintSlug(slug)}`)
+  console.log(`  ${bold('presentations')} ${dim('dev -')} ${paintSlug(slug)}`)
   console.log('')
   console.log(`  ${dim('Landing')}     ${link(`${base}/`)}`)
   console.log(`  ${dim('Deck')}        ${link(`${deckUrl}/`)}`)

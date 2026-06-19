@@ -1,4 +1,4 @@
-# DoubleClickjacking — No iframe Required
+# DoubleClickjacking - No iframe Required
 
 <span class="dcj-badge">2024 · Paulos Yibelo</span> <a href="https://www.evil.blog/2024/12/doubleclickjacking-what.html" target="_blank" class="dcj-link">evil.blog ↗</a>
 
@@ -49,7 +49,7 @@
 
 <!--
 PRESENTER NOTE:
-Paulos Yibelo, Dec 2024 — fresh variant that bypasses everything we just taught.
+Paulos Yibelo, Dec 2024 - fresh variant that bypasses everything we just taught.
 Emphasize: X-Frame-Options DENY on every page does nothing here. Zero iframes.
 Three cards: classic (blocked by headers) vs DCJ (popup/opener) vs what's bypassed (XFO, CSP, SameSite).
 Link evil.blog for curious audience members.
@@ -59,7 +59,7 @@ Link evil.blog for curious audience members.
 class: px-14 py-4
 ---
 
-# How It Works — The Timing Trick
+# How It Works - The Timing Trick
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -68,14 +68,14 @@ class: px-14 py-4
     <div class="dcj-step-num">01</div>
     <div>
       <div class="dcj-step-title">Attacker serves a popup</div>
-      <div class="dcj-step-desc">A decoy popup opens asking the victim to <strong>"double-click to verify you're human."</strong> The popup holds <code>window.opener</code> — a reference back to the parent tab.</div>
+      <div class="dcj-step-desc">A decoy popup opens asking the victim to <strong>"double-click to verify you're human."</strong> The popup holds <code>window.opener</code> - a reference back to the parent tab.</div>
     </div>
   </div>
 
   <div class="dcj-step">
     <div class="dcj-step-num">02</div>
     <div>
-      <div class="dcj-step-title"><code>mousedown</code> fires — parent tab swaps silently</div>
+      <div class="dcj-step-title"><code>mousedown</code> fires - parent tab swaps silently</div>
       <div class="dcj-step-desc">On the <em>first press</em> of the double-click, <code>mousedown</code> fires immediately. The popup redirects the parent tab to a real OAuth consent screen via <code>window.opener.location</code>.</div>
     </div>
   </div>
@@ -92,22 +92,22 @@ class: px-14 py-4
 <div v-click>
 
 ```js
-// popup.html — the "double-click to verify" decoy
+// popup.html - the "double-click to verify" decoy
 document.querySelector('.verify-btn')
   .addEventListener('mousedown', () => {
 
-    // Fires on first press — before mouseup completes
+    // Fires on first press - before mouseup completes
     window.opener.location =
       'https://slack.com/oauth/v2/authorize' +
       '?client_id=HACKER_APP' +
       '&scope=chat:write,users:read,channels:read'
 
     // mouseup now fires on the OAuth "Allow" button
-    // in the parent tab — authorizing the attacker's app
+    // in the parent tab - authorizing the attacker's app
   })
 ```
 
-<Callout variant="note" noIcon class="mt-3">The entire swap happens in the ~100 ms gap between press and release — imperceptible to humans, reliable for scripts.</Callout>
+<Callout variant="note" noIcon class="mt-3">The entire swap happens in the ~100 ms gap between press and release - imperceptible to humans, reliable for scripts.</Callout>
 
 </div>
 
@@ -144,7 +144,7 @@ PRESENTER NOTE:
 The whole attack is a race against human perception. Walk the three steps slowly.
 Step 2 is the magic: mousedown on first click of double-click fires BEFORE mouseup.
 Popup uses window.opener.location to swap the parent tab to OAuth consent.
-[click] Show the code — mousedown handler redirects parent; mouseup completes on "Allow".
+[click] Show the code - mousedown handler redirects parent; mouseup completes on "Allow".
 ~100ms gap is invisible to humans but plenty for navigation + layout.
 -->
 
@@ -191,16 +191,16 @@ class: p-2 py-4
 
 <!--
 PRESENTER NOTE:
-Visual aid — left: attack flow diagram, right: recorded demo (autoplays).
+Visual aid - left: attack flow diagram, right: recorded demo (autoplays).
 Let the video run ~10s if live demo might fail. Diagram is good for screenshots/social.
-Don't narrate over the video — let it show the parent tab swap, then move on.
+Don't narrate over the video - let it show the parent tab swap, then move on.
 -->
 
 ---
 layout: center
 ---
 
-## Demo — OAuth Hijack via Double-Click
+## Demo - OAuth Hijack via Double-Click
 
 <div class="dcj-demo-btns">
   <button class="dcj-demo-btn" onclick="window.open('/clickjacking/victims/dcj-victim.html','_blank','popup=yes,width=900,height=580,left=150,top=80')">
@@ -211,7 +211,7 @@ layout: center
   </button>
 </div>
 
-<p class="dcj-demo-note">Live demo uses a fake Slack consent screen. <strong>Real Target</strong> hits the real GitHub OAuth consent page. Don't click Authorize on stage — revoke at the link below if you do.</p>
+<p class="dcj-demo-note">Live demo uses a fake Slack consent screen. <strong>Real Target</strong> hits the real GitHub OAuth consent page. Don't click Authorize on stage - revoke at the link below if you do.</p>
 
 <div v-click class="dcj-revoke-wrap">
   <a
@@ -294,12 +294,12 @@ layout: center
 PRESENTER NOTE:
 Ask the audience: "What do you think you're double-clicking?"
 
-Launch Demo — reliable stage demo. Double-click the fake Turnstile button;
+Launch Demo - reliable stage demo. Double-click the fake Turnstile button;
 popup closes on mousedown, mouseup hits the fake Slack Allow button.
 
-Real Target — live Cloudflare Turnstile + window.opener.location swap to GitHub
+Real Target - live Cloudflare Turnstile + window.opener.location swap to GitHub
 OAuth. Needs network. Double-click "Double-click to verify"
-below the widget. Parent shows real GitHub login or consent — do NOT click
+below the widget. Parent shows real GitHub login or consent - do NOT click
 Authorize. Use the video on the previous slide for a full hit.
 
 [click] Show revoke link if anyone accidentally authorizes on stage.
@@ -320,13 +320,13 @@ zoom: 0.78
 Disable critical buttons until a real user gesture is detected:
 
 ```js
-// Only applies to pointer devices — touch can't do DCJ
+// Only applies to pointer devices - touch can't do DCJ
 if (window.matchMedia("(hover: hover)").matches) {
   const buttons = document.querySelectorAll(
     'form button, form input[type="submit"]'
   );
 
-  // Disabled on load — blocks the phantom double-click 🛑
+  // Disabled on load - blocks the phantom double-click 🛑
   buttons.forEach(btn => (btn.disabled = true));
 
   function enableButtons() {
@@ -362,9 +362,9 @@ The pattern mirrors the 2008 clickjacking story. JS patches first, then browser-
 <strong>Where else does this pattern live?</strong> Anywhere the <em>terminating</em> event of a gesture fires the action on whatever page is underneath:
 
 <ul class="dcj-similar-list">
-  <li><strong>Mobile double-tap</strong> — <code>touchstart</code> → swap → <code>touchend</code> synthesizes the click on whatever's under the finger when released.</li>
-  <li><strong>Cross-origin drag-and-drop</strong> — <code>dragstart</code> → swap → <code>drop</code> lands a file or text payload on a swapped drop zone.</li>
-  <li><strong>Spacebar on a focused button</strong> — Space fires <code>click</code> only on <code>keyup</code>, so <code>keydown</code> → swap → <code>keyup</code> activates whatever button is focused on the new page.</li>
+  <li><strong>Mobile double-tap</strong> - <code>touchstart</code> → swap → <code>touchend</code> synthesizes the click on whatever's under the finger when released.</li>
+  <li><strong>Cross-origin drag-and-drop</strong> - <code>dragstart</code> → swap → <code>drop</code> lands a file or text payload on a swapped drop zone.</li>
+  <li><strong>Spacebar on a focused button</strong> - Space fires <code>click</code> only on <code>keyup</code>, so <code>keydown</code> → swap → <code>keyup</code> activates whatever button is focused on the new page.</li>
 </ul>
 
 </Callout>
@@ -385,7 +385,7 @@ The pattern mirrors the 2008 clickjacking story. JS patches first, then browser-
 
 <!--
 PRESENTER NOTE:
-No browser-standard fix yet — mirrors 2008 clickjacking before XFO existed.
+No browser-standard fix yet - mirrors 2008 clickjacking before XFO existed.
 Client-side patch: disable submit buttons until mousemove/keydown proves real user presence. Zero UX hit.
 [click] Similar gesture-splitting patterns: mobile double-tap, drag-and-drop, spacebar keyup on focused buttons.
 Long-term: spec proposals (Double-Click-Protection header, CSP for opener). Watch the standards space.

@@ -47,7 +47,7 @@
   </style>
 </head>
 <body>
-  <div class="nav">🏦 SecureBank — Transfer $500</div>
+  <div class="nav">🏦 SecureBank - Transfer $500</div>
 
   <div class="content">
     <div class="icon" id="icon">⏳</div>
@@ -66,7 +66,7 @@
 
     if (window.self === window.top) {
       icon.textContent = '✅';
-      label.textContent = 'Not framed — safe.';
+      label.textContent = 'Not framed - safe.';
       sublabel.textContent = 'Frame buster not triggered.';
     } else {
       try {
@@ -74,9 +74,9 @@
         // Navigation initiated (no sandbox blocking it)
         icon.textContent = '🚀';
         label.textContent = 'Escaping! Redirecting top window…';
-        sublabel.textContent = 'Frame buster worked — attack aborted.';
+        sublabel.textContent = 'Frame buster worked - attack aborted.';
       } catch (e) {
-        // Sandboxed — top navigation denied
+        // Sandboxed - top navigation denied
         document.body.classList.add('trapped');
         icon.textContent = '🚫';
         label.textContent = 'Frame buster blocked by sandbox!';

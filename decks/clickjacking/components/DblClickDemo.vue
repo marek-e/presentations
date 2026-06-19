@@ -112,7 +112,7 @@ function onAllowUp() {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.09);
 }
 
-/* No transition — instant swap so mouseup registers on the new button */
+/* No transition - instant swap so mouseup registers on the new button */
 .dcjd-on  { opacity: 1; pointer-events: auto;  z-index: 2; }
 .dcjd-off { opacity: 0; pointer-events: none;   z-index: 1; }
 
@@ -168,7 +168,7 @@ function onAllowUp() {
   border: 1px solid var(--mm-border);
 }
 
-/* Damage card — positioned to the right of the card */
+/* Damage card - positioned to the right of the card */
 .dcjd-damage {
   position: absolute;
   top: -16px;

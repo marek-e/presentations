@@ -56,14 +56,14 @@ http.headers().frameOptions().deny();
 
 <!--
 PRESENTER NOTE:
-XFO is the 2009 answer — still works, still worth shipping. DENY is the default recommendation.
+XFO is the 2009 answer - still works, still worth shipping. DENY is the default recommendation.
 Show the server snippets briefly; audience may only need their stack's one-liner.
 [click] Limitations: ALLOW-FROM is dead in Chrome/Safari, SAMEORIGIN still allows same-origin XSS to frame you.
 Defense-in-depth: set it even if you also ship CSP.
 
-CONTEXT (optional — good for security-minded audiences):
-Classic iframe clickjacking is largely a solved problem today. XFO + frame-ancestors are cheap, well-understood, and shipped by every major app that handles sensitive actions (GitHub, Google, banks). Many bug bounty programs list clickjacking as out of scope or accept it without reward — not because the attack is fake, but because the baseline defense is trivial and impact is low when headers are present.
-Don't cite "missing header %" stats from crawlers like HTTP Archive — they count every site on the web (blogs, landing pages, CDNs), not the apps where clickjacking actually matters. The real gap is legacy/internal apps and misconfigured embed flows, not "89% of production sites."
+CONTEXT (optional - good for security-minded audiences):
+Classic iframe clickjacking is largely a solved problem today. XFO + frame-ancestors are cheap, well-understood, and shipped by every major app that handles sensitive actions (GitHub, Google, banks). Many bug bounty programs list clickjacking as out of scope or accept it without reward - not because the attack is fake, but because the baseline defense is trivial and impact is low when headers are present.
+Don't cite "missing header %" stats from crawlers like HTTP Archive - they count every site on the web (blogs, landing pages, CDNs), not the apps where clickjacking actually matters. The real gap is legacy/internal apps and misconfigured embed flows, not "89% of production sites."
 -->
 
 ---
@@ -73,11 +73,11 @@ zoom: 0.9
 # Defense #2 - CSP `frame-ancestors`
 
 <InfoPopover title="What is CSP?" width="620px" x="4.5rem" y="5.5rem">
-  <p><strong>Content Security Policy</strong> is an HTTP response header that lets a server declare which sources are trusted for loading resources — scripts, styles, images, and frames.</p>
+  <p><strong>Content Security Policy</strong> is an HTTP response header that lets a server declare which sources are trusted for loading resources - scripts, styles, images, and frames.</p>
   <div class="ip-code">Content-Security-Policy: &lt;directive&gt; &lt;sources&gt;; &lt;directive&gt; &lt;sources&gt;;</div>
   <p style="margin-top:8px">Most common use: <strong>blocking XSS</strong> by restricting where scripts can load from:</p>
   <div class="ip-code">script-src 'self' https://cdn.example.com;</div>
-  <p style="margin-top:8px">This blocks inline scripts and untrusted origins — cutting off the most common XSS vectors.<br><br>
+  <p style="margin-top:8px">This blocks inline scripts and untrusted origins - cutting off the most common XSS vectors.<br><br>
   <code>frame-ancestors</code> is a separate directive controlling who can embed your page in an <code>&lt;iframe&gt;</code>.</p>
 </InfoPopover>
 
@@ -148,11 +148,11 @@ If they conflict, CSP `frame-ancestors` takes precedence in modern browsers.
 
 <!--
 PRESENTER NOTE:
-If audience is fuzzy on CSP, pop the InfoPopover — most people know script-src for XSS; frame-ancestors is the clickjacking slice.
+If audience is fuzzy on CSP, pop the InfoPopover - most people know script-src for XSS; frame-ancestors is the clickjacking slice.
 frame-ancestors is strictly better than XFO: multi-origin allowlist, wildcards, report-only mode.
 [click] Best practice table: set BOTH. If they conflict, CSP wins in modern browsers.
 
-If someone pushes back ("is clickjacking even exploitable in 2026?"): yes, but mostly on apps that never shipped these headers — internal tools, acquired codebases, pages that need iframe embeds but misconfigure the allowlist. For a greenfield app, this is a 5-minute fix with near-zero ongoing cost. The interesting attack surface moved elsewhere (see variants section).
+If someone pushes back ("is clickjacking even exploitable in 2026?"): yes, but mostly on apps that never shipped these headers - internal tools, acquired codebases, pages that need iframe embeds but misconfigure the allowlist. For a greenfield app, this is a 5-minute fix with near-zero ongoing cost. The interesting attack surface moved elsewhere (see variants section).
 -->
 
 ---
@@ -208,7 +208,7 @@ if (window !== top) {
 
 <!--
 PRESENTER NOTE:
-Historical context only — many legacy apps still have this in their codebase. Don't rely on it.
+Historical context only - many legacy apps still have this in their codebase. Don't rely on it.
 Classic pattern: if (top !== self) top.location = self.location.
 [click] sandbox bypass: omit allow-top-navigation and framebusting can't escape. Also onbeforeunload can block the redirect.
 Takeaway: delete framebusting scripts when you add headers; they're false comfort.
@@ -224,7 +224,7 @@ zoom: 0.9
   <img src="../public/github-csp.png" alt="GitHub response headers showing X-Frame-Options: deny and Content-Security-Policy frame-ancestors 'none'" class="ip-img" />
 </InfoPopover>
 
-<div class="dia-label">Trying to embed <code>github.com</code> in an iframe —> live, right now</div>
+<div class="dia-label">Trying to embed <code>github.com</code> in an iframe -> live, right now</div>
 
 <div class="dia-frame">
   <iframe src="https://github.com" style="width:100%;height:100%;border:none;display:block;"></iframe>
@@ -287,9 +287,9 @@ zoom: 0.9
 
 <!--
 PRESENTER NOTE:
-Live proof — this iframe should be blank/broken. GitHub sends X-Frame-Options: DENY + frame-ancestors 'none' on every response.
+Live proof - this iframe should be blank/broken. GitHub sends X-Frame-Options: DENY + frame-ancestors 'none' on every response.
 Open the InfoPopover to show real response headers from github.com (screenshot).
-If the iframe somehow loads in dev, mention browser extensions or cached exceptions — production blocks it.
+If the iframe somehow loads in dev, mention browser extensions or cached exceptions - production blocks it.
 -->
 
 ---
@@ -408,9 +408,9 @@ zoom: 0.9
 
 <!--
 PRESENTER NOTE:
-(Hidden slide — use if audience asks "isn't this just CSRF?")
+(Hidden slide - use if audience asks "isn't this just CSRF?")
 CSRF: no user click, hidden request. Clickjacking: real click on real UI in real session.
-CSRF tokens do NOT stop clickjacking — the token is legitimately present when the victim clicks.
+CSRF tokens do NOT stop clickjacking - the token is legitimately present when the victim clicks.
 [click] Side-by-side reveal, then the misconception callout: "we have CSRF tokens" ≠ safe from UI redressing.
 -->
 

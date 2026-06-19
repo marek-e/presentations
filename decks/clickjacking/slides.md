@@ -108,7 +108,7 @@ class: text-center
 
 <!--
 PRESENTER NOTE:
-Let the title animation breathe — advance once so the cursor clicks "Click".
+Let the title animation breathe - advance once so the cursor clicks "Click".
 Tagline sets the tone: this is a CSS/UI attack, not malware or SQLi.
 Don't over-explain yet; the agenda slide frames the arc.
 -->

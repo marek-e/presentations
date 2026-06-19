@@ -6,10 +6,10 @@ export const SITE_URL = 'https://presentations.melmayan.fr'
 
 export const SITE = {
   url: SITE_URL,
-  name: 'Presentations — melmayan',
+  name: 'Presentations - melmayan',
   shortName: 'Presentations',
   description:
-    'Talks and presentations by Marek Elmayan — security, web, and whatever else seemed worth ranting about.',
+    'Talks and presentations by Marek Elmayan - security, web, and whatever else seemed worth ranting about.',
   author: 'Marek Elmayan',
   authorUrl: 'https://melmayan.fr',
   locale: 'en_US',

@@ -31,7 +31,7 @@
 </div>
 
 <Callout v-click variant="note" class="mt-5">
-  <strong>Why users click:</strong> Every site trains us to dismiss cookie banners, newsletter popups, push prompts, and CAPTCHA gates — often 1–3 clicks before we reach content. The lure mimics those same intrusive elements.
+  <strong>Why users click:</strong> Every site trains us to dismiss cookie banners, newsletter popups, push prompts, and CAPTCHA gates - often 1–3 clicks before we reach content. The lure mimics those same intrusive elements.
 </Callout>
 
 <style>
@@ -61,18 +61,18 @@
 
 <!--
 PRESENTER NOTE:
-"Jacking" = hi-jack — intercepting intent mid-click. UI redressing is the formal name.
+"Jacking" = hi-jack - intercepting intent mid-click. UI redressing is the formal name.
 [click] Reveal the definition: victim clicks what they *think* they see, not what's actually under the cursor.
 [click] Walk the three cards left→right: innocent lure → invisible iframe → silent damage.
-[click] Intrusive web elements — the psychological hook:
+[click] Intrusive web elements - the psychological hook:
 
 While browsing, users constantly hit elements that block content until they click:
-- Cookie consent banners — 1 click (accept/decline)
-- Newsletter popups, login dialogs — 1 click (close)
-- Web push notifications — 1 click (allow/block)
-- Cloudflare / CAPTCHA — 1 click ("Verify you are human"); 2+ if verification fails, 4+ if a puzzle appears
+- Cookie consent banners - 1 click (accept/decline)
+- Newsletter popups, login dialogs - 1 click (close)
+- Web push notifications - 1 click (allow/block)
+- Cloudflare / CAPTCHA - 1 click ("Verify you are human"); 2+ if verification fails, 4+ if a puzzle appears
 
-1–3 clicks before reaching real content is normal. Users *expect* to interact with these. Clickjacking exploits that trained reflex: the lure is a fake intrusive element — "Accept cookies", "Dismiss", "Verify you're human" — positioned over the real target button.
+1–3 clicks before reaching real content is normal. Users *expect* to interact with these. Clickjacking exploits that trained reflex: the lure is a fake intrusive element - "Accept cookies", "Dismiss", "Verify you're human" - positioned over the real target button.
 
 This is why prize/giveaway lures work, but cookie-banner and CAPTCHA clones work even better: zero suspicion.
 -->
@@ -287,11 +287,11 @@ const { next } = useNav()
 PRESENTER NOTE:
 Two layers: attacker's lure page + transparent iframe of the real target.
 Step through the code block clicks: CSS overlay → lure button → iframe with pre-filled transfer URL.
-[click:4] Right column: opacity/z-index/position — the whole attack is ~5 lines of CSS.
-[click:5] Email lure is the delivery vector — phishing link lands on attacker.com, not bank.com.
+[click:4] Right column: opacity/z-index/position - the whole attack is ~5 lines of CSS.
+[click:5] Email lure is the delivery vector - phishing link lands on attacker.com, not bank.com.
 Optional: mention opacity 0.001 instead of 0 so some browsers still register pointer events.
 
-The lure doesn't have to be a giveaway — fake cookie banners and "Verify you are human" buttons work better because users click those dozens of times per week without thinking. Tie back to the intrusive-elements callout on the intro slide.
+The lure doesn't have to be a giveaway - fake cookie banners and "Verify you are human" buttons work better because users click those dozens of times per week without thinking. Tie back to the intrusive-elements callout on the intro slide.
 -->
 
 ---
@@ -536,7 +536,7 @@ function onBtnClick() {
 
 <!--
 PRESENTER NOTE:
-Open with the full-screen teaser — audience only sees the iPhone prize page.
+Open with the full-screen teaser - audience only sees the iPhone prize page.
 [click] Reveal the demo: start opacity at 0, drag slider to show the bank iframe underneath.
 Key message: one click on "Claim Prize" = one confirmed bank transfer.
 [click] Actually click the button (or let audience click) to trigger the bank alert overlay.
@@ -796,9 +796,9 @@ zoom: 0.88
 
 <!--
 PRESENTER NOTE:
-The click is only half the con — smart attackers swap the decoy page immediately after.
+The click is only half the con - smart attackers swap the decoy page immediately after.
 Left: victim sees "Order Confirmed" and never suspects a bank transfer.
-[click] Right: reality — $500 already gone. Origin logged as iPhonePromo.net.
+[click] Right: reality - $500 already gone. Origin logged as iPhonePromo.net.
 [click] The blur listener trick: iframe stealing focus = user clicked the overlay. Same pattern powers the bank demo.
 -->
 
@@ -842,7 +842,7 @@ Left: victim sees "Order Confirmed" and never suspects a bank transfer.
 
 </div>
 
-<Callout v-click variant="error" class="mt-8" noIcon><strong>The twist:</strong> browser, server logs, audit trail — all completely legitimate. No malware. No injection. Just a misplaced click.</Callout>
+<Callout v-click variant="error" class="mt-8" noIcon><strong>The twist:</strong> browser, server logs, audit trail - all completely legitimate. No malware. No injection. Just a misplaced click.</Callout>
 
 <style>
 .ri-intro { font-size: 0.86em; color: var(--mm-text); }
@@ -868,10 +868,10 @@ Left: victim sees "Order Confirmed" and never suspects a bank transfer.
 
 <!--
 PRESENTER NOTE:
-Impact scales with what one click can do on the target app — not with attacker sophistication.
+Impact scales with what one click can do on the target app - not with attacker sophistication.
 [click] Reveal categories one by one; pause on account takeover (OAuth, 2FA device add).
-[click] Social manipulation is underrated — GitHub stars, fake reviews, trending manipulation.
-[click] Closing punch: logs look 100% legitimate. No exploit chain, no malware — just a tricked click.
+[click] Social manipulation is underrated - GitHub stars, fake reviews, trending manipulation.
+[click] Closing punch: logs look 100% legitimate. No exploit chain, no malware - just a tricked click.
 -->
 
 ---
@@ -881,17 +881,17 @@ Impact scales with what one click can do on the target app — not with attacker
 | Year | Target | Impact |
 |------|--------|--------|
 | 2008 | [Adobe Flash Player](https://blog.guya.net/2008/10/07/malicious-camera-spying-using-clickjacking/) | Mic/cam access via settings page |
-| 2009 | [Twitter](https://www.theregister.com/2009/02/13/twitter_clickjack_attack/) | "Don't Click" worm — forced tweets at scale |
+| 2009 | [Twitter](https://www.theregister.com/2009/02/13/twitter_clickjack_attack/) | "Don't Click" worm - forced tweets at scale |
 | 2010 | [Facebook](https://www.theregister.com/2010/06/01/facebook_clickjacking_worm/) | Mass Likejacking campaign |
 | 2015 | [LinkedIn](https://www.securityweek.com/linkedin-patches-clickjacking-flaw-exploitable-css/) | CSS-based invisible action buttons |
 | 2018 | [Yelp Reservations](https://hackerone.com/reports/355859) | Stored credit card charged via hijacked booking button |
-| 2024 | [DoubleClickjacking](https://www.bleepingcomputer.com/news/security/new-doubleclickjacking-attack-exploits-double-clicks-to-hijack-accounts/) | OAuth consent hijack — Slack, Salesforce, Shopify |
+| 2024 | [DoubleClickjacking](https://www.bleepingcomputer.com/news/security/new-doubleclickjacking-attack-exploits-double-clicks-to-hijack-accounts/) | OAuth consent hijack - Slack, Salesforce, Shopify |
 
 <!--
 PRESENTER NOTE:
-This isn't theoretical — decade-plus of real bugs. Highlight 2008 Flash (mic/cam via settings UI) and 2009 Twitter worm.
+This isn't theoretical - decade-plus of real bugs. Highlight 2008 Flash (mic/cam via settings UI) and 2009 Twitter worm.
 LinkedIn 2015 is the CSS-only variant: invisible buttons via opacity, no iframe tricks needed on their end.
-2024 DoubleClickjacking tees up the second half of the deck. Don't dwell — table is reference material.
+2024 DoubleClickjacking tees up the second half of the deck. Don't dwell - table is reference material.
 -->
 
 ---
@@ -919,11 +919,11 @@ layout: center
 
 <!--
 PRESENTER NOTE:
-Real historical vector — GitHub had no XFO before ~2013; star-bombing repos was trivial.
+Real historical vector - GitHub had no XFO before ~2013; star-bombing repos was trivial.
 Start opacity at 0, drag slider to reveal the Star button under the fake badge prompt.
 [click] Click "Claim My Badge" to star octocat/Hello-World. Today GitHub blocks framing; self-hosted GitLab/Gitea still don't.
 
-The popup chrome (ad-header strip) mimics an intrusive element — same pattern as cookie banners and newsletter modals users dismiss reflexively. Point that out if the room looks skeptical that anyone would click.
+The popup chrome (ad-header strip) mimics an intrusive element - same pattern as cookie banners and newsletter modals users dismiss reflexively. Point that out if the room looks skeptical that anyone would click.
 -->
 
 ---
@@ -1008,10 +1008,10 @@ The popup chrome (ad-header strip) mimics an intrusive element — same pattern 
 
 <!--
 PRESENTER NOTE:
-Three prerequisites — fix any one and the attack collapses. This is the checklist for your own apps.
+Three prerequisites - fix any one and the attack collapses. This is the checklist for your own apps.
 [click] #1 embeddable: missing XFO or frame-ancestors. One header fixes it.
 [click] #2 single-click sensitive action: add confirmation for money/destructive ops.
-[click] #3 predictable button position: can't fully prevent — that's why headers matter most.
+[click] #3 predictable button position: can't fully prevent - that's why headers matter most.
 -->
 
 ---
@@ -1030,7 +1030,7 @@ Three prerequisites — fix any one and the attack collapses. This is the checkl
       <span class="sc-step-icon">🔐</span>
     </div>
     <div class="sc-step-title">Login stores a credential</div>
-    <div class="sc-step-desc">You authenticate with your bank. The browser stores a credential — a <strong>session cookie</strong> or <strong>JWT</strong> — that proves your identity on every future request.</div>
+    <div class="sc-step-desc">You authenticate with your bank. The browser stores a credential - a <strong>session cookie</strong> or <strong>JWT</strong> - that proves your identity on every future request.</div>
   </div>
 
   <div class="sc-arrow" aria-hidden="true">→</div>
@@ -1064,7 +1064,7 @@ Three prerequisites — fix any one and the attack collapses. This is the checkl
 
 <div class="sc-caveat" v-click>
   <span class="sc-caveat-label">⚠️ JWT in <code>localStorage</code>?</span>
-  <span class="sc-caveat-text"><code>SameSite</code> doesn't help — there's no cookie. The framed page reads its own <code>localStorage</code> and attaches the token itself. Frame headers are the <em>only</em> fix.</span>
+  <span class="sc-caveat-text"><code>SameSite</code> doesn't help - there's no cookie. The framed page reads its own <code>localStorage</code> and attaches the token itself. Frame headers are the <em>only</em> fix.</span>
 </div>
 
 <style>
@@ -1160,7 +1160,7 @@ Three prerequisites — fix any one and the attack collapses. This is the checkl
 PRESENTER NOTE:
 Common question: "How does the bank page load logged-in inside the iframe?"
 Walk the 3-step flow: cookie stored on login → browser auto-sends it to iframe request → server renders authenticated UI.
-[click] SameSite=Lax helps for cookies — iframe won't get the session, user sees login form instead.
+[click] SameSite=Lax helps for cookies - iframe won't get the session, user sees login form instead.
 [click] JWT in localStorage: SameSite is irrelevant; framed page reads its own storage. Headers only fix.
 -->
 
@@ -1197,9 +1197,9 @@ Walk the 3-step flow: cookie stored on login → browser auto-sends it to iframe
 
 <!--
 PRESENTER NOTE:
-GET params that pre-fill forms are a gift to attackers — victim never even *initiated* the transfer flow.
+GET params that pre-fill forms are a gift to attackers - victim never even *initiated* the transfer flow.
 Attacker iframes bank.com/transfer?amount=500&to=attacker and only needs one click on Submit.
 [click] Chained clicks: two fake buttons, two real actions (Accept ToS → pay $500). Each click looks innocent in isolation.
-"Dismiss banner" / "Confirm free trial" are deliberate intrusive-element clones — users have muscle memory for clicking through these. Chaining them makes each individual click feel routine.
+"Dismiss banner" / "Confirm free trial" are deliberate intrusive-element clones - users have muscle memory for clicking through these. Chaining them makes each individual click feel routine.
 Bridge to defenses: even with CSRF tokens, the victim is clicking a real authenticated button.
 -->

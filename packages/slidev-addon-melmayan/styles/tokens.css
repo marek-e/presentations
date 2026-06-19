@@ -1,33 +1,33 @@
 /*
  * Shared design tokens for the presentations site and all decks.
- * Prefix: --mm-* (melmayan). Decks may override any token in style.css —
+ * Prefix: --mm-* (melmayan). Decks may override any token in style.css -
  * deck styles load after addon styles, so deck values win.
  */
 :root {
-  /* Neutrals — slate scale */
-  --mm-text-strong:  #0f172a;  /* slate-900 — headings, strong labels */
-  --mm-text:         #334155;  /* slate-700 — body text, descriptions */
-  --mm-text-muted:   #64748b;  /* slate-500 — muted text, captions */
-  --mm-text-meta:    #94a3b8;  /* slate-400 — step numbers, meta labels */
-  --mm-decorative:   #cbd5e1;  /* slate-300 — decorative separators, step numbers */
-  --mm-border:       #e2e8f0;  /* slate-200 — all borders / dividers */
-  --mm-divider:      #f1f5f9;  /* slate-100 — subtle interior dividers */
-  --mm-surface:      #f8fafc;  /* slate-50  — card / step surfaces */
-  --mm-nav:          #1e293b;  /* slate-800 — dark nav bar */
+  /* Neutrals - slate scale */
+  --mm-text-strong:  #0f172a;  /* slate-900 - headings, strong labels */
+  --mm-text:         #334155;  /* slate-700 - body text, descriptions */
+  --mm-text-muted:   #64748b;  /* slate-500 - muted text, captions */
+  --mm-text-meta:    #94a3b8;  /* slate-400 - step numbers, meta labels */
+  --mm-decorative:   #cbd5e1;  /* slate-300 - decorative separators, step numbers */
+  --mm-border:       #e2e8f0;  /* slate-200 - all borders / dividers */
+  --mm-divider:      #f1f5f9;  /* slate-100 - subtle interior dividers */
+  --mm-surface:      #f8fafc;  /* slate-50  - card / step surfaces */
+  --mm-nav:          #1e293b;  /* slate-800 - dark nav bar */
 
-  /* Danger — red (attacker, error, alert) */
+  /* Danger - red (attacker, error, alert) */
   --mm-danger:        #dc2626;
   --mm-danger-bg:     #fef2f2;
   --mm-danger-border: #fecaca;
   --mm-danger-text:   #b91c1c;
 
-  /* Safe — green (fix, success, protected) */
+  /* Safe - green (fix, success, protected) */
   --mm-safe:          #16a34a;
   --mm-safe-bg:       #f0fdf4;
   --mm-safe-border:   #bbf7d0;
   --mm-safe-text:     #15803d;
 
-  /* Defense — blue (info, link, defense) */
+  /* Defense - blue (info, link, defense) */
   --mm-defense:        #2563eb;
   --mm-defense-text:   #1d4ed8;
   --mm-defense-light:  #60a5fa;
@@ -35,14 +35,14 @@
   --mm-defense-border: #bfdbfe;
   --mm-defense-ring:   #93c5fd;
 
-  /* Warning — amber (escalation, partial fix) */
+  /* Warning - amber (escalation, partial fix) */
   --mm-warning:        #d97706;
   --mm-warning-text:   #b45309;
   --mm-warning-bg:     #fff7ed;
   --mm-warning-border: #fed7aa;
 
   /*
-   * Brand — melmayan.fr AnimatedLogo palette.
+   * Brand - melmayan.fr AnimatedLogo palette.
    * Used for site chrome (landing, 404); decks keep semantic --mm-danger/safe/etc.
    */
   --mm-brand-pink:       #F67280;
@@ -53,7 +53,7 @@
   --mm-brand-blue:       #355C7D;
   --mm-brand-blue-dark:  #264761;
 
-  /* Site chrome — warm surfaces from melmayan.fr light theme */
+  /* Site chrome - warm surfaces from melmayan.fr light theme */
   --mm-site-bg:     #fdfaf6;
   --mm-site-footer: #f5f0ea;
 }

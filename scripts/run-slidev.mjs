@@ -34,7 +34,7 @@ function resolveSlidevCli(deckRootDir) {
     }
   }
 
-  throw new Error('slidev CLI not found — run pnpm install from the repo root.')
+  throw new Error('slidev CLI not found - run pnpm install from the repo root.')
 }
 
 const slug = detectDeckSlug()

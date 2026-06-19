@@ -1,6 +1,6 @@
 {
   "name": "presentations",
-  "description": "Slidev deck monorepo — factory scaffold, shared design system, and a static landing site. Live at presentations.melmayan.fr.",
+  "description": "Slidev deck monorepo - factory scaffold, shared design system, and a static landing site. Live at presentations.melmayan.fr.",
   "version": "1.0.0",
   "private": true,
   "type": "module",

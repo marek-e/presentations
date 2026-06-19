@@ -48,7 +48,7 @@ function formatDate(date?: string): string {
         <em>presentations</em>
       </h1>
       <p class="masthead-sub">
-        Slides from talks I've given — security, web, and whatever else
+        Slides from talks I've given - security, web, and whatever else
         seemed worth ranting about. Built with
         <a href="https://sli.dev" target="_blank" rel="noopener">Slidev</a>.
       </p>
@@ -85,7 +85,7 @@ function formatDate(date?: string): string {
     <p>
       © {{ new Date().getFullYear() }}
       <a href="https://melmayan.fr" target="_blank" rel="noopener">melmayan</a>
-      — slides are open, opinions are mine.
+      - slides are open, opinions are mine.
     </p>
   </footer>
 

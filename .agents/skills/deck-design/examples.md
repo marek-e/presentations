@@ -2,7 +2,7 @@
 
 Three transformations showing how to apply the deck-design rules. All "after" versions use real patterns from `decks/clickjacking`.
 
-## 1. Concept slide — definition wall → layered visual
+## 1. Concept slide - definition wall → layered visual
 
 **Before (AI tell: label title, definition first, bullet wall):**
 
@@ -40,7 +40,7 @@ Only AFTER they've seen it, name the concept.
 
 Why it works: concrete before abstract, the term gets glossed on first use, the slide is a demo instead of four bullets.
 
-## 2. Comparison slide — bullets → two-cols with cards
+## 2. Comparison slide - bullets → two-cols with cards
 
 **Before:**
 
@@ -78,7 +78,7 @@ layout: two-cols
 
 Why it works: the title is the opinion, the layout is the comparison, each card carries one verdict.
 
-## 3. Impact slide — stats list → one huge number
+## 3. Impact slide - stats list → one huge number
 
 **Before:**
 
@@ -101,7 +101,7 @@ class: text-center
 <p class="text-8xl font-black m-0" style="color: var(--mm-danger)">1 click</p>
 
 <p v-click class="text-2xl mt-4" style="color: var(--mm-text)">
-  is all it took to enable your webcam — Adobe Flash settings, framed.
+  is all it took to enable your webcam - Adobe Flash settings, framed.
 </p>
 
 <!-- Tell the Flash webcam story here; the slide just needs the punch. -->

@@ -6,7 +6,7 @@ import { deckMetaVitePlugin } from '../../scripts/deck-meta-vite-plugin.mjs'
 
 const CALLBACK_HTML = 'public/callback/index.html'
 
-/** Serve /callback and /callback/ as static HTML — Slidev SPA fallback would otherwise win. */
+/** Serve /callback and /callback/ as static HTML - Slidev SPA fallback would otherwise win. */
 function callbackPagePlugin() {
   const serveCallback: Connect.NextHandleFunction = (req, res, next) => {
     const pathname = req.url?.split('?')[0] ?? ''

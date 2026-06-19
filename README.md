@@ -1,6 +1,6 @@
-# presentations.melmayan.fr — Slidev deck monorepo
+# presentations.melmayan.fr - Slidev deck monorepo
 
-All my [Slidev](https://sli.dev) presentations in one monorepo — deck factory, shared design system, static landing page — deployed to [presentations.melmayan.fr](https://presentations.melmayan.fr).
+All my [Slidev](https://sli.dev) presentations in one monorepo - deck factory, shared design system, static landing page - deployed to [presentations.melmayan.fr](https://presentations.melmayan.fr).
 
 - The landing page lists every deck as a card.
 - Each deck lives at `presentations.melmayan.fr/<slug>` (e.g. [/clickjacking](https://presentations.melmayan.fr/clickjacking)).
@@ -9,9 +9,9 @@ All my [Slidev](https://sli.dev) presentations in one monorepo — deck factory,
 
 | Path | What |
 | --- | --- |
-| `decks/<slug>/` | One Slidev deck per folder — the folder name is the URL slug |
+| `decks/<slug>/` | One Slidev deck per folder - the folder name is the URL slug |
 | `packages/slidev-addon-melmayan/` | Shared Slidev addon: reusable Vue components + design tokens |
-| `apps/home/` | Landing page (Vite + Vue) — reads each deck's `deck.json` |
+| `apps/home/` | Landing page (Vite + Vue) - reads each deck's `deck.json` |
 | `templates/deck/` | Template used by the deck factory |
 | `scripts/` | Build, dev, SEO, OG images, deck scaffolding |
 | `.agents/skills/` | Shared agent skills (Slidev reference, deck design, etc.) |
@@ -24,7 +24,7 @@ pnpm install
 # create a new presentation
 pnpm new my-talk "My Talk Title"
 
-# dev — landing + one deck on the same origin (mirrors prod routing)
+# dev - landing + one deck on the same origin (mirrors prod routing)
 pnpm dev                    # newest deck (by date in deck.json)
 pnpm dev clickjacking       # specific deck
 #   http://localhost:3030/              ← landing page
@@ -48,7 +48,7 @@ Requires Node ≥ 22.
 
 ## Deck metadata
 
-Each deck has a `deck.json` — single source of truth for the landing card, Slidev SEO headmatter, and OG images. Do **not** duplicate `title`, `author`, `info`, or `seoMeta` in `slides.md`; they're injected at build/dev time.
+Each deck has a `deck.json` - single source of truth for the landing card, Slidev SEO headmatter, and OG images. Do **not** duplicate `title`, `author`, `info`, or `seoMeta` in `slides.md`; they're injected at build/dev time.
 
 ```json
 {
@@ -82,4 +82,4 @@ Each push to `main` redeploys the whole site, decks included.
 
 - Decks are built with `--base /<slug>/`. Absolute URLs inside a deck (iframes, `window.open`, JS-referenced assets) must be prefixed with `/<slug>/`. `pnpm dev` uses the same base, so what works locally works in prod.
 - `pnpm dev` proxies one deck at a time. With multiple decks, pass the slug: `pnpm dev my-talk`.
-- Shared components (`Callout`, `AgendaItem`, `InfoPopover`, `OffsetCard`) come from the addon — see `packages/slidev-addon-melmayan/README.md`.
+- Shared components (`Callout`, `AgendaItem`, `InfoPopover`, `OffsetCard`) come from the addon - see `packages/slidev-addon-melmayan/README.md`.

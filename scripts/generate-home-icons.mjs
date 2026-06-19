@@ -23,7 +23,7 @@ function magickBin() {
       // try next
     }
   }
-  throw new Error('ImageMagick not found — install magick or convert')
+  throw new Error('ImageMagick not found - install magick or convert')
 }
 
 function runMagick(bin, args) {

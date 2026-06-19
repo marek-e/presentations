@@ -1,7 +1,7 @@
 {
-  "name": "Presentations — melmayan",
+  "name": "Presentations - melmayan",
   "short_name": "Presentations",
-  "description": "Talks and presentations by Marek Elmayan — security, web, and whatever else seemed worth ranting about.",
+  "description": "Talks and presentations by Marek Elmayan - security, web, and whatever else seemed worth ranting about.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fdfaf6",
