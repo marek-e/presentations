@@ -3,9 +3,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /__SLUG__/ --out dist",
-    "dev": "slidev --open --base /__SLUG__/",
-    "export": "slidev export"
+    "build": "node ../../scripts/run-slidev.mjs build --base /__SLUG__/ --out dist",
+    "dev": "node ../../scripts/run-slidev.mjs --open --base /__SLUG__/",
+    "export": "node ../../scripts/run-slidev.mjs export"
   },
   "dependencies": {
     "@slidev/cli": "^52.9.0",

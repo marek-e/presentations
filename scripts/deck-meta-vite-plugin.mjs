@@ -1,39 +1,29 @@
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import {
-  applyDeckMetaToSlides,
-  deckSlidesPath,
-  readDeckMeta,
-} from './deck-meta.mjs'
+import { deckSlidesPath } from './deck-meta.mjs'
+import { writeSlidevEntry } from './slidev-entry.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
-/** Injects title, author, info, and seoMeta from deck.json when Slidev loads slides.md. */
+/** Keeps slides.entry.md in sync when slides.md or deck.json change during dev. */
 export function deckMetaVitePlugin(slug) {
   const slidesPath = deckSlidesPath(slug, ROOT)
   const deckJsonPath = path.join(ROOT, 'decks', slug, 'deck.json')
 
   return {
     name: 'melmayan-deck-meta',
-    transform(code, id) {
-      const normalizedId = id.split('?')[0]
-      if (normalizedId !== slidesPath) return
-
-      const deck = readDeckMeta(slug, ROOT)
-      return applyDeckMetaToSlides(code, slug, deck)
-    },
-    handleHotUpdate({ file, server }) {
-      if (file !== deckJsonPath && file !== slidesPath) return
-
-      const modules = server.moduleGraph.getModulesByFile(slidesPath)
-      if (!modules?.size) return
-
-      for (const mod of modules) {
-        server.reloadModule(mod)
-      }
-    },
     configureServer(server) {
       server.watcher.add(deckJsonPath)
+
+      const syncEntry = () => {
+        writeSlidevEntry(slug, ROOT)
+      }
+
+      server.watcher.on('change', (file) => {
+        if (file !== slidesPath && file !== deckJsonPath) return
+        syncEntry()
+        server.ws.send({ type: 'full-reload' })
+      })
 
       // Slidev's notes API matches `/__slidev/slides/:no.json` at the server root.
       // With `--base /<slug>/`, proxied requests arrive as `/<slug>/__slidev/...`.
@@ -50,6 +40,13 @@ export function deckMetaVitePlugin(slug) {
         }
         server.middlewares.stack.unshift({ route: '', handle: stripBaseForSlidevApi })
       }
+    },
+    handleHotUpdate({ file, server }) {
+      if (file !== deckJsonPath && file !== slidesPath) return
+
+      writeSlidevEntry(slug, ROOT)
+      server.ws.send({ type: 'full-reload' })
+      return []
     },
   }
 }

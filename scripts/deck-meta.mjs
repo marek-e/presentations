@@ -23,7 +23,7 @@ export function readDeckMeta(slug, root = ROOT) {
 }
 
 export function deckDisplayTitle(deck) {
-  if (deck.subtitle) return `${deck.title} — ${deck.subtitle}`
+  if (deck.subtitle) return `${deck.title} - ${deck.subtitle}`
   return deck.title
 }
 
@@ -54,6 +54,7 @@ export function deckSeoMeta(slug, deck) {
 export function deckHeadmatter(slug, deck) {
   return {
     title: deckDisplayTitle(deck),
+    titleTemplate: '%s',
     author: deck.author ?? SITE.author,
     info: deckInfo(deck),
     seoMeta: deckSeoMeta(slug, deck),

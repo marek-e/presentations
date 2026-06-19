@@ -6,6 +6,7 @@ dist/
 .vercel/
 .netlify/
 .slidev/
+slides.entry.md
 .vite-inspect/
 .remote-assets/
 decks/**/components.d.ts

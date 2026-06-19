@@ -3,9 +3,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /clickjacking/ --out dist",
-    "dev": "slidev --open --base /clickjacking/",
-    "export": "slidev export"
+    "build": "node ../../scripts/run-slidev.mjs build --base /clickjacking/ --out dist",
+    "dev": "node ../../scripts/run-slidev.mjs --open --base /clickjacking/",
+    "export": "node ../../scripts/run-slidev.mjs export"
   },
   "dependencies": {
     "@slidev/cli": "^52.9.0",
