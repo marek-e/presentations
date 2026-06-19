@@ -1,0 +1,40 @@
+decks/clickjacking/package.json
+  s_a93b62c0fda340::t_c6ec5c24fb27b8 6-8
+scripts/deck-meta-vite-plugin.mjs
+  s_a93b62c0fda340::t_100ea0fc9cdddd 3-4,8,18-27,44-49
+templates/deck/package.json
+  s_a93b62c0fda340::t_0c5332a788500d 6-8
+scripts/deck-meta.mjs
+  s_a93b62c0fda340::t_bd9944600dd3d6 57
+scripts/dev.mjs
+  s_a93b62c0fda340::t_1fe2544bf13441 155-156
+scripts/slidev-entry.mjs
+  s_a93b62c0fda340::t_cdd6711ab28fa7 1-57
+scripts/run-slidev.mjs
+  s_a93b62c0fda340::t_954cb0a00e8b82 1-6,11-17,40-41,43-44,51,53-56,62-63
+  s_a93b62c0fda340::t_8bf1fa2d57421e 7-10,18,21-39,42,52,57-61
+  s_a93b62c0fda340::t_9797f2ae1c8e1d 19-20,45-50
+.gitignore
+  s_a93b62c0fda340::t_894875d6ffa430 9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "06e50155073f867a0a05c2e81c193d9da0f468aa",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_a93b62c0fda340": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "b46b8a7d-1181-46ff-9efe-44101fc528b5",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
