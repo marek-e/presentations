@@ -1,0 +1,46 @@
+decks/clickjacking/slides/06-ext-cj.md
+  s_7fb5cd6f3e765b::t_6b94e7c31af86d 463-512,515-516,520-558,563-567
+  s_22723e474db3d5::t_fe46a796599799 708,710-713
+  s_7fb5cd6f3e765b::t_07c36a339758fc 598
+  s_7fb5cd6f3e765b::t_dc47a8b3737e38 28
+  s_7fb5cd6f3e765b::t_88c7b26566010e 421
+  s_8c1c6691b582f9::t_6a790c87863faf 281,283-284,287-300,302-315,317,319-320,323-392
+  s_7fb5cd6f3e765b::t_655e0be2bc1024 185,187-188,191-197,199-267,269-277,279,393-420,422-462,674,676-677,680,686,696,701-704,714-750,755-759
+  s_22723e474db3d5::t_e21c9abd85c936 640,644
+  s_7fb5cd6f3e765b::t_74abc1a302f663 568
+  s_7fb5cd6f3e765b::t_5af304971602dc 32
+  s_22723e474db3d5::t_dd29d2951d6f24 608,610,613-620,622-630,634,636-639,641-642,645-650,656,665,669-673,675,678-679,681-685,687-695,697-700,705-707,709
+  s_7fb5cd6f3e765b::t_9beb5a6074208e 174
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "e44ab52c0007a79ca06dee13e1c3aeb68a30c381",
+  "prompts": {},
+  "sessions": {
+    "s_22723e474db3d5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f429e978-89c3-4521-b85f-d3090df3c1d6",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    },
+    "s_7fb5cd6f3e765b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2bb45335-ff76-4367-a210-4afcff5033d8",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    },
+    "s_8c1c6691b582f9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f3b5ca50-4e80-4a51-bd87-a839c43ef1c5",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
