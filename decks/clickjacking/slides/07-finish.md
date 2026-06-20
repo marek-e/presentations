@@ -11,14 +11,15 @@ zoom: 0.92
 
 <div style="position:relative;z-index:1">
 
-<span class="fin-eyebrow">Take this home</span>
+<span class="fin-eyebrow">Where this leaves you</span>
 
-<h1 class="fin-title">Ship <code>frame-ancestors</code> before dinner.</h1>
+<h1 class="fin-title">The frame is solved. The click isn't.</h1>
 
 <p class="fin-lead">
-  Classic clickjacking dies with two lines in your response headers.
-  DoubleClickjacking and extension tricks need more - but the baseline
-  is cheap, well-understood, and table stakes for any app handling sensitive actions.
+  <code>frame-ancestors</code> and <code>X-Frame-Options</code> end classic
+  clickjacking for good - cheap, well-understood, table stakes. But
+  DoubleClickjacking and extension clickjacking never load a frame, so your
+  headers never fire. The attack surface is the gesture and the page's own DOM now.
 </p>
 
 <div class="fin-grid mt-8">
@@ -171,8 +172,8 @@ zoom: 0.92
 
 <!--
 PRESENTER NOTE:
-Land the plane: frame-ancestors + XFO is the cheap win for classic clickjacking. If your app handles auth or sensitive actions and lacks these headers, fix it tonight - but don't oversell the urgency: this is a solved class of bug for anyone paying attention.
-Acknowledge DCJ and extension clickjacking need more than headers; that's where the deck's real "2026" value lives.
+Land the plane on the deck's through-line: the frame is solved, the click isn't. frame-ancestors + XFO is the cheap win for classic clickjacking - if your app handles auth or sensitive actions and lacks these headers, fix it tonight - but don't oversell the urgency: this is a solved class of bug for anyone paying attention.
+The title's second half is the real point: DoubleClickjacking (gesture/timing) and extension clickjacking (the page's own DOM) never load a frame, so headers are blind. That's where the deck's real "2026" value lives.
 Optional framing for bug bounty / AppSec folks: many programs deprioritize or exclude classic clickjacking because defenses are mature and impact is low when headers are present. Fair tradeoff - focus bounty budget on variants and on apps that genuinely need embed flows but misconfigure them.
 [click] OWASP cheat sheet for copy-paste configs; securityheaders.com to scan their own employer site tonight; MDN for the directive reference.
 [click] Slides URL - demos (bank, GitHub iframe, DCJ OAuth, extension cookie banner) all work from the deployed deck.
