@@ -1,0 +1,25 @@
+decks/clickjacking/slides/07-finish.md
+  s_6fc8985c454af3::t_1cacf087f0611e 14,16,19-22
+  s_6fc8985c454af3::t_6557944c699266 175-176
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "32d5c84cb2a93c564708b0de04bd2a9bd266e1f5",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_6fc8985c454af3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "851de3b7-55e1-4a5e-ab08-1097f05de232",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
