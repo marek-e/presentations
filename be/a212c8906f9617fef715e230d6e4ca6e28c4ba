@@ -1,0 +1,26 @@
+decks/clickjacking/slides/06-ext-cj.md
+  h_34454149dac528 571,581
+  s_d40cd99c0b4dde::t_6b39a5fdb0e961 574-580,582-583,593-601,603
+  s_d40cd99c0b4dde::t_290944b4e955c0 608,610,612
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "bea212c8906f9617fef715e230d6e4ca6e28c4ba",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_d40cd99c0b4dde": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bc472902-1442-406d-94c1-024adbf35176",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
