@@ -55,7 +55,11 @@
       if (isReal && window.opener.DCJOAuth) {
         window.opener.location = window.DCJOAuth.buildAuthorizeUrl()
       } else if (!isReal && window.opener.DCJVictim) {
-        window.opener.DCJVictim.revealOAuth()
+        const r = document.getElementById('verify-btn').getBoundingClientRect()
+        window.opener.DCJVictim.revealOAuth(
+          r.left + r.width / 2,
+          r.top + r.height / 2,
+        )
       }
     }
     window.close()

