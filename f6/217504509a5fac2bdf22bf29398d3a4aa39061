@@ -1,0 +1,64 @@
+decks/clickjacking/slides/06-ext-cj.md
+  s_bece324752211b::t_48524276c1a4a5 707
+  s_d40cd99c0b4dde::t_2a58052d72b164 785,788
+  s_bece324752211b::t_376415cafa02ab 708
+  h_34454149dac528 718,786,829
+  s_bece324752211b::t_0772f390e8d46f 395
+  s_bece324752211b::t_20df9e0c1364e7 381
+  s_bece324752211b::t_af14144a59cb07 409
+  s_d40cd99c0b4dde::t_a564489f8d0e27 828
+  s_bece324752211b::t_83e17cae327659 401
+  s_bece324752211b::t_3dd6d63186459f 485
+  s_bece324752211b::t_48a36319ec25c0 604
+  s_bece324752211b::t_dd921174504c48 32
+  s_bece324752211b::t_a91d589d575e4b 213
+  s_bece324752211b::t_22e81d45dfc0bc 636
+  s_bece324752211b::t_87cde300f08b30 644
+  s_d40cd99c0b4dde::t_1b0d790b651a1e 721-724
+  s_bece324752211b::t_5b0a1112e9aeae 495
+  s_d40cd99c0b4dde::t_169d1830c268fa 719-720,725
+  s_d40cd99c0b4dde::t_5f909166d6e44f 799
+  s_bece324752211b::t_a17861af87ace8 383
+  s_d40cd99c0b4dde::t_79e5b93b7bdda5 807
+  s_d40cd99c0b4dde::t_3da0431d8226bd 728-730,732-737,739-743,745-749,751-755,763-764,766-767,769-783,790-798,800-806,808-827,830-862,867-873
+  s_bece324752211b::t_b00d674cab370a 28
+  s_bece324752211b::t_1a1da239873ae2 704
+  s_d40cd99c0b4dde::t_517f2e3a384559 726
+  s_bece324752211b::t_0c058a3571793c 611
+  s_d40cd99c0b4dde::t_8ff5be238762ea 784,787
+  s_bece324752211b::t_ed8f9634145f40 284
+  s_bece324752211b::t_aef3c86e3f7682 702
+  s_bece324752211b::t_d00a279e115e7c 512
+  s_d40cd99c0b4dde::t_5c64a9a07bb82f 789
+  s_d40cd99c0b4dde::t_b6a92c4b4b83ae 716
+  s_d40cd99c0b4dde::t_cccb3c4547358e 758-759
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "f6217504509a5fac2bdf22bf29398d3a4aa39061",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_bece324752211b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dd9ace3f-6337-45e9-a250-0667ef213ee4",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    },
+    "s_d40cd99c0b4dde": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bc472902-1442-406d-94c1-024adbf35176",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
