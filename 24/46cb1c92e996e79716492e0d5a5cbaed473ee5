@@ -1,0 +1,24 @@
+.agents/skills/deck-design/SKILL.md
+  s_bece324752211b::t_08fa879c3fe51d 48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "2446cb1c92e996e79716492e0d5a5cbaed473ee5",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_bece324752211b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dd9ace3f-6337-45e9-a250-0667ef213ee4",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
