@@ -1,0 +1,21 @@
+decks/clickjacking/public/victims/dcj-victim.js
+  s_ca00c507d395d8::t_7ebd52428db2a7 8,20,23-28
+decks/clickjacking/public/victims/dcj-real.js
+  s_ca00c507d395d8::t_1ff1546a50668b 58-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "70e557e30b0e964e9bde80a7d29b7e60cf82f028",
+  "prompts": {},
+  "sessions": {
+    "s_ca00c507d395d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1d579cb-60b6-4a00-86f5-da00ce5da083",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
