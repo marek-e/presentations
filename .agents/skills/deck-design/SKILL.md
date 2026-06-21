@@ -45,6 +45,7 @@ Rules:
 
 AI decks are recognizable. Avoid the tells:
 
+- **Never use em dashes (—).** They are the single clearest AI tell. Write the sentence with a period, comma, parentheses, or a connecting word ("so", "but", "and") instead. This applies to slide text *and* speaker notes.
 - **No title-case headline + 3 emoji bullets pattern.** Emojis only where they carry meaning (a single icon as a visual anchor), never one per bullet.
 - **No boilerplate slides**: no "Agenda" read out as plain list, no "Conclusion", no "Thank you / Questions?" filler. End on the one thing to remember, plus where to find the slides.
 - **Write titles as claims, not labels.** "Framebusting is dead" beats "JavaScript Defenses". A junior should get the gist by reading only the titles.
