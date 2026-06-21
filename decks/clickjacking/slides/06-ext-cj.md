@@ -25,11 +25,11 @@
   <div class="ecj-why-rows">
     <div class="ecj-why-row">
       <div class="ecj-why-tag">Scope</div>
-      <div class="ecj-why-text">One vault is the master key — logins, TOTP, cards, and notes for every account, all in one place.</div>
+      <div class="ecj-why-text">One vault is the master key. Logins, TOTP, cards, and notes for every account, all in one place.</div>
     </div>
     <div class="ecj-why-row">
       <div class="ecj-why-tag">Reach</div>
-      <div class="ecj-why-text">The extension injects its UI into <em>every</em> page you load, so there's always something on-screen to hijack — no special target site required.</div>
+      <div class="ecj-why-text">The extension injects its UI into <em>every</em> page you load, so there's always something on-screen to hijack, with no special target site required.</div>
     </div>
     <div class="ecj-why-row">
       <div class="ecj-why-tag">Trigger</div>
@@ -210,7 +210,7 @@ zoom: 0.92
   <div class="ecj-mech-step ecj-mech-step--red" v-click>
     <div class="ecj-mech-num">3</div>
     <div class="ecj-mech-title">…and makes it vanish</div>
-    <div class="ecj-mech-desc">Invisible to you — still sitting there, still fully clickable.</div>
+    <div class="ecj-mech-desc">Invisible to you, but still sitting there, still fully clickable.</div>
     <div class="ecj-mech-code">.style.opacity = '0'</div>
   </div>
 </div>
@@ -281,7 +281,7 @@ Mention in passing: same idea works by hiding the whole <body> (and painting a s
 # One Loop Covers Every Manager
 
 <div class="ecj-intro mt-2 mb-5">
-  Each manager injects its autofill UI with a <strong>unique, predictable DOM signature</strong>. The attacker doesn't need to know which one you use — they probe a list and hide the first match.
+  Each manager injects its autofill UI with a <strong>unique, predictable DOM signature</strong>. The attacker doesn't need to know which one you use. They probe a list and hide the first match.
 </div>
 
 <div class="pmdet-grid">
@@ -315,10 +315,6 @@ if (pmEl) pmEl.style.opacity = '0';</pre>
   </div>
 
 </div>
-
-<Callout v-click variant="error" class="mt-5" noIcon>
-  Same 15-line script. Every major manager. A single compromised ad tag on any page is enough.
-</Callout>
 
 <style>
 .pmdet-grid {
@@ -382,9 +378,9 @@ if (pmEl) pmEl.style.opacity = '0';</pre>
 
 <!--
 PRESENTER NOTE:
-Bridge from the mechanism: the page CAN touch the extension's DOM — but which element? Different managers, different selectors.
+Bridge from the mechanism: the page CAN touch the extension's DOM, but which element? Different managers, different selectors.
 The attacker's answer is trivial: try all of them. The detection loop is 15 lines, one selector per manager.
-The first querySelector that returns a node wins — hide it, position the decoy overlay, done.
+The first querySelector that returns a node wins. Hide it, position the decoy overlay, done.
 This is why the same code path hit 11 managers: the attack is manager-agnostic. No per-manager customization needed.
 The Callout lands the scale: one poisoned ad tag inherits the full 40M-user blast radius.
 -->
@@ -396,13 +392,13 @@ class: px-14 py-4
 # One Click on "Accept Cookies" Empties the Vault
 
 <div class="ecj-intro mt-2 mb-4">
-  Everyone dismisses a cookie banner on reflex. The attacker lines that reflex up with the password manager's hidden Autofill button — so the click you meant for "Accept" lands somewhere else.
+  Everyone dismisses a cookie banner on reflex. The attacker lines that reflex up with the password manager's hidden Autofill button, so the click you meant for "Accept" lands somewhere else.
 </div>
 
 <div class="ecj-recipe">
   <div class="ecj-rstep">
     <div class="ecj-rnum">1</div>
-    <div class="ecj-rbody"><strong>Plant a decoy form.</strong> The attacker page drops a login/card form and turns it nearly invisible — <code>opacity: 0.001</code>.</div>
+    <div class="ecj-rbody"><strong>Plant a decoy form.</strong> The attacker page drops a login/card form and turns it nearly invisible with <code>opacity: 0.001</code>.</div>
   </div>
   <div class="ecj-rstep" v-click>
     <div class="ecj-rnum">2</div>
@@ -410,7 +406,7 @@ class: px-14 py-4
   </div>
   <div class="ecj-rstep" v-click>
     <div class="ecj-rnum">3</div>
-    <div class="ecj-rbody"><strong>Hide the dropdown.</strong> Same trick as the last slide — the Autofill button is now invisible but still live.</div>
+    <div class="ecj-rbody"><strong>Hide the dropdown.</strong> Same trick as the last slide, and the Autofill button is now invisible but still live.</div>
   </div>
   <div class="ecj-rstep" v-click>
     <div class="ecj-rnum">4</div>
@@ -486,7 +482,7 @@ zoom: 0.92
       <div class="ecj-mt-name">Personal info &amp; cards</div>
       <div class="ecj-mt-sub">Name, email, address · card no. + CVV</div>
     </div>
-    <div><span class="ecj-pill ecj-pill--red">None</span><span class="ecj-mt-note">Not domain-scoped — fills on any attacker page.</span></div>
+    <div><span class="ecj-pill ecj-pill--red">None</span><span class="ecj-mt-note">Not domain-scoped, so it fills on any attacker page.</span></div>
     <div><span class="ecj-pill ecj-pill--red">1 click</span></div>
     <div><span class="ecj-pill ecj-pill--red">No</span></div>
   </div>
@@ -496,7 +492,7 @@ zoom: 0.92
       <div class="ecj-mt-name">Logins &amp; TOTP</div>
       <div class="ecj-mt-sub">Password + 2FA code = full account takeover</div>
     </div>
-    <div><span class="ecj-pill ecj-pill--amber">Code on the origin</span><span class="ecj-mt-note">XSS · cache poisoning · subdomain takeover · malicious upload to a trusted CDN — any subdomain counts.</span></div>
+    <div><span class="ecj-pill ecj-pill--amber">Code on the origin</span><span class="ecj-mt-note">XSS · cache poisoning · subdomain takeover · malicious upload to a trusted CDN. Any subdomain counts.</span></div>
     <div><span class="ecj-pill ecj-pill--red">1 click</span></div>
     <div><span class="ecj-pill ecj-pill--red">No</span></div>
   </div>
@@ -513,7 +509,7 @@ zoom: 0.92
 </div>
 
 <div v-click class="ecj-matrix-foot mt-4">
-  💡 The hidden autofill UI can be pinned <strong>under the cursor</strong> — re-<code>focus()</code> every ~100 ms — so it's one click <em>anywhere</em> on the page, not on an exact pixel.
+  💡 The hidden autofill UI can be pinned <strong>under the cursor</strong> (re-<code>focus()</code> every ~100 ms), so it's one click <em>anywhere</em> on the page, not on an exact pixel.
 </div>
 
 <style>
@@ -605,14 +601,14 @@ Key message: the user did nothing wrong. Their own security tool was used agains
 zoom: 0.92
 ---
 
-# 40 Million Users at Risk — With Real Constraints
+# 40 Million Users at Risk, and Real Constraints
 
 <div class="grid grid-cols-2 gap-8 mt-4 items-start">
 
 <div>
   <div class="risk-stat">
     <div class="risk-stat-num">11</div>
-    <div class="risk-stat-label">Password managers — all initially vulnerable, all disclosed in 2025</div>
+    <div class="risk-stat-label">Password managers, all initially vulnerable, all disclosed in 2025</div>
   </div>
   <div class="risk-stat risk-stat--red mt-3">
     <div class="risk-stat-num">40M+</div>
@@ -637,7 +633,7 @@ zoom: 0.92
     <div class="risk-lim-icon">⏱</div>
     <div class="risk-lim-body">
       <div class="risk-lim-name">Auto-lock / inactivity timeout</div>
-      <div class="risk-lim-desc">A locked vault never shows the autofill dropdown — no trigger, no hijack. The attack only works during an <strong>active, unlocked session</strong>. Lock timing varies wildly across managers: from 1 minute to never.</div>
+      <div class="risk-lim-desc">A locked vault never shows the autofill dropdown, so there's no trigger and no hijack. The attack only works during an <strong>active, unlocked session</strong>. Lock timing varies wildly across managers: from 1 minute to never.</div>
     </div>
   </div>
 
@@ -645,7 +641,7 @@ zoom: 0.92
     <div class="risk-lim-icon">📐</div>
     <div class="risk-lim-body">
       <div class="risk-lim-name">Screen resolution &amp; zoom</div>
-      <div class="risk-lim-desc">The fake button must sit pixel-perfectly over the hidden autofill UI. Different DPI, viewport width, or browser zoom shifts the dropdown — the click misses.</div>
+      <div class="risk-lim-desc">The fake button must sit pixel-perfectly over the hidden autofill UI. Different DPI, viewport width, or browser zoom shifts the dropdown, and the click misses.</div>
     </div>
   </div>
 </div>
@@ -703,13 +699,13 @@ zoom: 0.92
 <!--
 PRESENTER NOTE:
 Scope the blast radius before moving to defenses.
-11 managers, 40M+ installs — Marek Toth's 2025 coordinated disclosure. All vulnerable before patching.
+11 managers, 40M+ installs, from Marek Toth's 2025 coordinated disclosure. All vulnerable before patching.
 
-Left shows scope: 11 managers, 40M+ installs — Marek Toth's 2025 coordinated disclosure.
+Left shows scope: 11 managers, 40M+ installs, from Marek Toth's 2025 coordinated disclosure.
 
 [click] Right reveals both constraints at once:
-Auto-lock: locked vault = no autofill dropdown = nothing to hijack. Requires an active session. But lock timing is not standardized — some managers default to 1 minute, others to "on browser close" or never. The attack window varies wildly depending on which manager the victim uses.
-Screen resolution: attacker hardcodes overlay pixel positions. Different viewport size, DPI scaling, or browser zoom shifts where the autofill dropdown lands — misalignment means the click goes to the wrong element. Solvable with a runtime window.innerWidth probe, but adds friction.
+Auto-lock: locked vault = no autofill dropdown = nothing to hijack. Requires an active session. But lock timing is not standardized. Some managers default to 1 minute, others to "on browser close" or never. The attack window varies wildly depending on which manager the victim uses.
+Screen resolution: attacker hardcodes overlay pixel positions. Different viewport size, DPI scaling, or browser zoom shifts where the autofill dropdown lands, so misalignment means the click goes to the wrong element. Solvable with a runtime window.innerWidth probe, but adds friction.
 Segue to what actually helps.
 -->
 
@@ -717,44 +713,162 @@ Segue to what actually helps.
 zoom: 0.9
 ---
 
-# Everyone Has to Fix a Piece of This
+# Extension-Side Mitigations: Cover All Three Surfaces
 
-<div class="ecj-fix-grid mt-4">
+<InfoPopover width="70vw" x="3.5rem" y="4.5rem">
+  <div class="ip-row">
+    <img src="../public/1password-alert.png" alt="1Password native browser dialog asking the user to click OK to fill the credential" class="ip-img" />
+    <div class="ip-text">
+      <div class="ip-cap-title">1Password's fix in the wild</div>
+      <div class="ip-cap">Picking a login pops a <strong>native browser dialog</strong> to confirm the fill. It lives outside the page, so the attacker can't hide or fake it.</div>
+    </div>
+  </div>
+</InfoPopover>
 
-  <OffsetCard title="Extension developers" accent="red">
-    <template #icon>🧩</template>
-    Render UI in a <strong>closed Shadow DOM</strong> so page JS can't reach it. Before filling, check <code>getComputedStyle</code> opacity &amp; visibility, and abort on suspicious style mutations.
-  </OffsetCard>
-
-  <OffsetCard title="Web authors" accent="orange">
-    <template #icon>🌐</template>
-    Keep <strong>untrusted third-party scripts</strong> off auth and payment pages — that's the foothold the attack needs. A tight CSP limits who runs JS in your page.
-  </OffsetCard>
-
-  <OffsetCard title="You, the user" accent="blue">
-    <template #icon>🙋</template>
-    Prefer <strong>manual autofill with a confirmation step</strong>, keep extensions updated, and be wary of a site nagging you to click something in an odd spot.
-  </OffsetCard>
-
+<div class="ecj-intro mt-2 mb-4">
+  The extension fix isn't one change. The page can hide your autofill UI in <strong>three different places</strong>, and patching two of them still leaves the vault wide open.
 </div>
 
-<Callout v-click variant="note" class="mt-6">
-  No single response header closes this. Your browser's own security tool became the attack surface — so the fix has to come from the <strong>extension ecosystem</strong>, not just one site.
+<div class="efx-matrix">
+  <div class="efx-head">
+    <div>Surface</div>
+    <div>How the page hides it</div>
+    <div>What the extension must do</div>
+  </div>
+
+  <div class="efx-row">
+    <div class="efx-surf">The UI's own node</div>
+    <div class="efx-attack"><code>el.style.opacity = 0</code> straight on the injected element</div>
+    <div class="efx-fix">Render in a <strong>closed Shadow-Root</strong> so page JS can't select it, and run a <strong>MutationObserver</strong> to catch style tampering.</div>
+  </div>
+
+  <div class="efx-row" v-click>
+    <div class="efx-surf">A parent element</div>
+    <div class="efx-attack"><code>opacity: 0</code> on <code>&lt;body&gt;</code> above it, which a node-level observer never sees</div>
+    <div class="efx-fix">Walk computed opacity <strong>up the ancestor chain</strong>, or draw in the top layer via the <strong>Popover API</strong>, which ignores ancestor opacity.</div>
+  </div>
+
+  <div class="efx-row" v-click>
+    <div class="efx-surf">An overlay on top</div>
+    <div class="efx-attack">stacks a decoy element <em>over</em> the still-visible UI</div>
+    <div class="efx-fix">Stay the <strong>last / top-layer</strong> node; list other popovers and refuse to show (or auto-close) if any exist; use <code>elementsFromPoint()</code> for partial overlays.</div>
+  </div>
+</div>
+
+<Callout v-click variant="info" icon="⏱" class="mt-4">
+  <strong>And on two clocks.</strong> Guard both <em>before</em> the UI renders and <em>after</em> it's visible. Opacity and overlay tricks fire in both windows.
 </Callout>
 
 <style>
-.ecj-fix-grid {
+.efx-matrix { border: 1.5px solid var(--mm-border); border-radius: 14px; overflow: hidden; }
+.efx-head, .efx-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: 0.85fr 1.25fr 1.7fr;
+  align-items: stretch;
 }
+.efx-head {
+  background: var(--mm-text-strong);
+  color: #fff;
+  font-size: 0.66em;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.efx-head > div { padding: 8px 14px; }
+.efx-row { background: #fff; border-top: 1px solid var(--mm-border); }
+.efx-row > div { padding: 11px 14px; font-size: 0.76em; color: var(--mm-text); line-height: 1.45; }
+.efx-surf { font-weight: 800; color: var(--mm-text-strong); }
+.efx-attack { color: var(--mm-danger-text); background: var(--mm-danger-bg); }
+.efx-attack code { font-family: monospace; font-size: 0.92em; color: var(--mm-danger-text); }
+.efx-fix code { font-family: monospace; font-size: 0.92em; color: var(--mm-text-strong); }
+.ip-title { display: none !important; }
+.ip-row { display: flex; gap: 14px; align-items: center; }
+.ip-img { width: auto; max-height: 50vh; display: block; border: 1px solid var(--mm-border); border-radius: 6px; flex: none; }
+.ip-cap-title { font-size: 1.05em; font-weight: 600; color: var(--mm-defense-text); margin-bottom: 6px; }
+.ip-cap { font-size: 0.82em; color: var(--mm-text); line-height: 1.5; }
+.ip-cap strong { color: var(--mm-text-strong); }
 </style>
 
 <!--
 PRESENTER NOTE:
-Land it as a shared-responsibility slide - this is the honest takeaway: no one party fixes it alone.
-Extension devs: closed Shadow DOM is the real structural fix (page JS literally can't traverse in). Plus visibility checks before fill + MutationObserver to bail if styles are tampered with. Most of the 11 shipped fixes along these lines after disclosure.
-Web authors: you can't patch the extension, but you control what scripts run on your sensitive pages. No untrusted third-party JS on login/checkout; CSP to enforce it.
-Users: pick managers that confirm before filling (that native 1Password dialog from the last slide is exactly this), keep them updated, and treat "click here" nags in weird positions with suspicion.
-[click] The closing line: there's no frame-ancestors equivalent here. It's an ecosystem fix, which is why it took coordinated disclosure across 11 vendors.
+The core dev message: there is no single fix. The attack hits three independent surfaces, and a defense that misses one leaves the extension exploitable.
+Surface 1 (visible): the attacker restyles the extension's own injected node. Closed Shadow-Root means page JS literally can't querySelector it; a MutationObserver on your own node catches style tampering. This is the fix most people stop at - and it's not enough.
+[click] Surface 2: hide it from above. Set opacity:0 on <body>/<html>. A MutationObserver watching only your node never sees this. You have to walk computed opacity up the ancestor chain, OR render in the top layer with the Popover API, which is unaffected by ancestor opacity.
+[click] Surface 3: don't touch the UI at all - stack a decoy on top of the still-visible dropdown. Defense: make sure you're the last/top-layer element, enumerate other popovers and bail if any exist, and use elementsFromPoint() to detect partial overlays.
+[click] Timing: all of this must run both before the UI renders (style/overlay set up in advance) and after it's visible (tampering immediately after render).
+Open the lightbulb popover (top-right): 1Password's shipped fix. When you pick a login, you get a native browser confirm dialog ("Click OK to fill..."). That dialog is drawn by the browser, not the page, so the attacker can't hide it or overlay it - this is the "render outside the page" idea made concrete, and it's the bridge to the next slide.
+Land it: this is why it took coordinated disclosure across 11 vendors - the complete fix is genuinely hard.
+-->
+
+---
+zoom: 0.92
+---
+
+# User Recommendations: Practicality vs. Security
+
+<div class="ecj-intro mt-2 mb-4">
+  Every fix on the last slide is <strong>JavaScript fighting JavaScript</strong>, an arms race the attacker can white-box. There's no <code>frame-ancestors</code> equivalent here, so today it comes down to tradeoffs.
+</div>
+
+<div class="grid grid-cols-2 gap-7 items-start">
+
+<div class="efx2-truth">
+  <div class="efx2-truth-head">Why even all three aren't enough</div>
+  <div class="efx2-truth-body">
+    <p>The attacker can <strong>read the extension's content script</strong> and build around every check. Conflicts between the two scripts are likely.</p>
+    <p>The only <strong>structurally safe</strong> move is to render <em>outside</em> the page: a real popup window, a system dialog, or a context-menu autofill. All of them break the one-click UX users expect.</p>
+    <p class="efx2-punch">The real fix is platform-level: browsers need a <strong>new API</strong> that lets an extension paint UI the page can't see or touch.</p>
+  </div>
+</div>
+
+<div>
+  <div class="efx2-user-head">What you can do today</div>
+
+  <div class="efx2-user mt-3">
+    <div class="efx2-user-name">Update your software</div>
+    <div class="efx2-user-desc">All 11 managers shipped fixes, so the patch only helps if you run it. The threat constantly changes, so it's a good idea to update your software regularly.</div>
+  </div>
+  <div class="efx2-user mt-2" v-click>
+    <div class="efx2-user-name">Disable manual autofill, copy/paste only</div>
+    <div class="efx2-user-desc">Removes the trigger entirely. Inconvenient, especially for personal info and cards.</div>
+  </div>
+  <div class="efx2-user mt-2" v-click>
+    <div class="efx2-user-name">Require exact-URL match for autofill</div>
+    <div class="efx2-user-desc">Kills subdomain abuse, but not an attacker already running code on the exact domain. Cards and personal data still leak.</div>
+  </div>
+</div>
+
+</div>
+
+<Callout v-click variant="note" class="mt-5">
+  No single recommendation fits everyone. Pick the tradeoff you can live with, and lean on browser vendors to give extensions a <strong>safe surface to draw on</strong>.
+</Callout>
+
+<style>
+.efx2-truth { border: 1.5px solid var(--mm-danger-border); border-radius: 14px; overflow: hidden; height: 100%; }
+.efx2-truth-head {
+  font-size: 0.68em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;
+  padding: 6px 14px; background: var(--mm-danger-bg); color: var(--mm-danger-text);
+}
+.efx2-truth-body { padding: 12px 14px; background: #fff; }
+.efx2-truth-body p { font-size: 0.78em; color: var(--mm-text); line-height: 1.5; margin: 0 0 9px; }
+.efx2-truth-body p:last-child { margin-bottom: 0; }
+.efx2-punch { color: var(--mm-text-strong) !important; font-weight: 600; border-top: 1px solid var(--mm-divider); padding-top: 9px; }
+.efx2-user-head {
+  font-size: 0.68em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--mm-text-muted);
+}
+.efx2-user { padding: 10px 14px; background: #fff; border: 1px solid var(--mm-border); border-radius: 12px; }
+.efx2-user-name { font-size: 0.84em; font-weight: 800; color: var(--mm-text-strong); margin-bottom: 3px; }
+.efx2-user-desc { font-size: 0.74em; color: var(--mm-text-muted); line-height: 1.45; }
+</style>
+
+<!--
+PRESENTER NOTE:
+The honest closer. Two halves: why the dev fixes still aren't a real fix, and what users can actually do.
+Left: every defense from the last slide is JS vs JS. The exploit author can white-box the extension's content script and engineer around each check; the two scripts can also just conflict. The only structurally safe option is to leave the page entirely - a separate popup window, a system dialog, or context-menu autofill - but that destroys the seamless one-click UX, so nobody wants it. The genuine fix is a new browser API that lets extensions draw UI the page can't see or touch.
+Right (walk the tradeoffs, none is free):
+- Auto-updates: cheapest win, all 11 patched. In orgs the admin controls versions, so this is a policy point.
+- Disable manual autofill (copy/paste): kills the trigger, but it's a real annoyance, especially for cards/personal data.
+- Exact-URL match: stops subdomain pivots (XSS on blog.example.com no longer reaches example.com creds), but same-domain code still wins, and non-domain-scoped data (cards, identity) still leaks.
+[click] Closing Callout: there's no header that fixes this. Pick the tradeoff you can live with and push vendors toward a platform API.
 -->
