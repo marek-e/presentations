@@ -568,11 +568,19 @@ Hand to demo: the demo shows the logins tier - a page the attacker's script alre
 layout: center
 ---
 
-## Demo - Cookie Banner Steals Your Credentials
+## Demo - Two Clicks to Empty Your Vault
 
 <div class="ecj-demo-wrap">
-  <div class="ecj-demo-hint">Click "Accept All" on the page below</div>
-  <iframe src="/clickjacking/victims/ext-clickjack-demo.html" style="width:760px;height:400px;border:none;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.10);"></iframe>
+  <video
+    :src="'/clickjacking/roboform-visible.mp4'"
+    controls
+    autoplay
+    loop
+    muted
+    playsinline
+    style="width:680px;max-width:100%;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.10);"
+  ></video>
+  <a href="https://websecurity.dev/password-managers/dom-based-extension-clickjacking/" target="_blank" class="ecj-demo-link">Experience it yourself ↗</a>
 </div>
 
 <style>
@@ -582,19 +590,26 @@ layout: center
   align-items: center;
   gap: 10px;
 }
-.ecj-demo-hint {
-  font-size: 0.8em;
-  color: var(--mm-text-muted);
-  font-style: italic;
+.ecj-demo-link {
+  font-size: 0.82em;
+  font-weight: 700;
+  color: var(--mm-danger-text);
+  text-decoration: none;
+  border: 1px solid var(--mm-danger-border);
+  background: var(--mm-danger-bg);
+  border-radius: 999px;
+  padding: 4px 14px;
 }
+.ecj-demo-link:hover { opacity: 0.85; }
 </style>
 
 <!--
 PRESENTER NOTE:
-Point out: this looks like a normal banking dashboard - and crucially, the malicious script is running on the bank's own page (that's the row-2 foothold; assume XSS or a compromised third-party script).
+Recorded RoboForm demo. Point out: this looks like a normal page with a cookie banner, but RoboForm's autofill UI is sitting invisibly behind the "Accept All" button.
 Ask the audience what they'd do if they saw this cookie banner.
-Click "Accept All" - the hidden password manager popup flashes briefly, then the damage card shows stolen credentials.
+Watch the click land on Accept - the hidden autofill fires and credentials go to the attacker. The victim just saw a banner close.
 Key message: the user did nothing wrong. Their own security tool was used against them.
+Point to the link (websecurity.dev): the audience can try the live PoC themselves afterwards.
 -->
 
 ---
