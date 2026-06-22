@@ -196,18 +196,18 @@ zoom: 0.92
     <div class="ecj-mech-code">&lt;pm-autofill&gt; … &lt;/pm-autofill&gt;</div>
   </div>
 
-  <div class="ecj-mech-arrow" aria-hidden="true">→</div>
+  <div class="ecj-mech-arrow" aria-hidden="true" v-click="1">→</div>
 
-  <div class="ecj-mech-step" v-click>
+  <div class="ecj-mech-step" v-click="1">
     <div class="ecj-mech-num">2</div>
     <div class="ecj-mech-title">The page grabs it</div>
     <div class="ecj-mech-desc">Same DOM, no wall between them. One selector finds the node.</div>
     <div class="ecj-mech-code">document.querySelector('pm-autofill')</div>
   </div>
 
-  <div class="ecj-mech-arrow" aria-hidden="true" v-click>→</div>
+  <div class="ecj-mech-arrow" aria-hidden="true" v-click="2">→</div>
 
-  <div class="ecj-mech-step ecj-mech-step--red" v-click>
+  <div class="ecj-mech-step ecj-mech-step--red" v-click="2">
     <div class="ecj-mech-num">3</div>
     <div class="ecj-mech-title">…and makes it vanish</div>
     <div class="ecj-mech-desc">Invisible to you, but still sitting there, still fully clickable.</div>
@@ -215,8 +215,8 @@ zoom: 0.92
   </div>
 </div>
 
-<Callout v-click variant="error" class="mt-6" noIcon>
-  No iframe is loaded, so <code>X-Frame-Options</code> and <code>frame-ancestors</code> never fire. The browser just sees a page quietly restyling its own contents.
+<Callout v-click="3" variant="warning" class="mt-6" noIcon>
+  There's no iframe here at all. The browser just sees a page quietly restyling its own contents.
 </Callout>
 
 <style>
@@ -289,7 +289,7 @@ Mention in passing: same idea works by hiding the whole <body> (and painting a s
   <div class="pmdet-sigs">
     <div class="pmdet-head">DOM signatures (by manager)</div>
     <div class="pmdet-rows">
-      <div class="pmdet-row"><code>[data-1p-id]</code><span>1Password</span></div>
+      <div class="pmdet-row"><code>[com-1password-menu]</code><span>1Password</span></div>
       <div class="pmdet-row"><code>#bitwarden-notification-bar</code><span>Bitwarden</span></div>
       <div class="pmdet-row"><code>#dashlane-app</code><span>Dashlane</span></div>
       <div class="pmdet-row"><code>[id*="keeper-fill"]</code><span>Keeper</span></div>
@@ -406,7 +406,7 @@ class: px-14 py-4
   </div>
   <div class="ecj-rstep" v-click>
     <div class="ecj-rnum">3</div>
-    <div class="ecj-rbody"><strong>Hide the dropdown.</strong> Same trick as the last slide, and the Autofill button is now invisible but still live.</div>
+    <div class="ecj-rbody"><strong>Hide the dropdown.</strong> Same trick: set <code>opacity: 0</code> on the Autofill button.</div>
   </div>
   <div class="ecj-rstep" v-click>
     <div class="ecj-rnum">4</div>
@@ -414,7 +414,7 @@ class: px-14 py-4
   </div>
   <div class="ecj-rstep ecj-rstep--red" v-click>
     <div class="ecj-rnum">5</div>
-    <div class="ecj-rbody"><strong>You click Accept.</strong> The manager autofills the decoy → values stream to the attacker's server. Cards &amp; identity from any page; logins only if their script is running on your real site. You just saw a cookie banner close.</div>
+    <div class="ecj-rbody"><strong>You click Accept.</strong> The manager autofills the decoy → values stream to the attacker's server.</div>
   </div>
 </div>
 
@@ -463,7 +463,18 @@ Then: scope what this actually grabs - and what each tier costs the attacker.
 zoom: 0.92
 ---
 
-# Some Loot Is Free. Logins Cost a Foothold.
+# Loot Depends on the Foothold
+
+<InfoPopover title="Pin the autofill UI under the cursor" width="40rem" x="3.5rem" y="4.5rem">
+  <pre class="ecj-pin-pre">document.addEventListener('mousemove', function (event) {
+  document.getElementById('personalform').style =
+    "top: " + (event.pageY - 50) + "px; left:" + (event.pageX - 100) + "px;" +
+    " width: 200px; position: fixed; z-index: 2147483647 !important; opacity: 0.5;";
+  window.setTimeout(function () {
+    document.getElementById('name').focus();
+  }, 100);
+});</pre>
+</InfoPopover>
 
 <div class="ecj-intro mt-2">
   The autofill dropdown only ever offers what it would fill on <em>this</em> origin. So what an attacker walks away with depends entirely on <strong>where they already have a foothold</strong>.
@@ -502,7 +513,7 @@ zoom: 0.92
       <div class="ecj-mt-name">Full vault export</div>
       <div class="ecj-mt-sub">Every saved item, including secure notes</div>
     </div>
-    <div><span class="ecj-pill ecj-pill--red">None</span><span class="ecj-mt-note">Drive the manager's own "select all → share/export" flow.</span></div>
+    <div><span class="ecj-pill ecj-pill--red">None</span><span class="ecj-mt-note">Depends on the manager's own "select all → share/export" flow.</span></div>
     <div><span class="ecj-pill ecj-pill--amber">Multi-step</span></div>
     <div><span class="ecj-pill ecj-pill--amber">Sometimes</span></div>
   </div>
@@ -551,6 +562,18 @@ zoom: 0.92
   border-radius: 10px;
   padding: 10px 14px;
   line-height: 1.5;
+}
+.ecj-pin-pre {
+  margin: 0;
+  font-family: monospace;
+  font-size: 0.78em;
+  line-height: 1.6;
+  color: var(--mm-text-strong);
+  background: var(--mm-divider);
+  border-radius: 8px;
+  padding: 12px 14px;
+  white-space: pre;
+  overflow-x: auto;
 }
 </style>
 
@@ -725,94 +748,233 @@ Segue to what actually helps.
 -->
 
 ---
-zoom: 0.9
+zoom: 0.95
 ---
 
 # Extension-Side Mitigations: Cover All Three Surfaces
 
-<InfoPopover width="70vw" x="3.5rem" y="4.5rem">
-  <div class="ip-row">
-    <img src="../public/1password-alert.png" alt="1Password native browser dialog asking the user to click OK to fill the credential" class="ip-img" />
-    <div class="ip-text">
-      <div class="ip-cap-title">1Password's fix in the wild</div>
-      <div class="ip-cap">Picking a login pops a <strong>native browser dialog</strong> to confirm the fill. It lives outside the page, so the attacker can't hide or fake it.</div>
-    </div>
-  </div>
-</InfoPopover>
-
-<div class="ecj-intro mt-2 mb-4">
+<div class="ecj-intro mt-2 mb-5">
   The extension fix isn't one change. The page can hide your autofill UI in <strong>three different places</strong>, and patching two of them still leaves the vault wide open.
 </div>
 
-<div class="efx-matrix">
-  <div class="efx-head">
-    <div>Surface</div>
-    <div>How the page hides it</div>
-    <div>What the extension must do</div>
+<div class="surfmap">
+  <div class="surfmap-card">
+    <div class="surfmap-top"><span class="surfmap-num">1</span><span class="surfmap-name">The node itself</span></div>
+    <div class="surfmap-how">Restyle the extension's own injected element.</div>
+    <code class="surfmap-code">el.style.opacity = 0</code>
   </div>
-
-  <div class="efx-row">
-    <div class="efx-surf">The UI's own node</div>
-    <div class="efx-attack"><code>el.style.opacity = 0</code> straight on the injected element</div>
-    <div class="efx-fix">Render in a <strong>closed Shadow-Root</strong> so page JS can't select it, and run a <strong>MutationObserver</strong> to catch style tampering.</div>
+  <div class="surfmap-card" v-click>
+    <div class="surfmap-top"><span class="surfmap-num">2</span><span class="surfmap-name">A parent element</span></div>
+    <div class="surfmap-how">Hide it from above, fake the real page behind.</div>
+    <code class="surfmap-code">body { opacity: 0 }</code>
   </div>
-
-  <div class="efx-row" v-click>
-    <div class="efx-surf">A parent element</div>
-    <div class="efx-attack"><code>opacity: 0</code> on <code>&lt;body&gt;</code> above it, which a node-level observer never sees</div>
-    <div class="efx-fix">Walk computed opacity <strong>up the ancestor chain</strong>, or draw in the top layer via the <strong>Popover API</strong>, which ignores ancestor opacity.</div>
-  </div>
-
-  <div class="efx-row" v-click>
-    <div class="efx-surf">An overlay on top</div>
-    <div class="efx-attack">stacks a decoy element <em>over</em> the still-visible UI</div>
-    <div class="efx-fix">Stay the <strong>last / top-layer</strong> node; list other popovers and refuse to show (or auto-close) if any exist; use <code>elementsFromPoint()</code> for partial overlays.</div>
+  <div class="surfmap-card" v-click>
+    <div class="surfmap-top"><span class="surfmap-num">3</span><span class="surfmap-name">An overlay on top</span></div>
+    <div class="surfmap-how">Leave it visible, stack a decoy over it.</div>
+    <code class="surfmap-code">z-index: 2147483647</code>
   </div>
 </div>
 
-<Callout v-click variant="info" icon="⏱" class="mt-4">
-  <strong>And on two clocks.</strong> Guard both <em>before</em> the UI renders and <em>after</em> it's visible. Opacity and overlay tricks fire in both windows.
-</Callout>
-
 <style>
-.efx-matrix { border: 1.5px solid var(--mm-border); border-radius: 14px; overflow: hidden; }
-.efx-head, .efx-row {
-  display: grid;
-  grid-template-columns: 0.85fr 1.25fr 1.7fr;
-  align-items: stretch;
+.surfmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.surfmap-card {
+  border: 1.5px solid var(--mm-danger-border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
 }
-.efx-head {
-  background: var(--mm-text-strong);
-  color: #fff;
-  font-size: 0.66em;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
+.surfmap-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.surfmap-num {
+  flex: none; width: 1.9rem; height: 1.9rem;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: var(--mm-danger); color: #fff;
+  font-weight: 900; font-size: 0.95em;
 }
-.efx-head > div { padding: 8px 14px; }
-.efx-row { background: #fff; border-top: 1px solid var(--mm-border); }
-.efx-row > div { padding: 11px 14px; font-size: 0.76em; color: var(--mm-text); line-height: 1.45; }
-.efx-surf { font-weight: 800; color: var(--mm-text-strong); }
-.efx-attack { color: var(--mm-danger-text); background: var(--mm-danger-bg); }
-.efx-attack code { font-family: monospace; font-size: 0.92em; color: var(--mm-danger-text); }
-.efx-fix code { font-family: monospace; font-size: 0.92em; color: var(--mm-text-strong); }
-.ip-title { display: none !important; }
-.ip-row { display: flex; gap: 14px; align-items: center; }
-.ip-img { width: auto; max-height: 50vh; display: block; border: 1px solid var(--mm-border); border-radius: 6px; flex: none; }
-.ip-cap-title { font-size: 1.05em; font-weight: 600; color: var(--mm-defense-text); margin-bottom: 6px; }
-.ip-cap { font-size: 0.82em; color: var(--mm-text); line-height: 1.5; }
-.ip-cap strong { color: var(--mm-text-strong); }
+.surfmap-name { font-size: 0.92em; font-weight: 800; color: var(--mm-text-strong); }
+.surfmap-how { font-size: 0.78em; color: var(--mm-text-muted); line-height: 1.45; flex: 1; }
+.surfmap-code {
+  margin-top: 10px; padding: 6px 10px;
+  font-family: monospace; font-size: 0.74em;
+  background: var(--mm-danger-bg); color: var(--mm-danger-text);
+  border-radius: 8px; display: block;
+}
+
+/* shared variant-slide layout (global, reused by the three surface slides) */
+.vsurf { display: grid; grid-template-columns: 1.05fr 1fr; gap: 22px; align-items: start; }
+.vsurf--media { align-items: center; }
+.vsurf--media .vsurf-img { max-height: 15vh; }
+.vsurf-col { border: 1.5px solid var(--mm-border); border-radius: 14px; overflow: hidden; }
+.vsurf-col--attack { border-color: var(--mm-danger-border); }
+.vsurf-col--fix { border-color: var(--mm-defense-border); }
+.vsurf-label {
+  font-size: 0.68em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;
+  padding: 6px 14px;
+}
+.vsurf-col--attack .vsurf-label { background: var(--mm-danger-bg); color: var(--mm-danger-text); }
+.vsurf-col--fix .vsurf-label { background: var(--mm-defense-bg); color: var(--mm-defense-text); }
+.vsurf-body { padding: 12px 14px; background: #fff; }
+.vsurf-img {
+  width: 100%; max-height: 42vh; object-fit: contain;
+  border: 1px solid var(--mm-border); border-radius: 8px;
+  background: var(--mm-surface); display: block;
+}
+.vsurf-cap { font-size: 0.74em; color: var(--mm-text-muted); line-height: 1.45; margin-top: 8px; }
+.vsurf-fix-text { font-size: 0.82em; color: var(--mm-text); line-height: 1.55; margin: 0 0 9px; }
+.vsurf-fix-text:last-child { margin-bottom: 0; }
+.vsurf-fix-text strong { color: var(--mm-text-strong); }
+.vsurf-fix-text code { font-family: monospace; font-size: 0.9em; color: var(--mm-text-strong); }
+.vsurf-note {
+  margin-top: 10px; padding: 8px 12px; font-size: 0.74em;
+  background: var(--mm-warning-bg); color: var(--mm-warning-text);
+  border: 1px solid var(--mm-warning-border); border-radius: 8px; line-height: 1.45;
+}
 </style>
 
 <!--
 PRESENTER NOTE:
-The core dev message: there is no single fix. The attack hits three independent surfaces, and a defense that misses one leaves the extension exploitable.
-Surface 1 (visible): the attacker restyles the extension's own injected node. Closed Shadow-Root means page JS literally can't querySelector it; a MutationObserver on your own node catches style tampering. This is the fix most people stop at - and it's not enough.
-[click] Surface 2: hide it from above. Set opacity:0 on <body>/<html>. A MutationObserver watching only your node never sees this. You have to walk computed opacity up the ancestor chain, OR render in the top layer with the Popover API, which is unaffected by ancestor opacity.
-[click] Surface 3: don't touch the UI at all - stack a decoy on top of the still-visible dropdown. Defense: make sure you're the last/top-layer element, enumerate other popovers and bail if any exist, and use elementsFromPoint() to detect partial overlays.
-[click] Timing: all of this must run both before the UI renders (style/overlay set up in advance) and after it's visible (tampering immediately after render).
-Open the lightbulb popover (top-right): 1Password's shipped fix. When you pick a login, you get a native browser confirm dialog ("Click OK to fill..."). That dialog is drawn by the browser, not the page, so the attacker can't hide it or overlay it - this is the "render outside the page" idea made concrete, and it's the bridge to the next slide.
-Land it: this is why it took coordinated disclosure across 11 vendors - the complete fix is genuinely hard.
+The core dev message: there is no single fix. The attack hits three independent surfaces, and a defense that misses one leaves the extension exploitable. This slide just names them; the next three slides take one each.
+Walk the three cards: (1) restyle the extension's own node, (2) hide it from a parent, (3) leave it visible and overlay a decoy. Patch any two and the third still empties the vault.
+[click][click] reveal cards 2 and 3.
+The next three slides take one surface each; then a slide on 1Password's shipped fix shows what a real answer looks like.
+This is why it took coordinated disclosure across 11 vendors - the complete fix is genuinely hard.
+-->
+
+---
+
+# Surface 1: Extension Element
+
+<div class="ecj-intro mt-2 mb-4">
+  The blunt move. Grab the extension's injected element and set its opacity to zero. Invisible to you, still sitting there, still fully clickable.
+</div>
+
+<div class="vsurf">
+  <div class="vsurf-col vsurf-col--attack">
+    <div class="vsurf-label">The attack</div>
+<div class="vsurf-body">
+
+```js
+// grab the manager's injected UI
+const el = document.querySelector('com-1password-button');
+// invisible, but same spot and still clickable
+el.style.opacity = '0';
+```
+
+</div>
+  </div>
+  <div class="vsurf-col vsurf-col--fix" v-click>
+    <div class="vsurf-label">What the extension must do</div>
+    <div class="vsurf-body">
+      <p class="vsurf-fix-text">Render the UI inside a <strong>closed Shadow-Root</strong>, so page JS can't even <code>querySelector</code> the node.</p>
+      <p class="vsurf-fix-text">Run a <strong>MutationObserver</strong> on your own element and revert any style the page tries to set on it.</p>
+      <div class="vsurf-note">⚠ This is the fix most people stop at. On its own, it covers one surface out of three.</div>
+    </div>
+  </div>
+</div>
+
+<!--
+PRESENTER NOTE:
+Surface 1 is the obvious one. The page selects the extension's injected element and sets opacity:0 - the element is invisible but unchanged: same position, same size, still receiving clicks.
+[click] The fix: a closed Shadow-Root means page JS literally cannot querySelector the node, and a MutationObserver on your own element catches and reverts style tampering.
+Hammer the warning: this is where most implementations stop, and it only closes one of three doors. The next two slides are the doors they forget.
+-->
+
+---
+
+# Surface 2: Parent Element
+
+<div class="ecj-intro mt-2 mb-4">
+  Never touch the extension's node at all. Set <code>opacity: 0</code> on a parent like <code>&lt;body&gt;</code>, and paint a screenshot of the real site as the background so nothing looks missing.
+</div>
+
+<div class="vsurf">
+  <div class="vsurf-col vsurf-col--attack">
+    <div class="vsurf-label">The attack</div>
+    <div class="vsurf-body">
+      <img src="../public/ext-cj/parent-elem.png" alt="DevTools showing opacity:0 on body and a background-image faking the website on the html element" class="vsurf-img" />
+      <div class="vsurf-cap">A MutationObserver watching only your own node never sees this. The hiding happens two levels up.</div>
+    </div>
+  </div>
+  <div class="vsurf-col vsurf-col--fix" v-click>
+    <div class="vsurf-label">What the extension must do</div>
+    <div class="vsurf-body">
+      <p class="vsurf-fix-text">Walk <strong>computed opacity up the ancestor chain</strong>, not just your own element.</p>
+      <p class="vsurf-fix-text">Or draw in the browser's <strong>top layer</strong> via the <strong>Popover API</strong>, which ignores ancestor opacity entirely.</p>
+    </div>
+  </div>
+</div>
+
+<!--
+PRESENTER NOTE:
+Surface 2 is the sneaky one. The attacker sets opacity:0 on <body> (or <html>) - the extension's node is untouched, so a MutationObserver on your own element sees nothing. A background-image of the real site keeps the page looking normal.
+Point at the screenshot: body style="opacity:0", html with background-image:url(website.png), the 1Password nodes still in the tree.
+[click] The fix: walk computed opacity up the ancestor chain, OR render in the top layer with the Popover API, which is unaffected by ancestor opacity. Top layer is the cleaner answer because it sidesteps the whole ancestor problem.
+-->
+
+---
+
+# Surface 3: Overlay
+
+<div class="ecj-intro mt-2 mb-4">
+  Leave the autofill UI fully visible. Just layer a decoy element <em>over</em> it, so the click that looks like it lands on your banner actually lands on the dropdown underneath.
+</div>
+
+<div class="vsurf vsurf--media">
+  <div class="vsurf-col vsurf-col--attack">
+    <div class="vsurf-body">
+      <img src="../public/ext-cj/partialoverlay.gif" alt="The 1Password autofill dropdown stays visible while a decoy element is layered over it" class="vsurf-img" />
+      <div class="vsurf-cap">The UI is on screen and untouched, so opacity checks pass. The decoy just sits on a higher layer.</div>
+    </div>
+  </div>
+  <div class="vsurf-col vsurf-col--fix" v-click>
+    <div class="vsurf-label">What the extension must do</div>
+    <div class="vsurf-body">
+      <p class="vsurf-fix-text">Stay the <strong>last / top-layer</strong> node. Enumerate other popovers and refuse to show (or auto-close) if any exist.</p>
+      <p class="vsurf-fix-text">Use <code>elementsFromPoint()</code> to detect a <strong>partial overlay</strong> sitting over your clickable area.</p>
+    </div>
+  </div>
+</div>
+
+<!--
+PRESENTER NOTE:
+Surface 3 is the one that beats both previous fixes. The attacker doesn't touch the UI at all - it stays fully visible, every opacity check passes - they just stack a decoy element on top with a higher z-index / in the top layer.
+Point at the gif: the autofill dropdown is right there and untouched; the decoy is layered over the clickable area.
+[click] The fix: make sure you're the last / top-layer node, enumerate other popovers and bail (or auto-close) if any exist, and use elementsFromPoint() to catch a partial overlay covering your button.
+Land it: cover surface 1 and 2 perfectly and this one still works. That's why the complete fix is hard and took 11 vendors.
+-->
+
+---
+layout: center
+---
+
+# 1Password's Fix: Leave the Page Entirely
+
+<div class="ip-slide">
+  <img src="../public/1password-alert.png" alt="1Password native browser dialog asking the user to click OK to fill the credential" class="ip-slide-img" />
+  <div class="ip-slide-text">
+    <div class="ip-cap-title">A native browser dialog, not page DOM</div>
+    <div class="ip-cap">Picking a login now pops a <strong>native browser dialog</strong> to confirm the fill. It lives <strong>outside the page</strong>, so no amount of <code>opacity</code>, parent tricks, or overlays can hide or fake it.</div>
+    <div class="ip-cap mt-3">This sidesteps all three surfaces at once. The only structurally safe move is to stop drawing where the page can reach.</div>
+  </div>
+</div>
+
+<style>
+.ip-slide { display: flex; gap: 28px; align-items: center; justify-content: center; margin-top: 1rem; }
+.ip-slide-img { width: auto; max-height: 40vh; display: block; border: 1px solid var(--mm-border); border-radius: 8px; flex: none; }
+.ip-slide-text { max-width: 24rem; }
+.ip-slide-text .ip-cap-title { font-size: 1.1em; font-weight: 700; color: var(--mm-defense-text); margin-bottom: 8px; }
+.ip-slide-text .ip-cap { font-size: 0.9em; color: var(--mm-text); line-height: 1.55; }
+.ip-slide-text .ip-cap strong { color: var(--mm-text-strong); }
+.ip-slide-text .ip-cap code { font-family: monospace; font-size: 0.9em; color: var(--mm-text-strong); }
+</style>
+
+<!--
+PRESENTER NOTE:
+This is the "what a real fix looks like" beat, and the bridge to the recommendations slide.
+1Password's shipped fix: when you pick a login, you get a native browser confirm dialog ("Click OK to fill..."). That dialog is drawn by the browser, not the page, so the attacker can't hide it or overlay it.
+This is the "render outside the page" idea made concrete - it neutralizes all three surfaces at once, because none of them can touch UI that isn't in the page DOM.
+Tradeoff to flag (sets up the next slide): it adds a click to every fill, so it's friction. That's the practicality-vs-security tension the recommendations slide unpacks.
 -->
 
 ---
