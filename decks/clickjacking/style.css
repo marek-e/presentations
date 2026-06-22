@@ -4,3 +4,31 @@
  * (packages/slidev-addon-melmayan/styles/tokens.css).
  * Override any token here - deck styles load after addon styles.
  */
+
+/*
+ * Emphasis for the "What the extension must do" label on the three
+ * Surface slides. Lives here (global) rather than in a slide <style>
+ * block because Slidev scopes slide styles to a single slide, and the
+ * label appears on three separate slides.
+ */
+.vsurf-col--fix .vsurf-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 11px 0 3px 14px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--mm-defense-border);
+  font-size: 0.72em;
+}
+.vsurf-col--fix .vsurf-label::before {
+  content: "✓";
+  font-size: 1.1em;
+  line-height: 1;
+}
+.vsurf-fix-text a {
+  color: var(--mm-defense-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.vsurf-fix-text a:hover { opacity: 0.8; }

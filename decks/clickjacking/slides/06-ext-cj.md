@@ -866,9 +866,9 @@ el.style.opacity = '0';
   <div class="vsurf-col vsurf-col--fix" v-click>
     <div class="vsurf-label">What the extension must do</div>
     <div class="vsurf-body">
-      <p class="vsurf-fix-text">Render the UI inside a <strong>closed Shadow-Root</strong>, so page JS can't even <code>querySelector</code> the node.</p>
-      <p class="vsurf-fix-text">Run a <strong>MutationObserver</strong> on your own element and revert any style the page tries to set on it.</p>
-      <div class="vsurf-note">⚠ This is the fix most people stop at. On its own, it covers one surface out of three.</div>
+      <p class="vsurf-fix-text">Render the UI inside a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow" target="_blank"><strong>closed Shadow-Root</strong></a>, so page JS can't even <code>querySelector</code> the node.</p>
+      <p class="vsurf-fix-text">Run a <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver" target="_blank"><strong>MutationObserver</strong></a> on your own element and revert any style the page tries to set on it.</p>
+      <Callout variant="warning" class="mt-2">This is the fix most people stop at. On its own, it covers one surface out of three.</Callout>
     </div>
   </div>
 </div>
@@ -893,14 +893,13 @@ Hammer the warning: this is where most implementations stop, and it only closes 
     <div class="vsurf-label">The attack</div>
     <div class="vsurf-body">
       <img src="../public/ext-cj/parent-elem.png" alt="DevTools showing opacity:0 on body and a background-image faking the website on the html element" class="vsurf-img" />
-      <div class="vsurf-cap">A MutationObserver watching only your own node never sees this. The hiding happens two levels up.</div>
     </div>
   </div>
   <div class="vsurf-col vsurf-col--fix" v-click>
     <div class="vsurf-label">What the extension must do</div>
     <div class="vsurf-body">
       <p class="vsurf-fix-text">Walk <strong>computed opacity up the ancestor chain</strong>, not just your own element.</p>
-      <p class="vsurf-fix-text">Or draw in the browser's <strong>top layer</strong> via the <strong>Popover API</strong>, which ignores ancestor opacity entirely.</p>
+      <p class="vsurf-fix-text">Or draw in the browser's <strong>top layer</strong> via the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API" target="_blank"><strong>Popover API</strong></a>, which ignores ancestor opacity entirely.</p>
     </div>
   </div>
 </div>
@@ -920,18 +919,16 @@ Point at the screenshot: body style="opacity:0", html with background-image:url(
   Leave the autofill UI fully visible. Just layer a decoy element <em>over</em> it, so the click that looks like it lands on your banner actually lands on the dropdown underneath.
 </div>
 
-<div class="vsurf vsurf--media">
-  <div class="vsurf-col vsurf-col--attack">
-    <div class="vsurf-body">
-      <img src="../public/ext-cj/partialoverlay.gif" alt="The 1Password autofill dropdown stays visible while a decoy element is layered over it" class="vsurf-img" />
-      <div class="vsurf-cap">The UI is on screen and untouched, so opacity checks pass. The decoy just sits on a higher layer.</div>
-    </div>
+<div class="grid grid-cols-2 gap-8 items-center mt-2">
+  <div>
+    <img src="../public/ext-cj/partialoverlay.gif" alt="The 1Password autofill dropdown stays visible while a decoy element is layered over it" class="vsurf-img" style="max-height:52vh" />
+    <div class="vsurf-cap"><strong>Partial overlay</strong> (above): a small decoy covers just the clickable area. <strong>Full overlay</strong>: a decoy covers the whole UI but sets <code>pointer-events: none</code>, so the click passes straight through to the button underneath.</div>
   </div>
   <div class="vsurf-col vsurf-col--fix" v-click>
     <div class="vsurf-label">What the extension must do</div>
     <div class="vsurf-body">
       <p class="vsurf-fix-text">Stay the <strong>last / top-layer</strong> node. Enumerate other popovers and refuse to show (or auto-close) if any exist.</p>
-      <p class="vsurf-fix-text">Use <code>elementsFromPoint()</code> to detect a <strong>partial overlay</strong> sitting over your clickable area.</p>
+      <p class="vsurf-fix-text">Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/elementsFromPoint" target="_blank"><code>elementsFromPoint()</code></a> to detect a <strong>partial overlay</strong> sitting over your clickable area.</p>
     </div>
   </div>
 </div>
@@ -948,7 +945,7 @@ Land it: cover surface 1 and 2 perfectly and this one still works. That's why th
 layout: center
 ---
 
-# 1Password's Fix: Leave the Page Entirely
+# The safest solution: a new popup window
 
 <div class="ip-slide">
   <img src="../public/1password-alert.png" alt="1Password native browser dialog asking the user to click OK to fill the credential" class="ip-slide-img" />
