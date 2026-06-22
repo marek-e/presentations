@@ -1,0 +1,28 @@
+decks/clickjacking/slides/02-the-attack.md
+  s_7b6792c837dfcb::t_08e5bac0c9a442 916
+decks/clickjacking/components/ClickjackDemo.vue
+  s_7b6792c837dfcb::t_c8f961b6b8c88e 34-36,43,47-49,51-52,54-55,57-61,63,66-67,69,76,81,96-97
+  s_7b6792c837dfcb::t_4009885b2858b2 22-25
+  s_7b6792c837dfcb::t_a9d8c2a827b083 147
+  s_7b6792c837dfcb::t_38c87b8add3c55 121-125,128
+  s_7b6792c837dfcb::t_bf19ed4d7cfceb 183-187,189
+  s_7b6792c837dfcb::t_a8ae642958dbcd 126-127,129
+  s_7b6792c837dfcb::t_ff8fd67b8856e0 37-42,44-46,50,53,56,62,64-65,68,70-75,77-80,82-95
+  s_7b6792c837dfcb::t_c5d192f9fdf246 188
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.10",
+  "base_commit_sha": "67690c99508f6987c8ab5ea6d5ca046b0a692d29",
+  "prompts": {},
+  "sessions": {
+    "s_7b6792c837dfcb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "54435498-5ee3-407e-920b-237f23fb6bce",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
