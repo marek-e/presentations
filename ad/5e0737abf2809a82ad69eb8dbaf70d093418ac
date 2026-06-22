@@ -1,0 +1,91 @@
+decks/clickjacking/deck.fr.json
+  s_79c825ac441fc9::t_73a8385bdcb6c9 1-9
+decks/clickjacking/package.json
+  s_79c825ac441fc9::t_2b12a1cd142c09 7,9-11
+scripts/run-slidev.mjs
+  s_79c825ac441fc9::t_5fdd858392bd2a 42,45,47,52-53
+  s_79c825ac441fc9::t_773c3ebc33341d 14-15
+decks/clickjacking/slides/fr/04-defenses.md
+  s_27176c12fa5a6c::t_e3a86a374f9c87 1-415
+decks/clickjacking/slides/fr/02-the-attack.md
+  s_9d0270c97d8564::t_f859e4f6114c8e 1-838,840-1183
+  s_9d0270c97d8564::t_9630a8696fca44 839
+decks/clickjacking/slides/fr/07-finish.md
+  s_79c825ac441fc9::t_78864ac1e2c4c8 1-178
+scripts/deck-meta-vite-plugin.mjs
+  s_79c825ac441fc9::t_b35e935855c8e8 53
+  s_79c825ac441fc9::t_26f481bd4f748e 4,10-17,25
+decks/clickjacking/slides/fr/01-cover.md
+  s_79c825ac441fc9::t_ddf7a5a79e6af1 1-39
+scripts/slidev-entry.mjs
+  s_79c825ac441fc9::t_a2629b5564a92b 70
+  s_79c825ac441fc9::t_392ec2a7a5f195 14-28
+  s_79c825ac441fc9::t_24f1dce94364e0 63,65-67,69
+scripts/build.mjs
+  s_79c825ac441fc9::t_8c677cefa47d82 46-52
+  s_79c825ac441fc9::t_695973bbe18394 12
+decks/clickjacking/slides/fr/05-dcj.md
+  s_d7e682d7773290::t_5b533f5adc2f45 1-388
+decks/clickjacking/slides/fr/06-ext-cj.md
+  s_9eeaed0a5fdb70::t_dfbf5f01e5d478 1-1048
+.gitignore
+  s_79c825ac441fc9::t_d52d6cd5527bde 10
+scripts/deck-meta.mjs
+  s_79c825ac441fc9::t_3d7520ee984571 37,40-41
+  s_79c825ac441fc9::t_5a390299166bb9 79,82
+  s_79c825ac441fc9::t_401ee6b5cb8554 16-19,21
+  s_79c825ac441fc9::t_aa3a29935400a4 113-114,117-126
+  s_79c825ac441fc9::t_6a22c2fe5e9bbf 57,63
+decks/clickjacking/slides.fr.md
+  s_79c825ac441fc9::t_ad953df1c20d83 1-142
+decks/clickjacking/slides/fr/05-variants-intro.md
+  s_79c825ac441fc9::t_459910e13c6cc0 1-159
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "ad5e0737abf2809a82ad69eb8dbaf70d093418ac",
+  "prompts": {},
+  "sessions": {
+    "s_27176c12fa5a6c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "7cc50bde-371f-49f8-9494-43a929fe0dd3",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    },
+    "s_79c825ac441fc9": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "cb6f8f53-6b44-469d-95fb-a11a4c2f4200",
+        "model": "composer-2.5"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    },
+    "s_9d0270c97d8564": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "2f8e44cf-c729-498d-a02e-39b56fb0f1b0",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    },
+    "s_9eeaed0a5fdb70": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "6a306c41-2e26-4a61-a9e2-1d696e908a8d",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    },
+    "s_d7e682d7773290": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "56681c51-6ad8-43e9-83ea-248957976e51",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
