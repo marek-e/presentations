@@ -27,7 +27,7 @@ zoom: 0.9
     <div class="av-card-icon" aria-hidden="true">🖱️🖱️</div>
     <div class="av-card-title">DoubleClickjacking</div>
     <p class="av-card-body">
-      Popup + <code>window.opener</code> + the gap between <code>mousedown</code> and <code>mouseup</code>.
+      Popup + <code>window.opener</code> + the gap between double-clicks.
       Hijacks OAuth without a single iframe.
     </p>
     <div class="av-card-hook">"Double-click to verify you're human."</div>
