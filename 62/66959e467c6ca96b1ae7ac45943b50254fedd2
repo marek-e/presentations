@@ -1,0 +1,32 @@
+decks/clickjacking/slides/05-dcj.md
+  s_4e77f5b482a521::t_bc4ed671f42231 1,5,10,14,18
+  h_34454149dac528 104
+  s_4e77f5b482a521::t_0e17456407e478 53-54
+  s_4e77f5b482a521::t_3108acabd783e3 95-97,99-101
+  s_4e77f5b482a521::t_cfe4130d152327 138,141
+  s_4e77f5b482a521::t_44ab2568ef42fc 139-140,142-144
+  s_4e77f5b482a521::t_3c1f6099864cc0 16
+  s_4e77f5b482a521::t_f38bd9a1f0e5ef 62,86-87
+  s_4e77f5b482a521::t_35b3fd44968a64 70-71,78-79
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "6266959e467c6ca96b1ae7ac45943b50254fedd2",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_4e77f5b482a521": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "80df8594-641e-4fcd-8f92-a52edddf7fe8",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
