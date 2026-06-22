@@ -1,21 +1,21 @@
-# DoubleClickjacking - No iframe Required
+# DoubleClickjacking: One Gesture, Two Targets
 
 <span class="dcj-badge">2024 · Paulos Yibelo</span> <a href="https://www.evil.blog/2024/12/doubleclickjacking-what.html" target="_blank" class="dcj-link">evil.blog ↗</a>
 
-<Callout variant="warning" class="mt-4">You set <code>X-Frame-Options: DENY</code> on every page. Doesn't matter. <strong>No iframe is involved.</strong></Callout>
+<Callout variant="warning" class="mt-4">A double-click is two separate clicks. Click 1 fires on the attacker's popup and closes it. Click 2, at the same cursor position ~100 ms later, fires on whatever is now underneath - the OAuth <strong>Allow</strong> button.</Callout>
 
 <div class="dcj-three-col mt-6">
   <OffsetCard title="Classic Clickjacking" accent="blue">
     <template #icon>🖼️</template>
-    Loads victim in an invisible <code>iframe</code>. Blocked by <code>X-Frame-Options</code> and <code>CSP frame-ancestors</code>.
+    Invisible <code>iframe</code> overlays the victim page. One click, one target. Blocked by <code>X-Frame-Options</code> and <code>CSP frame-ancestors</code>.
   </OffsetCard>
   <OffsetCard title="DoubleClickjacking" accent="red">
     <template #icon>🖱️</template>
-    Uses a <strong>popup window</strong> and the <code>window.opener</code> API. Zero iframes. All frame-based defenses are blind to it.
+    Click 1 lands on the attacker's popup and swaps the context. Click 2 lands on a completely different page, same position. No iframe needed.
   </OffsetCard>
-  <OffsetCard title="What's Bypassed" accent="orange">
+  <OffsetCard title="Net Result" accent="orange">
     <template #icon>🚫</template>
-    <code>X-Frame-Options</code> · <code>CSP frame-ancestors</code> · <code>SameSite</code> cookies (Lax &amp; Strict)
+    <code>X-Frame-Options</code>, <code>CSP frame-ancestors</code>, <code>SameSite</code> cookies - all irrelevant. None of them protect against a popup.
   </OffsetCard>
 </div>
 
@@ -50,8 +50,8 @@
 <!--
 PRESENTER NOTE:
 Paulos Yibelo, Dec 2024 - fresh variant that bypasses everything we just taught.
-Emphasize: X-Frame-Options DENY on every page does nothing here. Zero iframes.
-Three cards: classic (blocked by headers) vs DCJ (popup/opener) vs what's bypassed (XFO, CSP, SameSite).
+Core trick: a double-click is two separate, complete clicks. Click 1 fires on the popup and closes it. Click 2 (same cursor position, ~100ms later) fires on whatever is now underneath - the OAuth Allow button.
+Three cards: classic (one click, one target, blocked by headers) vs DCJ (two clicks, two targets) vs net result (frame headers useless because no frame).
 Link evil.blog for curious audience members.
 -->
 
@@ -59,7 +59,7 @@ Link evil.blog for curious audience members.
 class: px-14 py-4
 ---
 
-# How It Works - The Timing Trick
+# Click 1 closes the popup. Click 2 hits Allow.
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -67,24 +67,24 @@ class: px-14 py-4
   <div class="dcj-step">
     <div class="dcj-step-num">01</div>
     <div>
-      <div class="dcj-step-title">Attacker serves a popup</div>
-      <div class="dcj-step-desc">A decoy popup opens asking the victim to <strong>"double-click to verify you're human."</strong> The popup holds <code>window.opener</code> - a reference back to the parent tab.</div>
+      <div class="dcj-step-title">Popup opens and immediately swaps the parent</div>
+      <div class="dcj-step-desc">On load, the popup calls <code>window.opener.location</code> to navigate the parent tab to the OAuth consent page. While the user reads the "double-click to verify" prompt, the page fully loads in the background. No race condition.</div>
     </div>
   </div>
 
   <div class="dcj-step">
     <div class="dcj-step-num">02</div>
     <div>
-      <div class="dcj-step-title"><code>mousedown</code> fires - parent tab swaps silently</div>
-      <div class="dcj-step-desc">On the <em>first press</em> of the double-click, <code>mousedown</code> fires immediately. The popup redirects the parent tab to a real OAuth consent screen via <code>window.opener.location</code>.</div>
+      <div class="dcj-step-title">Click 1 closes the popup</div>
+      <div class="dcj-step-desc">The button listens for <code>mousedown</code> (not <code>click</code>) and only does one thing: <code>window.close()</code>. The popup disappears before click 2's <code>mousedown</code> can fire on it.</div>
     </div>
   </div>
 
   <div class="dcj-step dcj-step--red">
     <div class="dcj-step-num">03</div>
     <div>
-      <div class="dcj-step-title"><code>mouseup</code> lands on the OAuth "Allow" button</div>
-      <div class="dcj-step-desc">By the time the click completes, the consent screen has loaded with "Allow" exactly under the cursor. The victim just authorized the attacker's app.</div>
+      <div class="dcj-step-title">Click 2 fires on the OAuth Allow button</div>
+      <div class="dcj-step-desc">The popup is gone. Click 2 lands on the parent tab at the exact same cursor position - straight onto the Allow button. The victim just authorized the attacker's app.</div>
     </div>
   </div>
 </div>
@@ -92,22 +92,16 @@ class: px-14 py-4
 <div v-click>
 
 ```js
-// popup.html - the "double-click to verify" decoy
+// On popup load: parent starts loading OAuth immediately
+window.opener.location =
+  'https://slack.com/oauth/v2/authorize?client_id=HACKER_APP&scope=chat:write'
+
+// Click 1: mousedown closes popup before click 2 can fire on it
 document.querySelector('.verify-btn')
-  .addEventListener('mousedown', () => {
-
-    // Fires on first press - before mouseup completes
-    window.opener.location =
-      'https://slack.com/oauth/v2/authorize' +
-      '?client_id=HACKER_APP' +
-      '&scope=chat:write,users:read,channels:read'
-
-    // mouseup now fires on the OAuth "Allow" button
-    // in the parent tab - authorizing the attacker's app
-  })
+  .addEventListener('mousedown', () => window.close())
 ```
 
-<Callout variant="note" noIcon class="mt-3">The entire swap happens in the ~100 ms gap between press and release - imperceptible to humans, reliable for scripts.</Callout>
+<Callout variant="note" noIcon class="mt-3"><code>mousedown</code> not <code>click</code>: if you used <code>click</code>, click 2's <code>mousedown</code> might fire on the popup before it closes. Also: <code>window.opener.location</code> is the most reliable swap method but other approaches exist.</Callout>
 
 </div>
 
@@ -141,11 +135,13 @@ document.querySelector('.verify-btn')
 
 <!--
 PRESENTER NOTE:
-The whole attack is a race against human perception. Walk the three steps slowly.
-Step 2 is the magic: mousedown on first click of double-click fires BEFORE mouseup.
-Popup uses window.opener.location to swap the parent tab to OAuth consent.
-[click] Show the code - mousedown handler redirects parent; mouseup completes on "Allow".
-~100ms gap is invisible to humans but plenty for navigation + layout.
+Title IS the punchline - say it out loud before walking the steps.
+Step 1: navigation on popup load is key. OAuth page is fully loaded BEFORE the user double-clicks - no race condition regardless of double-click speed.
+Step 2: click 1 only closes the popup. Nothing else. The hard work was done in step 1.
+Step 3: popup is gone, click 2 falls through. The victim has no idea they clicked on two different things.
+[click] Walk the code: 2 lines at the top (navigation on load), 1 line in the listener (window.close). That's the whole attack.
+Note on mousedown: closing on mousedown rather than click ensures the popup is fully gone before click 2's mousedown fires. If you used click, click 2 might start on the popup before it disappears.
+Note on other swap methods: window.opener.location was Yibelo's preferred method - other approaches exist but he found this the most reliable.
 -->
 
 ---
