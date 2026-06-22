@@ -1,0 +1,14 @@
+decks/clickjacking/slides/02-the-attack.md
+  h_34454149dac528 934
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "7495276b7c4ac0f88e15a7530542d58b41e00919",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
