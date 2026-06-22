@@ -1,0 +1,19 @@
+decks/clickjacking/slides/02-the-attack.md
+  s_4c2a76a1a4fac4::t_cf4e59fd717585 1142
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "5c7e72367e76158caff38bca4cd185ec58a80c6f",
+  "prompts": {},
+  "sessions": {
+    "s_4c2a76a1a4fac4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7ddc26e2-edc0-415a-91a7-d0e361ddee7b",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
