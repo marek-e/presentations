@@ -1,0 +1,19 @@
+decks/clickjacking/slides/01-cover.md
+  s_19d025f9114f73::t_a9fc7e3d290ecd 3,12-14,19-26,28-30,37-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "d3748bead7b5975785b9f660a92aec71a45c5f5f",
+  "prompts": {},
+  "sessions": {
+    "s_19d025f9114f73": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d23e613f-3550-4106-817a-e29c4429f987",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
