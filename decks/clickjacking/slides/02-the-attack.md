@@ -1062,11 +1062,6 @@ Three prerequisites - fix any one and the attack collapses. This is the checklis
   <span class="sc-fix-text"><code>SameSite=Lax</code> (now the browser default) tells the browser not to send cookies inside cross-site iframes; the bank shows a login screen instead. Still, pair it with frame headers for a complete defense.</span>
 </div>
 
-<div class="sc-caveat" v-click>
-  <span class="sc-caveat-label">⚠️ JWT in <code>localStorage</code>?</span>
-  <span class="sc-caveat-text"><code>SameSite</code> doesn't help - there's no cookie. The framed page reads its own <code>localStorage</code> and attaches the token itself. Frame headers are the <em>only</em> fix.</span>
-</div>
-
 <style>
 /* ── Session cookie slide ───────────────────────────── */
 .sc-intro {
@@ -1133,23 +1128,6 @@ Three prerequisites - fix any one and the attack collapses. This is the checklis
 .sc-fix-label { font-weight: 800; color: var(--mm-warning-text); white-space: nowrap; }
 .sc-fix-text  { color: var(--mm-text); }
 
-.sc-caveat {
-  display: flex;
-  gap: 12px;
-  align-items: baseline;
-  margin-top: 18px;
-  padding: 10px 16px;
-  background: var(--mm-danger-bg);
-  border: 1px solid var(--mm-danger-border);
-  border-radius: 12px;
-  font-size: 0.78em;
-  line-height: 1.5;
-  animation: sc-rise 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.sc-caveat.slidev-vclick-hidden { animation-play-state: paused; }
-.sc-caveat-label { font-weight: 800; color: var(--mm-danger-text); white-space: nowrap; }
-.sc-caveat-text  { color: var(--mm-text); }
-
 @keyframes sc-rise {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -1161,7 +1139,7 @@ PRESENTER NOTE:
 Common question: "How does the bank page load logged-in inside the iframe?"
 Walk the 3-step flow: cookie stored on login → browser auto-sends it to iframe request → server renders authenticated UI.
 [click] SameSite=Lax helps for cookies - iframe won't get the session, user sees login form instead.
-[click] JWT in localStorage: SameSite is irrelevant; framed page reads its own storage. Headers only fix.
+Just in case someone asks about JWT in localStorage: modern browsers partition storage by top-level site, so a cross-site iframe gets an empty store (same effect as SameSite). Headers still stop the click.
 -->
 
 ---
