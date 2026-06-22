@@ -1,0 +1,34 @@
+decks/clickjacking/style.css
+  s_5a5f93dd129f57::t_2afc0f382d10be 7-14,16,23-25,27-28
+  s_5a5f93dd129f57::t_e0d1119ac945b1 29-34
+  s_5a5f93dd129f57::t_4003233278fdfc 15,17-22,26
+decks/clickjacking/slides/06-ext-cj.md
+  s_5a5f93dd129f57::t_fdb523369ad4da 925
+  s_5a5f93dd129f57::t_15ec48d54058e0 871
+  s_5a5f93dd129f57::t_da4f3519943754 931
+  h_34454149dac528 948
+  s_5a5f93dd129f57::t_2fc3be7e2af918 869-870
+  s_5a5f93dd129f57::t_9ccd0cf33e1b6c 902
+  s_5a5f93dd129f57::t_68f79cf3ed954c 922-924
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "02e6ca6675d6371c52da964210b3ae0152c06087",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_5a5f93dd129f57": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1ee8584-f896-4ae2-b887-60116a4dfc15",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
