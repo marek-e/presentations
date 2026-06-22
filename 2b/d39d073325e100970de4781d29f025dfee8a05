@@ -1,0 +1,14 @@
+decks/clickjacking/slides/05-variants-intro.md
+  h_34454149dac528 30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.10",
+  "base_commit_sha": "2bd39d073325e100970de4781d29f025dfee8a05",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
