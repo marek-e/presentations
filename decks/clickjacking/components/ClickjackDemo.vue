@@ -19,6 +19,10 @@ const props = defineProps({
   adHeader: { type: String, default: "" },
   adHeaderBg: { type: String, default: "#6366f1" },
   attackerBg: { type: String, default: "" },
+  // CSS selector of the real element inside the (same-origin) victim iframe to
+  // sit under the fake button. When set, top/left are measured automatically on
+  // load/resize, so alignment holds on any screen and start-x/start-y are unused.
+  alignTarget: { type: String, default: "" },
 });
 
 const emit = defineEmits(["buttonClick"]);
@@ -26,6 +30,70 @@ const emit = defineEmits(["buttonClick"]);
 const revealOpacity = ref(0);
 const iframeTop = ref(props.startY);
 const iframeLeft = ref(props.startX);
+
+const stageEl = ref(null);
+const iframeEl = ref(null);
+
+// Which decoy element the victim target must sit under: the close "×" in ad
+// mode (user thinks they're dismissing an ad), else the main fake button.
+const decoySelector = computed(() =>
+  props.adMode ? ".cj-ad-close" : ".cj-attacker-btn",
+);
+
+/**
+ * Position the iframe so `alignTarget` (inside it) sits centered under the
+ * decoy element. Everything is measured live, so it self-calibrates on any
+ * screen. The decoy lives in the outer document and is rendered through
+ * Slidev's slide transform, so its rect is scaled; we divide it back to the
+ * stage's local px (the same coordinate space the iframe's top/left use). The
+ * iframe's own document is not scaled internally, so the target rect is already
+ * in that space. Returns false when layout isn't ready yet so the caller retries.
+ */
+function alignToTarget() {
+  if (!props.alignTarget) return true;
+  const stage = stageEl.value;
+  const iframe = iframeEl.value;
+  if (!stage || !iframe || !stage.offsetWidth) return false;
+
+  let target;
+  try {
+    target = iframe.contentDocument?.querySelector(props.alignTarget);
+  } catch {
+    return true; // cross-origin: can't measure, leave start-x/start-y as-is
+  }
+  const decoy = stage.querySelector(decoySelector.value);
+  if (!target || !decoy) return false;
+
+  const stageRect = stage.getBoundingClientRect();
+  const decoyRect = decoy.getBoundingClientRect();
+  const targetRect = target.getBoundingClientRect();
+  // Zero-sized rects mean the content hasn't laid out yet -> retry.
+  if (!stageRect.width || !decoyRect.width || !targetRect.width) return false;
+
+  const scale = stageRect.width / stage.offsetWidth || 1;
+  const decoyCenterX = (decoyRect.left - stageRect.left + decoyRect.width / 2) / scale;
+  const decoyCenterY = (decoyRect.top - stageRect.top + decoyRect.height / 2) / scale;
+
+  iframeLeft.value = Math.round(decoyCenterX - (targetRect.left + targetRect.width / 2));
+  iframeTop.value = Math.round(decoyCenterY - (targetRect.top + targetRect.height / 2));
+  return true;
+}
+
+/** Retry across frames until layout is ready (fixes "only aligns after refresh"). */
+function scheduleAlign(attempts = 12) {
+  if (alignToTarget() || attempts <= 0) return;
+  requestAnimationFrame(() => scheduleAlign(attempts - 1));
+}
+
+/** Re-align once the iframe's own fonts/emoji settle (they shift the target). */
+function onIframeLoad() {
+  scheduleAlign();
+  try {
+    iframeEl.value?.contentDocument?.fonts?.ready.then(() => alignToTarget());
+  } catch {
+    /* cross-origin */
+  }
+}
 
 const iframeStyle = computed(() => ({
   opacity: revealOpacity.value / 100,
@@ -50,7 +118,15 @@ watch(
   { immediate: true },
 );
 
-onUnmounted(() => window.removeEventListener("blur", onWindowBlur));
+const onResize = () => scheduleAlign();
+onMounted(() => {
+  window.addEventListener("resize", onResize);
+  scheduleAlign(); // iframe may already be loaded (cached) before @load fires
+});
+onUnmounted(() => {
+  window.removeEventListener("blur", onWindowBlur);
+  window.removeEventListener("resize", onResize);
+});
 
 const attackerBgStyle = computed(() =>
   props.attackerBg ? { background: props.attackerBg } : {},
@@ -68,7 +144,7 @@ const statusLabel = computed(() => {
 <template>
   <div class="cj-wrapper">
     <!-- ── Stage ─────────────────────────────────────────── -->
-    <div class="cj-stage" :style="{ height: height + 'px' }">
+    <div ref="stageEl" class="cj-stage" :style="{ height: height + 'px' }">
       <!-- Bottom layer: attacker's page (always visible) -->
 
       <!-- Default full-page layout -->
@@ -104,7 +180,13 @@ const statusLabel = computed(() => {
       </div>
 
       <!-- Top layer: victim iframe (opacity + position controlled) -->
-      <iframe class="cj-victim" :src="victimUrl" :style="iframeStyle" />
+      <iframe
+        ref="iframeEl"
+        class="cj-victim"
+        :src="victimUrl"
+        :style="iframeStyle"
+        @load="onIframeLoad"
+      />
 
       <!-- Opacity label overlay -->
       <div

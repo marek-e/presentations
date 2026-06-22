@@ -913,8 +913,7 @@ layout: center
   :ad-mode="true"
   :show-position-controls="true"
   :clickable="true"
-  :start-y="-15"
-  :start-x="32"
+  align-target="#starBtn"
 />
 
 <!--
