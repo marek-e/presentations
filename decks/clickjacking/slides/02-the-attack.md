@@ -931,7 +931,7 @@ The popup chrome (ad-header strip) mimics an intrusive element - same pattern as
 # When Are You Vulnerable? The Prerequisites
 
 <div class="pq-intro mt-3">
-  Three boxes must be checked for an attack to land. Fix any one - the attack collapses.
+  Three boxes must be checked for an attack to land.
 </div>
 
 <div class="pq-steps mt-5">
