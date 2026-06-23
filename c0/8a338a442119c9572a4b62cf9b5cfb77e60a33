@@ -1,0 +1,14 @@
+decks/clickjacking/public/victims/dcj.css
+  h_34454149dac528 17-18,47-50,63-64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.11",
+  "base_commit_sha": "c08a338a442119c9572a4b62cf9b5cfb77e60a33",
+  "prompts": {},
+  "humans": {
+    "h_34454149dac528": {
+      "author": "Marek Elmayan <melmayan.dev@gmail.com>"
+    }
+  }
+}
