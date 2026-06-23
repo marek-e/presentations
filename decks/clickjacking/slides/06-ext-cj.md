@@ -1003,12 +1003,12 @@ zoom: 0.92
     <div class="efx2-user-desc">All 11 managers shipped fixes, so the patch only helps if you run it. The threat constantly changes, so it's a good idea to update your software regularly.</div>
   </div>
   <div class="efx2-user mt-2" v-click>
-    <div class="efx2-user-name">Disable manual autofill, copy/paste only</div>
-    <div class="efx2-user-desc">Removes the trigger entirely. Inconvenient, especially for personal info and cards.</div>
-  </div>
-  <div class="efx2-user mt-2" v-click>
     <div class="efx2-user-name">Require exact-URL match for autofill</div>
     <div class="efx2-user-desc">Kills subdomain abuse, but not an attacker already running code on the exact domain. Cards and personal data still leak.</div>
+  </div>
+  <div class="efx2-user mt-2" v-click>
+    <div class="efx2-user-name">Disable manual autofill, copy/paste only</div>
+    <div class="efx2-user-desc">Removes the trigger entirely. Inconvenient, especially for personal info and cards.</div>
   </div>
 </div>
 

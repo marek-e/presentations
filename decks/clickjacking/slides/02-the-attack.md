@@ -87,7 +87,7 @@ This is why prize/giveaway lures work, but cookie-banner and CAPTCHA clones work
 
 The attacker hosts a page with **two layers**:
 
-```html {all|3-9|12-13|all}
+```html {all|12-13|15-18}
 <!-- attacker.html -->
 <style>
   iframe {
@@ -110,7 +110,7 @@ The attacker hosts a page with **two layers**:
 
 </div>
 
-<div class="cj-mech-right" v-click="4">
+<div class="cj-mech-right" v-click="3">
 
 **CSS properties exploited:**
 
@@ -128,7 +128,7 @@ The attacker hosts a page with **two layers**:
   </OffsetCard>
 </div>
 
-<div class="cj-mail" v-click="5">
+<div class="cj-mail" v-click="4">
   <div class="cj-mail-toast">
     <div class="cj-mail-dot" aria-hidden="true"></div>
     <div class="cj-mail-meta">

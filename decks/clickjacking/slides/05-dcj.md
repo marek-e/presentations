@@ -2,20 +2,17 @@
 
 <span class="dcj-badge">2024 · Paulos Yibelo</span> <a href="https://www.evil.blog/2024/12/doubleclickjacking-what.html" target="_blank" class="dcj-link">evil.blog ↗</a>
 
-<Callout variant="warning" class="mt-4">A double-click is two separate clicks. Click 1 fires on the attacker's popup and closes it. Click 2, at the same cursor position ~100 ms later, fires on whatever is now underneath - the OAuth <strong>Allow</strong> button.</Callout>
+<Callout variant="warning" class="mt-4">A double-click is not a single action. It's two separate clicks. The idea is to exploit this gesture by having the first click to set the context, and the second click to do the damage.</Callout>
 
-<div class="dcj-three-col mt-6">
+<div class="dcj-two-col mt-6">
   <OffsetCard title="Classic Clickjacking" accent="blue">
     <template #icon>🖼️</template>
     Invisible <code>iframe</code> overlays the victim page. One click, one target. Blocked by <code>X-Frame-Options</code> and <code>CSP frame-ancestors</code>.
   </OffsetCard>
   <OffsetCard title="DoubleClickjacking" accent="red">
-    <template #icon>🖱️</template>
-    Click 1 lands on the attacker's popup and swaps the context. Click 2 lands on a completely different page, same position. No iframe needed.
-  </OffsetCard>
-  <OffsetCard title="Net Result" accent="orange">
-    <template #icon>🚫</template>
-    <code>X-Frame-Options</code>, <code>CSP frame-ancestors</code>, <code>SameSite</code> cookies - all irrelevant. None of them protect against a popup.
+    <template #icon>🖱️🖱️</template>
+    There are <strong>two pages</strong>: the attacker's popup and the victim's page.
+    Click 1 lands on the attacker's popup and closes it. Click 2 lands on a completely different page, same position.
   </OffsetCard>
 </div>
 
@@ -31,9 +28,9 @@
   font-weight: 700;
   letter-spacing: 0.3px;
 }
-.dcj-three-col {
+.dcj-two-col {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 .dcj-link {
@@ -59,7 +56,9 @@ Link evil.blog for curious audience members.
 class: px-14 py-4
 ---
 
-# Click 1 closes the popup. Click 2 hits Allow.
+# <span class="dcj-highlight">Click 1</span> closes the popup. <span class="dcj-highlight-2">Click 2</span> hits Allow.
+
+At some point, the attacker's page makes you open a popup window.
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -72,15 +71,15 @@ class: px-14 py-4
     </div>
   </div>
 
-  <div class="dcj-step">
+  <div class="dcj-step dcj-step--warning">
     <div class="dcj-step-num">02</div>
     <div>
       <div class="dcj-step-title">Click 1 closes the popup</div>
-      <div class="dcj-step-desc">The button listens for <code>mousedown</code> (not <code>click</code>) and only does one thing: <code>window.close()</code>. The popup disappears before click 2's <code>mousedown</code> can fire on it.</div>
+      <div class="dcj-step-desc">The button listens for <code>mousedown</code> and only does one thing: <code>window.close()</code>. The popup disappears before click 2's <code>mousedown</code> can fire on it.</div>
     </div>
   </div>
 
-  <div class="dcj-step dcj-step--red">
+  <div class="dcj-step dcj-step--danger">
     <div class="dcj-step-num">03</div>
     <div>
       <div class="dcj-step-title">Click 2 fires on the OAuth Allow button</div>
@@ -101,13 +100,15 @@ document.querySelector('.verify-btn')
   .addEventListener('mousedown', () => window.close())
 ```
 
-<Callout variant="note" noIcon class="mt-3"><code>mousedown</code> not <code>click</code>: if you used <code>click</code>, click 2's <code>mousedown</code> might fire on the popup before it closes. Also: <code>window.opener.location</code> is the most reliable swap method but other approaches exist.</Callout>
+<Callout variant="info" noIcon class="mt-3"><code>mousedown</code> not <code>click</code>: if you used <code>click</code>, click 2's <code>mousedown</code> might fire on the popup before it closes. Also: <code>window.opener.location</code> is the most reliable swap method but other approaches exist.</Callout>
 
 </div>
 
 </div>
 
 <style>
+.dcj-highlight { color: var(--mm-warning); font-weight: 800; }
+.dcj-highlight-2 { color: var(--mm-danger); font-weight: 800; }
 .dcj-steps { display: flex; flex-direction: column; gap: 10px; }
 
 .dcj-step {
@@ -119,7 +120,8 @@ document.querySelector('.verify-btn')
   border: 1px solid var(--mm-border);
   border-radius: 12px;
 }
-.dcj-step--red { background: var(--mm-danger-bg); border-color: var(--mm-danger-border); }
+.dcj-step--danger { background: var(--mm-danger-bg); border-color: var(--mm-danger-border); }
+.dcj-step--warning { background: var(--mm-warning-bg); border-color: var(--mm-warning-border); }
 
 .dcj-step-num {
   font-size: 1.8em;
@@ -147,6 +149,8 @@ Note on other swap methods: window.opener.location was Yibelo's preferred method
 ---
 class: p-2 py-4
 ---
+
+# Visual Explanation
 
 <div class="dcj-media-grid">
   <div class="dcj-media-cell">
