@@ -1015,6 +1015,47 @@ Three prerequisites - fix any one and the attack collapses. This is the checklis
 
 ---
 
+# Pre-armed Forms & Chained Clicks
+
+<div class="mt-3 text-sm text-slate-600">
+  Some sites accept form values via URL, handing the attacker a pre-armed payload.
+</div>
+
+<div class="mt-5 font-mono text-sm bg-slate-50 border border-slate-200 rounded-xl p-4 text-blue-700">
+  https://bank.com/transfer<strong>?amount=500&amp;to=attacker_account</strong>
+</div>
+
+<Callout variant="info" class="mt-5">The attacker loads the victim page inside an iframe with the form <strong>already filled</strong>, then overlays just the submit button with their lure. One click from the victim and the transaction fires without them ever choosing to initiate it.</Callout>
+
+<Callout v-click variant="escalation" class="mt-4">
+  <strong>Chain it.</strong> Nothing stops placing <em>two</em> fake buttons over two different successive targets inside an iframe:
+  <div class="mt-2 flex gap-2 font-mono text-xs">
+    <div class="flex-1 bg-white rounded-lg border border-orange-200 px-3 py-2 text-center">
+      <div class="text-orange-600 font-bold">Click 1</div>
+      <div class="text-slate-500 mt-0.5">Fake: "Dismiss banner"</div>
+      <div class="text-slate-400 text-[10px] mt-1">↓ real: Accept ToS</div>
+    </div>
+    <div class="flex-1 bg-white rounded-lg border border-orange-200 px-3 py-2 text-center">
+      <div class="text-orange-600 font-bold">Click 2</div>
+      <div class="text-slate-500 mt-0.5">Fake: "Confirm free trial"</div>
+      <div class="text-slate-400 text-[10px] mt-1">↓ real: Pay $500</div>
+    </div>
+  </div>
+  <div class="mt-2 text-slate-500">No single action looks suspicious. The victim never suspects a thing.</div>
+</Callout>
+
+<!--
+PRESENTER NOTE:
+GET params that pre-fill forms are a gift to attackers - victim never even *initiated* the transfer flow.
+Attacker iframes bank.com/transfer?amount=500&to=attacker and only needs one click on Submit.
+[click] Chained clicks: two fake buttons, two real actions (Accept ToS → pay $500). Each click looks innocent in isolation.
+"Dismiss banner" / "Confirm free trial" are deliberate intrusive-element clones - users have muscle memory for clicking through these. Chaining them makes each individual click feel routine.
+Bridge to defenses: even with CSRF tokens, the victim is clicking a real authenticated button.
+-->
+
+
+---
+
 # How Does the Victim's Session Get In?
 
 <div class="sc-intro mt-3">
@@ -1139,44 +1180,4 @@ Common question: "How does the bank page load logged-in inside the iframe?"
 Walk the 3-step flow: cookie stored on login → browser auto-sends it to iframe request → server renders authenticated UI.
 [click] SameSite=Lax helps for cookies - iframe won't get the session, user sees login form instead.
 Just in case someone asks about JWT in localStorage: modern browsers partition storage by top-level site, so a cross-site iframe gets an empty store (same effect as SameSite). Headers still stop the click.
--->
-
----
-
-# Pre-armed Forms & Chained Clicks
-
-<div class="mt-3 text-sm text-slate-600">
-  Some sites accept form values via URL, handing the attacker a pre-armed payload.
-</div>
-
-<div class="mt-5 font-mono text-sm bg-slate-50 border border-slate-200 rounded-xl p-4 text-blue-700">
-  https://bank.com/transfer<strong>?amount=500&amp;to=attacker_account</strong>
-</div>
-
-<Callout variant="info" class="mt-5">The attacker loads the victim page inside an iframe with the form <strong>already filled</strong>, then overlays just the submit button with their lure. One click from the victim and the transaction fires without them ever choosing to initiate it.</Callout>
-
-<Callout v-click variant="escalation" class="mt-4">
-  <strong>Chain it.</strong> Nothing stops placing <em>two</em> fake buttons over two different successive targets inside an iframe:
-  <div class="mt-2 flex gap-2 font-mono text-xs">
-    <div class="flex-1 bg-white rounded-lg border border-orange-200 px-3 py-2 text-center">
-      <div class="text-orange-600 font-bold">Click 1</div>
-      <div class="text-slate-500 mt-0.5">Fake: "Dismiss banner"</div>
-      <div class="text-slate-400 text-[10px] mt-1">↓ real: Accept ToS</div>
-    </div>
-    <div class="flex-1 bg-white rounded-lg border border-orange-200 px-3 py-2 text-center">
-      <div class="text-orange-600 font-bold">Click 2</div>
-      <div class="text-slate-500 mt-0.5">Fake: "Confirm free trial"</div>
-      <div class="text-slate-400 text-[10px] mt-1">↓ real: Pay $500</div>
-    </div>
-  </div>
-  <div class="mt-2 text-slate-500">No single action looks suspicious. The victim never suspects a thing.</div>
-</Callout>
-
-<!--
-PRESENTER NOTE:
-GET params that pre-fill forms are a gift to attackers - victim never even *initiated* the transfer flow.
-Attacker iframes bank.com/transfer?amount=500&to=attacker and only needs one click on Submit.
-[click] Chained clicks: two fake buttons, two real actions (Accept ToS → pay $500). Each click looks innocent in isolation.
-"Dismiss banner" / "Confirm free trial" are deliberate intrusive-element clones - users have muscle memory for clicking through these. Chaining them makes each individual click feel routine.
-Bridge to defenses: even with CSRF tokens, the victim is clicking a real authenticated button.
 -->
