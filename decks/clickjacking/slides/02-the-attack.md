@@ -87,7 +87,7 @@ This is why prize/giveaway lures work, but cookie-banner and CAPTCHA clones work
 
 The attacker hosts a page with **two layers**:
 
-```html {all|12-13|15-18}
+```html {all|12-13|15-18|all}
 <!-- attacker.html -->
 <style>
   iframe {
